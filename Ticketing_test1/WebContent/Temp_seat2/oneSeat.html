@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>좌석선택</title>
+<!---- 현재 좌석 선택 화면을 메인 화면의 팝업 창 형태로 띄우게 할 것이다.  -->
+<script>
+	window.onfocus=function(){
+	}
+	window.onload=function(){
+ 	window.focus(); // 현재 window 즉 익스플러러를 윈도우 최상단에 위치
+	window.moveTo(0,0); // 웹 페이지의 창 위치를 0,0 (왼쪽 최상단) 으로 고정
+	window.resizeTo(1280,800); // 웹페이지의 크기를 가로 1280 , 세로 800 으로 고정(확장 및 축소) 
+	//window.scrollTo(0,250); // 페이지 상단 광고를 바로 볼 수 있게 스크롤 위치를 조정
+	}
+}	
+</script>
+<style>
+.info-box{
+	box-sizing: content-box;
+	width: 500px;
+	height: 50px;
+	padding: 10px;
+
+}
+
+.content-box{
+	box-sizing: content-box;
+	width:500px;
+	height:500px;
+	padding: 20px;
+	border: 1px solid grey;
+	background-color: white;
+}
+.content-box .seat{
+	width:10px;
+	height:10px;
+	background-color:lightgray;
+}
+/* .seat_info{
+	width: 150px;
+	height: 200px;
+	padding:20px;
+	border:1px solid grey;
+	background-color: white;
+} */
+
+
+</style>
+</head>
+
+<body>
+<div class ="info">공연 제목 &nbsp;&nbsp; <!--공연정보, 선택 창 상단영역  -->
+<select name="perform_list">
+	<option value="8월 20일 14:00시">8월 20일 14:00시<br>
+	<option value="8월 20일 19:00시">8월 20일 19:00시<br>
+</select>
+</div>
+<p></p>
+<div class ="content-box">무대 <br></br> <!--좌석 선택 영역 -->
+	<div class="seat">
+	</div>
+</div>
+
+<p></p>
+
+<div class="seat_info">
+	<div class ="p_seat"> <!--남아있는 자리  --></div>
+	<div class = "security_num"> <!--안심예매 --></div>
+	<div class = "s_seat"> <!--선택된 자리  --> </div>
+</div>
+
+<form action="seatSelected.jsp" method="get">
+<input type = "submit" value="좌석 선택 완료">
+
+</form>
+
+
+
+</body>
+</html>
