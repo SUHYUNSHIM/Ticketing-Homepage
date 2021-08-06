@@ -15,7 +15,7 @@
 	}
 }	
 </script>
-<style>
+<style> /*스타일이 너무 길어지면 css 파일을 따로 만들 예정.  */
 .info-box{
 	box-sizing: content-box;
 	width: 500px;
@@ -31,26 +31,49 @@
 	padding: 20px;
 	border: 1px solid grey;
 	background-color: white;
+	float:left;
+	margin: 5px;
 }
 .content-box .seat{
 	width:10px;
 	height:10px;
 	background-color:lightgray;
 }
-/* .seat_info{
-	width: 150px;
-	height: 200px;
+.seat_info{
+	width: 200px;
+	height: 500px;
 	padding:20px;
 	border:1px solid grey;
 	background-color: white;
+	margin: 5px;
+	float: left;
+} 
+.seat_info > div{
+	padding: 75px;
+	background-color:#E5E5E5;
+	margin-bottom:2px;
+	
+}
+.seat_info .p_seat{
+	width: 100%;
+	box-sizing: border-box;		
+}
+/* .seat_info .security_num{
+	width: 100%;	
+	box-sizing: border-box;	
 } */
+.seat_info .s_seat{
+	width: 100%;	
+	box-sizing: border-box;	
+}
+
 
 
 </style>
 </head>
 
 <body>
-<div class ="info">공연 제목 &nbsp;&nbsp; <!--공연정보, 선택 창 상단영역  -->
+<div class ="info">공연 제목 &nbsp;&nbsp; <!--공연정보, 선택 창 상단영역  --> <!--공연 제목은 추후 사용자가 선택한 공연의 이름을 전 페이지에서 가져오는 것으로 한다.-->
 <select name="perform_list">
 	<option value="8월 20일 14:00시">8월 20일 14:00시<br>
 	<option value="8월 20일 19:00시">8월 20일 19:00시<br>
@@ -65,15 +88,20 @@
 <p></p>
 
 <div class="seat_info">
+	<h5>잔여석</h5>
 	<div class ="p_seat"> <!--남아있는 자리  --></div>
-	<div class = "security_num"> <!--안심예매 --></div>
+	
+	<!-- <h5>안심예매</h5> <!--사이드 content의 영역 분배가 안되어서 처음 좌석 선택 페이지에 접속 시 띄우는 걸로 수정할 예정.  -->
+	<!-- <div class = "security_num"> 안심예매</div> -->
+	<h5>선택한 좌석</h5>
 	<div class = "s_seat"> <!--선택된 자리  --> </div>
+	<br></br>
+	<form action="seatSelected.jsp" method="get">
+	<input type = "submit" value="좌석 선택 완료">
+	
+	
+	</form>
 </div>
-
-<form action="seatSelected.jsp" method="get">
-<input type = "submit" value="좌석 선택 완료">
-
-</form>
 
 
 
