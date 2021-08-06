@@ -41,8 +41,8 @@
 }
 .seat_info{
 	width: 200px;
-	height: 500px;
-	padding:20px;
+	height: 520px; /*padding... 높이 수동 조작  */
+	padding:10px;
 	border:1px solid grey;
 	background-color: white;
 	margin: 5px;
@@ -50,9 +50,7 @@
 } 
 .seat_info > div{
 	padding: 75px;
-	background-color:#E5E5E5;
-	margin-bottom:2px;
-	
+	background-color:#E5E5E5;		
 }
 .seat_info .p_seat{
 	width: 100%;
@@ -67,7 +65,14 @@
 	box-sizing: border-box;	
 }
 
-
+/*이미지 리사이징  */
+	img.resizing{
+		float:right;
+		width:30px;
+		height:30px;
+		padding:10px;
+		maring:1ppx;
+	}
 
 </style>
 </head>
@@ -88,13 +93,15 @@
 <p></p>
 
 <div class="seat_info">
-	<h5>잔여석</h5>
-	<div class ="p_seat"> <!--남아있는 자리  --></div>
+	<!--이미지 삽입  -->
+	<img src="images/music.png" class="resizing"> <!--이미지를 클릭하면 메인 홈으로 이동할 수 있도록 수정할 예정. -->
+	<h5>좌석등급/잔여석</h5>
+	<div class ="p_seat"> <!--남아있는 자리  --></div> <!--textArea 넣을 예정  -->
 	
 	<!-- <h5>안심예매</h5> <!--사이드 content의 영역 분배가 안되어서 처음 좌석 선택 페이지에 접속 시 띄우는 걸로 수정할 예정.  -->
 	<!-- <div class = "security_num"> 안심예매</div> -->
 	<h5>선택한 좌석</h5>
-	<div class = "s_seat"> <!--선택된 자리  --> </div>
+	<div class = "s_seat"> <!--선택된 자리  --> </div> <!--textArea 넣을 예정  -->
 	<br></br>
 	<form action="seatSelected.jsp" method="get">
 	<input type = "submit" value="좌석 선택 완료">
