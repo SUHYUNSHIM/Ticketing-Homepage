@@ -2,11 +2,12 @@
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
 <body>
-
+할인수단 선택 페이지
 </body>
 </html>
