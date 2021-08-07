@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!--  ---------------------------------------------------------------->
+alert(document.form1.irum.value);
+<form name= form1>
+	<input type ="text" name="irum"><br>
+	<input type ="button" value="눌러봐요" onclick="kaja();"><br>
+</form>
+
+<!--  ----------------------------------------------------------------->
+	
+<script> /*이 안에 있는 것은 모두 자바스크립트이다 */
+		document.onmousemove = function(){
+			//DOM
+			document.getElementById("f1").style.left = event.clientX +"px" /*f1이름을 가진 것에 접근, 즉 span 태그에 접근한다.  */
+			//document.getElementById("f1").style.top = event.clientY+"px"
+			//마우스는 default로 기준점이 0,0이다.
+			var f1 = document.getElementById("f1");
+			f1.style.top = event.clientY+"px"
+	}
+</script>
+<span id="f1" style="position:absolute;">  <!--그림의 시작점을 정해주었다. 마우스와 기준점, 시작점을 같게 만들어 주었다. -->
+		<img src ="bear.png" border="0" name="krim">
+	</span> <!--그룹태그를 붙인 이유는? 0,0을 중심으로 그림을 위치시키기 위해서 이다. -->
+	<!--relative - 원래 나와야 할 자리에서 위치를 계산해서 배치시키는 것.-->	
+<!--  ----------------------------------------------------------------->
+	
+	
+	
+	
+</body>
+</html>
