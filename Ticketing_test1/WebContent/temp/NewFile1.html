@@ -1,0 +1,913 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>멜론 티켓</title>
+
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" type="image/x-icon" href="https://cdnticket.melon.co.kr/resource/image/web/common/pc_32.ico" />
+
+    <!-- IOS용 -->
+    <link rel="apple-touch-icon-precomposed" href="https://cdnticket.melon.co.kr/resource/image/web/common/ios_120.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://cdnticket.melon.co.kr/resource/image/web/common/ios_180.png" />
+
+    <meta name="viewport" content="width=1126"/><!-- 모바일 접속시 컨텐츠 넓이 -->
+    <meta name="keywords" content="티켓, 콘서트, 테마/지역, 랭킹, 티켓오픈소식, 이벤트, FouU, 마이티켓" />
+    <meta name="description" content="No.1 음악플랫폼 멜론에서 제공하는 공연 예매사이트. 콘서트, 팬미팅, 페스티벌, 추천공연 제공" />
+    <meta property="og:title" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:description" content="듣다·보다·만나다, 멜론티켓"/>
+    <meta name="naver-site-verification" content="8912542fdfc7aaf11e289d8bed9e86892deef890"/>
+    <script type="text/javascript" src="/resource/script/web/common/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="/resource/script/web/common/jquery.inputmask.bundle.js"></script>
+    <script type="text/javascript" src="/resource/script/web/common/ui_script.js?v=20181206"></script>
+    <script type="text/javascript" src="/resource/script/web/common/melonweb_openlib.js"></script>
+    <script type="text/javascript" src="/resource/script/web/common/melonweb_comm.js?t=20180626"></script>
+    <script type="text/javascript" src="/resource/script/web/common/melonweb_member_external.js?t=20180626"></script>
+    <script type="text/javascript" src="/resource/script/web/common/webUtils.js?v=20181201"></script>
+    <script type="text/javascript" src="/resource/script/web/common/CaptchaUtils.js?v=20190621"></script>
+    <link rel="stylesheet" type="text/css" href="//cdnticket.melon.co.kr/resource/style/web/common/common_onestop-1f4da835a2.css" />
+    <link rel="stylesheet" type="text/css" href="//cdnticket.melon.co.kr/resource/style/web/common/onestop-ea870b1203.css" />
+    <script>var APIURL = '/tktapi', POCURL = '/tktapi_poc', CTX = "";</script>
+    <!-- 구매전환스크립트2-->
+<!-- Facebook Pixel Code -->
+	<script>
+	!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+	n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+	document,'script','https://connect.facebook.net/en_US/fbevents.js');
+	fbq('init', '251716985244559'); // Insert your pixel ID here.
+	fbq('track', 'PageView');
+	</script>
+	<noscript><img height="1" width="1" style="display:none"
+	src="https://www.facebook.com/tr?id=251716985244559&ev=PageView&noscript=1"
+	/></noscript>
+
+	<!-- DO NOT MODIFY -->
+<!-- End Facebook Pixel Code -->
+    <!-- Kakao Pixel Code -->
+    <script type="text/javascript" charset="UTF-8" src="//t1.daumcdn.net/adfit/static/kp.js"></script>
+    <script type="text/javascript">
+        kakaoPixel("1432956840521218273").pageView("WEB-공통");
+    </script>
+<!-- End Kakao Pixel Code -->
+</head>
+<body>
+
+    <script src="/resource/script/phase/deployPhaseUtils.js"></script><form id="sForm" method="post" name="sForm" target="oneStopFrame">
+<input type="hidden"    id="prodId"             name="prodId"               value="205938">
+<input type="hidden"    id="pocCode"            name="pocCode"              value="SC0002">
+<input type="hidden"    id="perfTypeCode"       name="perfTypeCode"         value="">
+<input type="hidden"    id="perfDate"           name="perfDate"             value="">
+<input type="hidden"    id="scheduleNo"         name="scheduleNo"           value="100018">
+<input type="hidden"    id="sellTypeCode"       name="sellTypeCode"         value="ST0001">
+<input type="hidden"    id="sellCondNo"         name="sellCondNo"           value="">
+<input type="hidden"    id="perfMainName"       name="perfMainName"         value="">
+<input type="hidden"    id="seatGradeNo"        name="seatGradeNo"          value="">
+<input type="hidden"    id="seatGradeName"      name="seatGradeName"          value="">
+<input type="hidden"    id="blockId"            name="blockId"              value="">
+<input type="hidden"    id="sntv"               name="sntv"                 value="">
+<input type="hidden"    id="blockTypeCode"      name="blockTypeCode"        value="">
+<input type="hidden"    id="floorNo"            name="floorNo"               value="">
+<input type="hidden"    id="floorName"          name="floorName"           value="">
+<input type="hidden"    id="areaNo"             name="areaNo"               value="">
+<input type="hidden"    id="areaName"           name="areaName"               value="">
+<input type="hidden"    id="prodTypeCode"       name="prodTypeCode"         value="">
+<input type="hidden"    id="flplanTypeCode"     name="flplanTypeCode"       value="">
+<input type="hidden"    id="scheduleTypeCode"   name="scheduleTypeCode"     value="">
+<input type="hidden"    id="seatTypeCode"       name="seatTypeCode"         value="">
+<input type="hidden"    id="jType"              name="jType"                value="I">
+
+<input type="hidden"    id="cardGroupId"        name="cardGroupId"          value="">
+<input type="hidden"    id="cardBpId"           name="cardBpId"             value="">
+<input type="hidden"    id="cardMid"            name="cardMid"              value="">
+<input type="hidden"    id="rsrvStep"           name="rsrvStep"             value="SAT">
+<input type="hidden"    id="zamEnabled"         name="zamEnabled"           value="0">
+<input type="hidden"    id="zamKey"             name="zamKey"               value="">
+<input type="hidden"    id="trafficCtrlYn"      name="trafficCtrlYn"        value="N">
+<input type="hidden"    id="netfunnel_key"      name="netfunnel_key"        value="">
+
+<input type="hidden"    id="stvn_view_list"     name="stvn_view_list"       value="">
+<input type="hidden"    id="mapClickYn"     	name="mapClickYn"       	value="N">
+
+<!-- 기업노출 추가 -->
+<input type="hidden"    id="basePriceDpYn"            name="basePriceDpYn"              value="">
+<input type="hidden"    id="bpDcPriceDpYn"            name="bpDcPriceDpYn"              value="">
+<!-- 카카오페이 추가 -->
+<input type="hidden"	id="tid"				name="tid"					value="">
+</form>
+<form id="sFormSub" method="post" name="sFormSub">
+	<input type="hidden"    id="prodId"             name="prodId"               value="205938">
+	<input type="hidden"    id="scheduleNo"         name="scheduleNo"           value="100018">
+	<input type="hidden"    id="flplanTypeCode"     name="flplanTypeCode"       value="">
+	<input type="hidden"    id="seatTypeCode"       name="seatTypeCode"         value="">
+	<input type="hidden" id="encryptedSeatIds" name="encryptedSeatIds" value=""/>
+	<input type="hidden" id="interlockTypeCode" name="interlockTypeCode" value=""/>
+</form>
+<div id="oneStopDiv" style="overflow: hidden; width: 100%; border: 0px solid red;">
+    <iframe id="oneStopFrame" name="oneStopFrame" src="" style="width:100%; height: 100%; border: 0px;overflow: auto; -webkit-overflow-scrolling: touch;" frameborder="0"></iframe>
+</div>
+
+<!-- UX-1309 -->
+<!-- 인증예매 안내 [CAPTCHA] -->
+<div class="layerPop" id="certification" style="width:310px; top:125px; left:50%;margin-left:-155px;display:block;" >
+		<div class="dim_back"></div>
+		<div class="la_header">
+			<div class="la_header1">
+				<h3 class="ac">인증예매</h3>
+			</div>
+		</div>
+		<div class="la_middle">
+			<div class="la_middle1">
+				<div class="la_con">
+					<div class="box_certification">
+						<p class="ment">부정예매 방지를 위해 보안문자를 정확히 입력해주세요. </p>
+						<!-- UX-1309 : 2018-05-25-->
+						<div class="captcha">
+							<div class="api">
+								<img id="captchaImg" src="data:image/png;base64,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" style="width:230px;height:70px;" >
+								</div>
+							<div class="button">
+								<button type="button" class="reflash" id="btnReload">새로고침</button>
+								<button type="button" class="speaker" id="btnAudio">소리듣기</button>
+							</div>
+						</div>
+						<!-- //UX-1309 : 2018-05-25-->
+						<div class="wrap_form_input onError">
+							<label for="label-for-captcha" class="place_holder">대소문자 구분없이 문자입력</label>
+							<input type="text" id="label-for-captcha" class="inputType"  style="border-color:#ddd;text-transform:uppercase;" maxlength="8" />
+							<div class="errorMessage" id="errorMessage" style="display:none;">문자를 정확히 입력해 주세요.</div>
+						</div>
+						<div class="wrap_form_button">
+							<a href="#" class="btn_flexible btn_full_radius" id="btnComplete"><span>입력완료</span></a>
+						</div>
+						<div class="wrap_form_button">
+							<a href="#" class="link" id="btn_later">좌석 먼저 확인하고 나중에 입력하기</a>
+						</div>
+						<div id="audioCaptcha" style="display: none;"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="la_footer"><div class="la_footer1"></div></div>
+	</div>
+<!-- //인증예매 안내 -->
+<!-- //UX-1309 -->
+<input type="hidden" id="captchaEncStr" value="YNoezfD120uwdrWhhBQHnQ==">
+
+<script type="text/javascript" src="/resource/script/web/add_info.js?t=201907040000"></script>
+<script type="text/javascript">
+var naviSeat            ="stepSeat.htm";
+function setLink() {
+
+    var frm                 = document.sForm;
+    var flplanTypeCode      = prodData.flplanTypeCode;
+    var prodTypeCode        = prodData.prodTypeCode;
+    var perfTypeCode        = prodData.perfTypeCode;
+    var sellTypeCode        = "ST0001";
+    scheduleTypeCode        = prodData.scheduleTypeCode;
+
+    $("#scheduleNo"         ).val(prodData.scheduleNo);
+    $("#perfMainName"       ).val(prodData.perfMainName);
+    $("#prodTypeCode"       ).val(prodData.prodTypeCode);
+    $("#scheduleTypeCode"   ).val(prodData.scheduleTypeCode);
+    $("#flplanTypeCode"     ).val(flplanTypeCode);
+    $("#perfDate"           ).val(prodData.perfStartDay);
+    $("#schPerfDate"        ).val(prodData.perfStartDay);
+    $("#perfTypeCode"       ).val(perfTypeCode);
+    $("#trafficCtrlYn"      ).val(prodData.trafficCtrlYn == "Y" ? "Y" : "N");
+
+    // 비지정일 경우  인증예매팝업의 '좌석 먼저 보고 나중에 입력하기' 문구 비활성화 처리'  [CAPTCHA]
+	if (flplanTypeCode == 'DR0003')
+		$('#btn_later').parent().hide();
+	else
+		$('#btn_later').parent().show();
+
+    if (prodTypeCode == "PT0001") {
+        if(sellTypeCode == "ST0003"){
+            $("#rsrvStep").val("SAT");
+            var params = $("#sForm").serialize();
+            $.ajax({
+                type            : "POST"
+                , dataType      : "jsonp"
+                , url           : APIURL + "/pickrsrv/usercond.json?v=1"
+                , async         : false
+                , data          : params
+                , success       : function(result) {
+                    if(result.data.authYn == "Y") {
+                        document.oneStopFrame.location.href          = CTX + "/reservation/popup/pick.htm";
+                    }
+                    else {
+                        alert(result.message);
+                        rsrvPopupClose();
+                    }
+                }
+                , error         : function(e) {
+                    alert("다시 시도부탁드립니다.");
+                    rsrvPopupClose();
+                }
+            });
+        }else {
+            if (flplanTypeCode == "DR0001") {
+                $("#rsrvStep").val("SAT");
+                document.oneStopFrame.location.href          = CTX + "/reservation/popup/stepSeat.htm";
+                naviSeat = "stepSeat.htm";
+            }else if (flplanTypeCode == "DR0002") {
+                $("#rsrvStep").val("SAT");
+                document.oneStopFrame.location.href          = CTX + "/reservation/popup/stepBlock.htm";
+                naviSeat = "stepBlock.htm";
+            }else {
+                $("#rsrvStep").val("TKT");
+	           	 var sf  = parent.document.sForm;
+
+	             sf.target        = "oneStopFrame";
+	             sf.action        = CTX + "/reservation/popup/stepTicket.htm";
+	             sf.submit();
+             	 //oneStopFrame.location.href          = CTX + "/reservation/popup/stepTicket.htm";
+            }
+        }
+    }else {
+        if (flplanTypeCode == "DR0001") {
+            $("#rsrvStep").val("SAT");
+            document.oneStopFrame.location.href          = CTX + "/reservation/popup/stepSeat.htm";
+            naviSeat = "stepSeat.htm";
+        }else if (flplanTypeCode == "DR0002") {
+            $("#rsrvStep").val("SAT");
+            document.oneStopFrame.location.href          = CTX + "/reservation/popup/stepBlock.htm";
+            naviSeat = "stepBlock.htm";
+        }else {
+            $("#rsrvStep").val("TKT");
+            var sf  = parent.document.sForm;
+
+            sf.target        = "oneStopFrame";
+            sf.action        = CTX + "/reservation/popup/stepTicket.htm";
+            sf.submit();
+        }
+    }
+}
+
+function goMyticket() {
+    if(window.opener && !window.opener.closed) {
+		window.opener.location.href = "https://ticket.melon.com/myticket/rsrvList.htm";
+        rsrvPopupClose();
+
+        if(window.opener.opener && !window.opener.opener.closed) {
+			document.domain = 'melon.com';
+			window.opener.opener.location.href = "https://ticket.melon.com/myticket/rsrvList.htm";
+			window.opener.self.close(); //부모창 닫기
+			rsrvPopupClose(); //현재창 닫기
+        }
+    } else {
+        rsrvPopupClose();
+    }
+}
+
+
+
+function goAdvtk() {
+    opener.location.href           = "https://ticket.melon.com/myticket/advtkList.htm";
+    rsrvPopupClose();
+}
+
+function reset() {
+
+	if (document.sForm.prodId.value == "") {
+		alert("상품ID가 존재하지 않습니다.");
+		history.back();
+	}
+
+	var params = $("#sForm").serialize();
+    $.ajax({
+        type            : "POST"
+        , dataType      : "jsonp"
+        , url           : APIURL + "/product/inform.json?v=1"
+        , async         : false
+        , data          : params
+        , success       : function(result) {
+            if (result.code == "0000") {
+                if (result.prodInform != null) {
+                    prodData        = result.prodInform;
+                    setLimit();
+                }else {
+                    alert("상품 정보가 존재하지 않습니다.");
+                    history.back();
+                }
+            }else {
+                alert(result.message);
+                history.back();
+            }
+        }
+        , error         : function(e) {
+            alert("잠시 서비스가 지연되고 있습니다.");
+            history.back();
+        }
+    });
+}
+
+function init() {
+    var params          = $("#sForm").serialize();
+    var chkSchedule     = true;
+    this.seatData       = {};
+    if($("#scheduleNo").val() == null || $("#scheduleNo").val() == ''){
+    	chkSchedule = false;
+    }
+    $.ajax({
+        type            : "POST"
+        , cache         : true
+        , url           : APIURL + "/product/informProdSch.json?v=1"
+        , async         : false
+        , data          : {
+				            prodId: $("#prodId").val()
+				          , pocCode: $("#pocCode").val()
+				          , scheduleNo: $("#scheduleNo").val()
+				          , sellTypeCode: $("#sellTypeCode").val()
+				          , sellCondNo: $("#sellCondNo").val()
+				          , perfDate: $("#perfDate").val()
+						  , corpCodeNo:getCookie('corpCodeNo')
+				          }
+		, jsonpCallback: "getInformProdSchCallBack"
+        , success       : function(result) {
+            if (result.code == "0000") {
+                if (result.prodInform != null) {
+                    prodData        = result.prodInform;
+                    schData         = result.schList;
+                    if (schData.length > 0) {
+                        if (prodData.rsrvAvailYn == "Y") {
+                        	if(!chkSchedule){
+                        		if(prodData.prodTypeCode != 'PT0002' && prodData.prodTypeCode != 'PT0003'){
+		                            var pDt = result.prodInform.perfStartDay.substr(0,4) + "." + result.prodInform.perfStartDay.substr(4,2) + "." + result.prodInform.perfStartDay.substr(6,2)
+		                            pDt += " (" + getWeekDay(result.prodInform.perfStartDay, "", "1") + ") " + result.prodInform.perfStartTime.substr(0,2) + ":" + result.prodInform.perfStartTime.substr(2,2);
+	                        	    alert('현재 회차는 ' + pDt + ' 입니다.\n선택하신 회차가 맞는지 다시한번 확인 후 예매해 주십시오.');
+                        		}
+                                $("#scheduleNo").val(prodData.scheduleNo);
+                        	}
+                            setLimit();
+                        }else {
+                            alert("상품 예매 기간이 아닙니다.");
+                            rsrvPopupClose();
+                        }
+                    } else {
+                        alert("유효한 스케줄이 존재하지 않습니다.");
+                        rsrvPopupClose();
+                    }
+                }else {
+                    alert("상품 정보가 존재하지 않습니다.");
+                    rsrvPopupClose();
+                }
+            }else {
+                alert(result.message);
+                rsrvPopupClose();
+            }
+        }
+        , error         : function(e) {
+            setLoading(false);
+            alert("잠시 서비스가 지연되고 있습니다");
+ //           rsrvPopupClose();
+        }
+    });
+    setLoading(false);
+}
+
+function setLimit(){
+    $.ajax({
+        type            : "POST"
+        , xhrFields     : {withCredentials: true}
+        , url           : APIURL + "/product/informLimit.json"
+        , async         : false
+        , data          : {v:1, prodId: $("#prodId").val(), pocCode : $("#pocCode").val(), scheduleNo: $("#scheduleNo").val(), sellTypeCode: $("#sellTypeCode").val()}
+        , success       : function(result) {
+            if(result.code == "0000"){
+            	lmt             = result.limitVolume;
+            	campingYn		= result.campingYn;
+            	//지산 밸리 록 페스티벌 하드코딩 2017.05.12 joyh S
+            	festivalCnt		= result.festivalCnt;
+            	campingCnt		= result.campingCnt;
+            	tentCnt			= result.tentCnt;
+            	campingSGN		= result.campingSGN;
+            	campingTentFlag	= result.campingTentFlag;
+            	//지산 밸리 록 페스티벌 하드코딩 2017.05.12 joyh E
+                setLink();
+            }else{
+                alert(result.message);
+                rsrvPopupClose();
+            }
+        }
+        , jsonpCallback: "getInformLimitCallBack"
+        , error         : function(e) {
+            alert('잠시 서비스가 지연되고 있습니다. 다시 시도해 주세요.');
+            rsrvPopupClose();
+        }
+    });
+}
+
+$(function() {
+    if (!isMelonLogin()) {
+        alert("로그인 후 예매해 주시기 바랍니다.");
+        close();
+        return;
+    }
+
+    validateKey(function() {
+        executeCaptcha();			// [CAPTCHA] 인증 예매 상품일 경우  captcha 관련 처리
+    	setLoading(true);
+        init();
+        fncResize();
+		popupWindowSize();
+    });
+});
+
+/**
+ * 원스탑 팝업창 호출시 화면 크기에 따른 리사이징 함수
+ * 모든 데이터가 호출된 다음에 호출해야함
+ */
+function popupWindowSize() {
+
+	try {
+
+		var outerHeight = (window.outerHeight - window.innerHeight);
+		var outerWidth = (window.outerWidth - window.innerWidth);
+
+		$("#oneStopFrame").load(function(){
+			var $iframeElement = $(this).contents().find(".section_onestop");
+
+			window.resizeTo($iframeElement.width()+outerWidth,$iframeElement.height()+outerHeight);
+		});
+
+	} catch (e) {
+		//에러 발생시 창 리사이징 하지 않고 넘어감
+	}
+}
+
+
+function validateKey(cb) {
+    $.ajax({
+        type : "get",
+        dataType:"jsonp",
+        url  : APIURL + "/product/prodKey.json?prodId=205938&v=1",
+        async : false,
+        xhrFields: {withCredentials: true},
+        success : function(response){
+            if(response.code == '0000') {
+                trafficCtrlYn = response.trafficCtrlYn;
+                if(trafficCtrlYn == 'Y') {
+                    if(trafficCtrlYn == 'N') {
+	                    	if('N' == 'Y') {    // nfResult
+	                    		cb();
+	                    	}else {
+		                    	alert('올바른 접근이 아닙니다.[ERR_CODE:100014]');
+		                    	rsrvPopupClose();
+	                    	}
+                    }else {
+                    	alert('예매정보가 유효하지 않습니다. 예매창을 종료한 뒤 다시 시작해주세요.');
+                    	rsrvPopupClose();
+                    }
+                }else {
+                    cb();
+                }
+            }else if(response.code == 'T8888' || response.code == 'T8900') {
+                alert(response.message);
+                rsrvPopupClose();
+            }else {
+                alert('서버와의 통신이 원할하지 않습니다. 잠시 후 다시 시도해주세요.[ERR_CODE:100012]');
+                rsrvPopupClose();
+            }
+        },
+        error : function(xhr, status, error) {
+            alert('서버와의 통신이 원할하지 않습니다. 잠시 후 다시 시도해주세요.[ERR_CODE:100011]');
+            rsrvPopupClose();
+        }
+    });
+}
+
+$(window).resize(function() {
+    fncResize();
+});
+
+function fncResize() {
+    $("#oneStopFrame").parent().height($(window).height());
+    $("#oneStopFrame").height($(this).parent().height());
+}
+
+function setProdSchedule() {
+    var schDate             = prodData.perfStartDay;
+    var schTime             = prodData.perfStartTime;
+    var prodName            = prodData.perfMainName;
+    var prodSchedule        = "";
+
+    if (scheduleTypeCode == "SG0001") {
+        if (schDate != null && schDate != undefined) {
+            prodSchedule            = schDate.substr(0,4) + "." + schDate.substr(4,2) + "." + schDate.substr(6,2) + "(" + getWeekDay(schDate, "", "1") + ")" ;
+        }
+
+        if (schTime != null && schTime != undefined) {
+            prodSchedule            += " " + schTime.substr(0,2) + ":";
+            prodSchedule            += schTime.substr(2,2);
+        }
+    }else {
+        prodSchedule           = "상시";
+    }
+
+    $('#oneStopFrame').contents().find(".txt_prod_name").prop("title", prodName);
+    $('#oneStopFrame').contents().find(".txt_prod_name").text(prodName);
+
+    // ## 20181207 Ultra ##  (mod)
+	//$('#oneStopFrame').contents().find(".txt_prod_schedule").text(prodSchedule);
+    $('#oneStopFrame').contents().find(".txt_prod_schedule").text(checkDateUnsettled(schDate, schTime, prodSchedule));
+
+    $('#oneStopFrame').contents().find("body").css("overflow", "hidden");
+}
+
+function setProdSeat() {
+    var ticketInfoText      = $('#oneStopFrame').contents().find(".txt_ticket_info");
+    var ticketInfoList      = $('#oneStopFrame').contents().find(".list_ticket_info");
+    var ticketInfo          = "";
+    var ticketCount         = 0;
+    var ticketTitle         = "";
+
+    ticketInfoText.empty();
+    ticketInfoList.empty();
+
+    if ($("#seatTypeCode").val() == "SE0003") {
+        var totalSelected = 0;
+        $.each(this.typeData, function(key, val) {
+            totalSelected  += parseInt(val.selectedVolume, 10);
+        });
+        ticketInfoText.append($("<span />").append("비지정 (<span id=\"txtNoneSeatCount\" >" + totalSelected + "</span>석)"));
+    }else {
+        $.each(seatData, function(key, val) {
+            ticketInfoList.append($("<li />").text("- " + gradeData[val.grade] + " " + val.title));
+            if (ticketCount == 0) ticketTitle = gradeData[val.grade] + " " + val.title;
+            ticketCount++;
+        });
+
+        ticketInfo              = "총 " + ticketCount + "석 선택<br/>" + ticketTitle;
+        ticketInfoText.html(ticketInfo);
+        if (ticketCount > 1) {
+            ticketInfoText.append(" 외");
+            ticketInfoText.append($("<span />").attr("onmouseover", "toolTip('layer_ticket');").addClass("txt_b").text((ticketCount - 1) +"석"));
+        }
+    }
+}
+
+function setCancelInfo(cancelFeeObj) {
+    setCancelCloseDt();
+    setCancelFee(cancelFeeObj);
+}
+
+function setCancelCloseDt() {
+
+	var schDate             = prodData.perfStartDay;
+    var schTime             = prodData.perfStartTime;
+    var prodName            = prodData.perfMainName;
+    var prodSchedule        = "";
+
+    if (scheduleTypeCode == "SG0001") {
+        if (schDate != null && schDate != undefined) {
+            prodSchedule            = schDate.substr(0,4) + "." + schDate.substr(4,2) + "." + schDate.substr(6,2) + "(" + getWeekDay(schDate, "", "1") + ")" ;
+        }
+
+        if (schTime != null && schTime != undefined) {
+            prodSchedule            += " " + schTime.substr(0,2) + ":";
+            prodSchedule            += schTime.substr(2,2);
+        }
+    }
+
+
+    var cancelCloseDtText       = $('#oneStopFrame').contents().find(".txt_cancel_close_dt");
+    var cancelFeeInfoText       = $('#oneStopFrame').contents().find(".txt_cancel_fee_info");
+    var cancelCloseDt           = prodData.cancelCloseDt;
+    var cancelCloseDtStr        = "";
+    //    var cancelCloseDtStr= cancelCloseDt.substr(0,4) + "년 " + cancelCloseDt.substr(4,2) + "월 " + cancelCloseDt.substr(6,2) + "일 " + cancelCloseDt.substr(8,2) + "시 " + cancelCloseDt.substr(10,2);
+    if (cancelCloseDt != null && cancelCloseDt != undefined) {
+        cancelCloseDtStr            = cancelCloseDt.substr(0,4) + "년 " + parseInt(cancelCloseDt.substr(4,2)) + "월 " + parseInt(cancelCloseDt.substr(6,2)) + "일(" + getWeekDay(cancelCloseDt, "", "1") + ")";
+        cancelCloseDtStr            += " " + cancelCloseDt.substr(8,2) + ":" + cancelCloseDt.substr(10,2);
+    }
+    cancelCloseDtText.html(scheduleTypeCode == "SG0001" ? checkClosinglDateUnsettled((schDate+schTime.substring(0,2)+"0000"),cancelCloseDt,cancelCloseDtStr) : cancelCloseDtStr);
+    if (prodData.maxCancelFeeVal == 0) {
+        cancelFeeInfoText.html("티켓금액의 0%");
+    }else {
+        cancelFeeInfoText.html("티켓금액의 0~" + prodData.maxCancelFeeVal + "%");
+    }
+}
+
+function setCancelFee(cancelFeeObj) {
+    // ## 20181207 Ultra ##  (new add)
+    if (checkDateUnsettledYn(prodData.perfStartDay)) {
+        setCancelFeeObj(cancelFeeObj);
+        return;
+    }
+
+    $.ajax({
+        type            : "POST"
+        , dataType      : "jsonp"
+        , url           : APIURL + "/product/cancelfee.json?v=1"
+        , async         : false
+        , data          : {prodId: prodData.prodId, pocCode : prodData.pocCode, perfDate: prodData.perfStartDay}
+        , jsonpCallback: "ticketCancel"
+        , success       : function(result) {
+            feeData             = result.list;
+            $.each(feeData, function(key, val) {
+                if(val.TODAY == val.FROMDT && val.CANCELFEETXT != '없음'){ //무부과 기간은 지났지만 예매당일 일시
+	                var trobjDummy           = $("<tr/>");
+                	var toDay = val.TODAY.substr(0,4) + "." + val.TODAY.substr(4,2) + "." + val.TODAY.substr(6,2);
+	                trobjDummy.append("<td>"+toDay+"</td>");
+	                trobjDummy.append("<td>없음</td>");
+	                trobjDummy.appendTo(cancelFeeObj);
+
+                	var todayDate = new Date();
+                	todayDate.setDate( todayDate.getDate() + 1);
+                	var yy = todayDate.getFullYear();
+                	var mm = todayDate.getMonth()+1; mm = (mm < 10) ? '0' + mm : mm;
+                	var dd = todayDate.getDate(); dd = (dd < 10) ? '0' + dd : dd;
+
+                    var cancelStartDt       = yy + "." + mm + "." + dd;
+                    var cancelEndDt         = val.TODT.substr(0,4) + "." + val.TODT.substr(4,2) + "." + val.TODT.substr(6,2);
+                    if (val.TODT < val.FROMDT) cancelEndDt = val.FROMDT.substr(0,4) + "." + val.FROMDT.substr(4,2) + "." + val.FROMDT.substr(6,2);
+                }else{
+                    var cancelStartDt       = val.FROMDT.substr(0,4) + "." + val.FROMDT.substr(4,2) + "." + val.FROMDT.substr(6,2);
+                    var cancelEndDt         = val.TODT.substr(0,4) + "." + val.TODT.substr(4,2) + "." + val.TODT.substr(6,2);
+                    if (val.TODT < val.FROMDT) cancelEndDt = val.FROMDT.substr(0,4) + "." + val.FROMDT.substr(4,2) + "." + val.FROMDT.substr(6,2);
+                }
+
+                var trobj           = $("<tr/>");
+                if(cancelStartDt <= cancelEndDt){
+                	if (cancelStartDt == cancelEndDt) {
+                        trobj.append("<td>" + cancelStartDt + "</td>");
+                    }else {
+                        trobj.append("<td>" + cancelStartDt + " ~ " + cancelEndDt + "</td>");
+                    }
+                	trobj.append("<td>" + val.CANCELFEETXT + "</td>");
+
+                    trobj.appendTo(cancelFeeObj);
+                }
+            });
+        }
+        , error         : function(e) {
+            alert("다시 시도부탁드립니다.");
+        }
+    });
+}
+
+function setRsrvNavi(rStepNo) {
+    var rsrvNavigation              = $('#oneStopFrame').contents().find(".location_step");
+
+    if ($("#rsrvStep").val() == "SAT") {
+        rsrvNavigation.children().append("<li class=\"step\"><a href=\"/reservation/popup/"+ naviSeat +"\" class=\"btn_o_menu btn_o_menu01\">좌석선택</a></li>");
+        if (rStepNo == "2") {
+            rsrvNavigation.children().append("<li class=\"step\"><a href=\"javascript:;\" class=\"btn_o_menu btn_o_menu02 on\">가격선택</a></li>");
+            rsrvNavigation.children().append("<li class=\"step\"><a href=\"javascript:;\" class=\"btn_o_menu btn_o_menu03\">배송/결제</a></li>");
+        }else if (rStepNo == "3") {
+            rsrvNavigation.children().append("<li class=\"step\"><a href=\"/reservation/popup/stepTicket.htm\" class=\"btn_o_menu btn_o_menu02\">가격선택</a></li>");
+            //rsrvNavigation.children().append("<li class=\"step\"><a href=\"javascript:;\" onclick=\"history.back(); return false;\" class=\"btn_o_menu btn_o_menu02\">가격선택</a></li>");
+            rsrvNavigation.children().append("<li class=\"step\"><a href=\"javascript:;\" class=\"btn_o_menu btn_o_menu03 on\">배송/결제</a></li>");
+        }
+    }else {
+        rsrvNavigation.children().removeClass("list_step");
+    	rsrvNavigation.children().addClass("list_give");
+        if (rStepNo == "2") {
+            rsrvNavigation.children().append("<li class=\"btn_menu btn_menu01 on\">가격선택</li>");
+            rsrvNavigation.children().append("<li class=\"btn_menu btn_menu02\">배송/결제</li>");
+        }else if (rStepNo == "3") {
+            rsrvNavigation.children().append("<li onclick=\"history.back();\" class=\"btn_menu btn_menu01\">가격선택</li>");
+            rsrvNavigation.children().append("<li class=\"btn_menu btn_menu02 on\">배송/결제</li>");
+        }
+    }
+}
+
+function rsrvPopupClose() {
+    self.close();
+}
+
+function doFinish(rsrvSeq) {
+    document.oneStopFrame.location.href      = CTX + "/reservation/popup/stepFinish.htm?rsrvSeq=" + rsrvSeq;
+}
+
+var tickettype = {};
+tickettype.form = {};
+tickettype.form.isDcTypeDspsnMeriter = function(dcTypeCodeArr){
+    dcTypeCodeArr = dcTypeCodeArr.length && typeof dcTypeCodeArr != 'string' ? dcTypeCodeArr : [dcTypeCodeArr];
+
+    var isDspsnMeriterRwdmrtDcPriceType = false;
+    for(var i = 0; i < dcTypeCodeArr.length; i++) {
+        if(dcTypeCodeArr[i] == 'DP0006'){
+            isDspsnMeriterRwdmrtDcPriceType = true;
+            break;
+        }
+    }
+
+    return isDspsnMeriterRwdmrtDcPriceType;
+};
+
+var onestop = {};
+onestop.ui = {};
+onestop.ui.ele = {};
+onestop.ui.ele.toggle = function(toEnable,eleArr){
+    var _this = this;
+    _this.input = {};
+    _this.input.run = function(toEnable,$ele){
+        var ele = $ele[0];
+        switch(ele.type.toUpperCase()){
+        case "RADIO" : _this.input.radio(toEnable,$ele); break;
+        default : break;
+        }
+    };
+    _this.input.radio = function(toEnable,_$ele){
+        if(toEnable){
+            _$ele.prop("disabled", false);
+        } else {
+            _$ele.prop("disabled", true);
+            _$ele.prop("checked", false);
+        }
+    };
+    _this.span = function(toEnable,_$ele){
+        if(toEnable){
+            _$ele.css("color", "");
+        } else {
+            _$ele.css("color", "#ccc");
+        }
+    };
+    $(eleArr).each(function(i,$ele){
+        var ele = $ele[0];
+        switch(ele.tagName.toUpperCase()){
+        case 'SPAN'  : _this.span(toEnable,$ele); break;
+        case 'INPUT' : _this.input.run(toEnable,$ele); break;
+        default : break;
+        }
+    });
+};
+
+var $dom = {};
+$dom.addInfo = {};
+
+var isMobile            = false;    // KCP media_type 사용
+var scheduleTypeCode    = "";
+var payParams           = {};
+var prodData            = {};
+var typeData            = {};
+var seatData            = {};
+var couponData          = {};
+var advtkData           = {};
+var advtkSeatGradeData  = {};
+var schData             = {};
+var lmt                 = 0;
+var campingYn			= "N";
+var festivalCnt			= 0;
+var campingCnt			= 0;
+var tentCnt				= 0;
+var campingSGN			= {};
+var campingTentFlag		= "";
+var feeData             = {};
+var gradeData           = {};
+var gradeDataList       = {};
+var data                = {proddata: {}, seatdata: {},  ticketdata: {},  coupondata: {},  advtkdata: {}, deliveryCost: 0, selectedSeatCount: 0, selectedTicketCount: 0};
+var kakaoTicketList     = [];
+var dcPriceCheckYn      = "N";
+var captchaObj 			= null;
+
+function setLoading (isloading) {
+    if (isloading) {
+        loadingOpen(" ");
+    }else {
+    	setTimeout(function(){
+        	loadingClose();
+        }, 500);
+    }
+}
+
+/**
+ *  [CAPTCHA] 인증 예매   관련 처리
+ */
+function executeCaptcha(){
+	try{
+		captchaObj = new Captcha('Y');
+	}catch(e){
+		console.log(e);
+		$("#certification").hide();
+	}
+}
+
+
+var util = {};
+util.getIntWithDefaultOf0 = function(intStr){
+	var res = parseInt(intStr, 10) || 0;
+	return res;
+};
+
+/**
+ * 할인권종 매수제한 체크 [DcPrice]
+ */
+function chkDcPrice(_payParams) {
+    var success = true;
+    if( dcPriceCheckYn == 'Y' ){
+		var dcPriceData	= new Array();
+		var tmpData = {};
+		dcPriceData.push({name:"prodId"             , value: prodData.prodId});
+		$.each(typeData, function(key, val) {
+			if (util.getIntWithDefaultOf0(val.selectedVolume) > 0) {
+				if( tmpData.hasOwnProperty(val.priceNo) ){
+					tmpData[val.priceNo] = util.getIntWithDefaultOf0(tmpData[val.priceNo])	+ util.getIntWithDefaultOf0(val.selectedVolume);
+				}else{
+					tmpData[val.priceNo] = util.getIntWithDefaultOf0(val.selectedVolume);
+				}
+			 }
+		});
+
+		$.each(tmpData, function(key, val) {
+			dcPriceData.push({name:"dcPriceNo", value: key}, {name:"dcPriceNoCnt", value:val});
+			if( _payParams != undefined )
+				_payParams.push({name:"dcPriceNo", value: key}, {name:"dcPriceNoCnt", value:val});
+		});
+
+        $.ajax({
+            type            : 'POST'
+            , dataType      : 'jsonp'
+            , url           : APIURL + '/reservation/dcPricelimit.json?v=1'
+            , async         : false
+            , data          : dcPriceData
+            , success       : function(result) {
+                if( result.code == "9999" ){
+                    success = false;
+                    if( result.message != undefined ) alert(result.message);
+                }else{
+                    success = true;
+                }
+            }
+            , error         : function(e) {
+                success = false;
+                alert("다시 시도부탁드립니다.");
+            }
+        });
+	}
+    return success;
+}
+
+function cancelLock() {
+	var encryptedSeatIds = document.sFormSub.encryptedSeatIds.value;
+	var interlockTypeCode = document.sFormSub.interlockTypeCode.value;
+	var prodId = document.sFormSub.prodId.value;
+
+	//seatIds가 없거나 interlockTypeCode가 세종이 아닐때는 lock 해지 안함
+	if (encryptedSeatIds === "" || interlockTypeCode === "" || interlockTypeCode !== "IL0002") {
+		return;
+	}
+
+	var data = {
+		encryptedSeatIds : encryptedSeatIds,
+		interlockTypeCode : interlockTypeCode,
+		prodId : prodId
+	};
+	$.ajax({
+		type            : 'POST'
+		, url           : APIURL + '/reservation/cancel/lock.json?v=1'
+		, async         : false
+		, data          : data
+		, success       : function(result) {
+			if (result.errorCode) {
+				console.log("ErrorCode :::: " + result.errorCode);
+				console.log("ErrorMsg  :::: " + result.errorMessage);
+			}
+		}
+		,error         : function(e) {
+			alert("다시 시도 부탁드립니다.");
+		}
+	});
+}
+
+// 쿠폰 사용 매수 제한 체크
+function chkCupn(cupnNo) {
+    var isSuccess = true;
+	$.ajax({
+		type            : 'POST'
+		, dataType      : 'jsonp'
+		, url           : APIURL + '/reservation/cupnLimitCheck.json?v=1'
+		, async         : false
+		, data          : {'cupnNo' : cupnNo}
+		, success       : function(result) {
+			if( result.code == "9999" ){
+				isSuccess = false;
+				if( result.message != undefined ) alert(result.message);
+			}else{
+				isSuccess = true;
+			}
+		}
+		, error         : function(e) {
+			isSuccess = false;
+			alert("다시 시도부탁드립니다.");
+		}
+	});
+
+	return isSuccess;
+}
+
+//예매화면 닫히고 멜론 ‘카카오계정관리’ 화면으로 이동 및 계정통합 플로우 진행
+function kakaoMemberJoin() {
+	window.open("about:blank").location.href = "https://member.melon.com/muid/web/kakao/kakao_inform.htm";
+	self.close();
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+.info-box{
+	box-sizing: content-box;
+	width: 500px;
+	height: 50px;
+	padding: 10px;
+
+}
+
+.content-box{
+	box-sizing: content-box;
+	width:60%;
+	height:500px;
+	padding: 20px;
+	border: 1px solid grey;
+	background-color: white;
+	float:left;
+	margin: 5px;
+}
+.content-box .seat{
+	width:10px;
+	height:10px;
+	background-color:lightgray;
+}
+.seat_info{
+	width: 20%;
+	height: 520px; /*padding... 높이 수동 조작  */
+	padding:10px;
+	border:1px solid grey;
+	background-color: white;
+	margin: 5px;
+	float: left;
+} 
+.seat_info > div{
+	padding: 75px;
+	background-color:#E5E5E5;		
+}
+.seat_info .p_seat{
+	width: 100%;
+	box-sizing: border-box;		
+}
+/* .seat_info .security_num{
+	width: 100%;	
+	box-sizing: border-box;	
+} */
+.seat_info .s_seat{
+	width: 100%;	
+	box-sizing: border-box;	
+}
+
+/*이미지 리사이징  */
+	img.resizing{
+		float:right;
+		width:30px;
+		height:30px;
+		padding:10px;
+		maring:1ppx;
+	}
