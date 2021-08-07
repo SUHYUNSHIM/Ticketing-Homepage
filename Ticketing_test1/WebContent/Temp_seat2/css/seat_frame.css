@@ -32,11 +32,11 @@
 } 
 .seat_info > div{
 	padding: 75px;
-	background-color:#E5E5E5;		
+	background-color:#E5E5E5;
+	box-sizing: border-box;			
 }
 .seat_info .p_seat{
-	width: 100%;
-	box-sizing: border-box;	
+	width: 100%;	
 	font-size: 15px;	
 }
 /* .seat_info .security_num{
@@ -45,7 +45,6 @@
 } */
 .seat_info .s_seat{
 	width: 100%;	
-	box-sizing: border-box;	
 	font-size: 15px;
 }
 

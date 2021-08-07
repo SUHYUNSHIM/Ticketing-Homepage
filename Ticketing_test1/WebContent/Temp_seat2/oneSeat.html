@@ -30,6 +30,8 @@
 </div>
 <p></p>
 <div class ="content-box">무대 <br></br> <!--좌석 선택 영역 -->
+														<!--토글방식으로 변경. 한번 눌렸으면 같은 좌석 정보를 찍지 않도록. 다시 누르면 안 눌린 상태로 전환되도록. -->
+														<!--그리고 좌석 선택의 갯수에도 제한을 두어야 한다.  -->
 	<div class="seat" id ="#1" onclick="seat_click1();"></div> <!--해당 버튼 누르면 바로 선택된 좌석 번호가 찍히는 함수 매칭했음.  -->
 	<br></br>
 	<div class="seat" id="#2" onclick="seat_click2();"></div>
@@ -37,7 +39,7 @@
 
 <p></p>
 
-<div class="seat_info">
+<div class="seat_info" style ="overflow-y: scroll;" >
 	<!--이미지 삽입  -->
 	<img src="images/music.png" class="resizing"> <!--이미지를 클릭하면 메인 홈으로 이동할 수 있도록 수정할 예정. -->
 	<h5>좌석등급/잔여석</h5>
@@ -48,7 +50,7 @@
 	
 	
 	<h5>선택한 좌석</h5>
-	<div class = "s_seat" id="s_seat"> <!--선택된 자리  --> </div> <!--textArea 넣을 예정  -->
+	<div class = "s_seat" id="s_seat"> <!--선택된 자리  --> </div> 
 	<br></br>
 	<form action="seatSelected.jsp" method="get">
 	<input type = "submit" value="좌석 선택 완료">	
