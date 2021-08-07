@@ -6,12 +6,13 @@
 </head>
 <body>
 <!--  ---------------------------------------------------------------->
+<script>
 alert(document.form1.irum.value);
 <form name= form1>
 	<input type ="text" name="irum"><br>
 	<input type ="button" value="눌러봐요" onclick="kaja();"><br>
 </form>
-
+</script>
 <!--  ----------------------------------------------------------------->
 	
 <script> /*이 안에 있는 것은 모두 자바스크립트이다 */
@@ -24,7 +25,7 @@ alert(document.form1.irum.value);
 			f1.style.top = event.clientY+"px"
 	}
 </script>
-<span id="f1" style="position:absolute;">  <!--그림의 시작점을 정해주었다. 마우스와 기준점, 시작점을 같게 만들어 주었다. -->
+	<span id="f1" style="position:absolute;">  <!--그림의 시작점을 정해주었다. 마우스와 기준점, 시작점을 같게 만들어 주었다. -->
 		<img src ="bear.png" border="0" name="krim">
 	</span> <!--그룹태그를 붙인 이유는? 0,0을 중심으로 그림을 위치시키기 위해서 이다. -->
 	<!--relative - 원래 나와야 할 자리에서 위치를 계산해서 배치시키는 것.-->	
@@ -47,8 +48,29 @@ var Yuchin={ //객체 .{} 중괄호에서 힌트.
 	</script>
 </body>
 <!--  ----------------------------------------------------->
-	
-	
+<!--head위에 함수 선언 후 body 에서 호출  -->	
+function ebbu(){
+		alert("예쁘네~")
+	}	
+<div onclick="mut()">
+	<span onclick="sa();kajaCancel();">
+		신상 입은 나 어때~~
+	</span>
+</div>	
+<script>
+document.onclick =ebbu
+</script>
+
+<!--  ------------------------------------------------------------->
+<body>
+	<form name="form1">
+	<input type ="button" name="b1" value="눌러봐">
+	</form>
+	<script> /*객체.동적 메소드() */
+		document.form1.b1.addEventListener('click',kaja,true)
+		/*계층적 */
+	</script>	
+</body>
 	
 	
 </body>
