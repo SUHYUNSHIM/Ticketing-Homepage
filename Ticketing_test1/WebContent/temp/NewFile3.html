@@ -29,6 +29,24 @@ alert(document.form1.irum.value);
 	</span> <!--그룹태그를 붙인 이유는? 0,0을 중심으로 그림을 위치시키기 위해서 이다. -->
 	<!--relative - 원래 나와야 할 자리에서 위치를 계산해서 배치시키는 것.-->	
 <!--  ----------------------------------------------------------------->
+<script>
+var aa=30; //숫자 기억창고
+var bb={}; //객체:bb. 객체를 만듦.new를 사용하지 않아도 금방 만들 수 있다는 장점.
+var Yuchin={ //객체 .{} 중괄호에서 힌트.
+		noon:"멋있어", //속성: 값  --- key:value의 구조 
+		personality:"착함",
+		bob: function(){alert("먹는 속도 빠름") //메소드	
+		}
+	}
+</script>
+</head>
+<body>
+	<script> //객체.속성
+		alert(Yuchin.noon+" "+Yuchin.personality);
+		Yuchin.bob(); //객체.메소드
+	</script>
+</body>
+<!--  ----------------------------------------------------->
 	
 	
 	

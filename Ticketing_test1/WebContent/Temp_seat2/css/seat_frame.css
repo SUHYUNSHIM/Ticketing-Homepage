@@ -36,7 +36,8 @@
 }
 .seat_info .p_seat{
 	width: 100%;
-	box-sizing: border-box;		
+	box-sizing: border-box;	
+	font-size: 15px;	
 }
 /* .seat_info .security_num{
 	width: 100%;	
@@ -45,6 +46,7 @@
 .seat_info .s_seat{
 	width: 100%;	
 	box-sizing: border-box;	
+	font-size: 15px;
 }
 
 /*이미지 리사이징  */
