@@ -29,11 +29,13 @@
 <script>
 var settings = {
         rows: 5,
-        cols: 15,
+        cols: 20,
+        //지금 5줄이 넘어가면 간격이 붙는 현상 발생.
+        //블록 나누기를 위해서 조건을 지정할 필요가 있다.
         rowCssPrefix: 'row-',
         colCssPrefix: 'col-',
-        seatWidth: 35,
-        seatHeight: 35,
+        seatWidth: 22,
+        seatHeight: 22,
         seatCss: 'seat',
         selectedSeatCss: 'selectedSeat',
         selectingSeatCss: 'selectingSeat'
