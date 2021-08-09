@@ -67,7 +67,7 @@ init(bookedSeats);
 
 $('.' + settings.seatCss).click(function () {
 	if ($(this).hasClass(settings.selectedSeatCss)){
-	    alert('This seat is already reserved');
+	    alert('다른 고객님이 결제 중인 좌석입니다.');
 	}
 	else{
 	    $(this).toggleClass(settings.selectingSeatCss);
