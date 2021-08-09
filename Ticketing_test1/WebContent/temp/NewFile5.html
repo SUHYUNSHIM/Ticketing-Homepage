@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!--테이블 규칙   -->
+<script>
+$(function(){
+	$("tr:nth-child(4n+1)").css("background","red");
+	$("tr:nth-child(4n+2)").css("background","orange");
+	$("tr:nth-child(4n+3)").css("background","green");
+	$("tr:nth-child(4n)").css("background","cyan");
+});
+</script>
+<!--  -->
+
+<script>
+	$(function(){
+		$('li').each(function(index1,content1){
+			$(this).css('color','blue');
+		});
+	});
+</script>
+<!--  -------------------------------each-->
+<body>
+	<h1>맛집메뉴</h1>
+	<div id=d2>
+		<ul id=ul2 class=ul2>
+			<li id=1><b>불백</b></li>
+			<li id=2>파스타</li>
+			<li id=3>피자</li>
+		</ul>
+	</div>
+	<div id=d3>
+		<ul class=ul3>
+			<li id=11>김치전</li>
+			<li id=22>파전</li>
+			<li id=33>녹두전</li>
+		</ul>
+	</div>
+	<div id=d5>
+		<ul class=ul5>
+			<li id=100>회덮밥</li>
+			<li id=200>냉면</li>
+			<li id=300>왕만두</li>
+		</ul>
+	</div>
+	
+	<script>
+	$(function(){
+		$('li').each(function(index1,content1){
+			$(this).css('color','blue');
+		});
+	});
+	
+	//가장 기본적인 방법으로 한다면 이런 스타일로 전부 하나씩 적용
+	// $("div").find("#22").text("두부전"); //setText();
+	//$("div").find("#100").html("<h3>회냉면</h3>").css('color','red'); --> setHTML, chaining 기법
+	
+	//프로그램 작성으로
+	 /* $(function(){
+		$("li").css("color","blue");
+	}); */
+	//프로그램 작성, each로 하면!
+	/* $(function(){			//인자1 증가, 인자2
+		$("li").each(function(index1,content2){
+			$(this).css('color','blue');
+			//alert(index1) --> 0,1,2... 이렇게 증가.
+		});
+	}); */
+	
+	</script>
+<!--  ----------------------------------------------------------------------------------->
+<!--  -->
+
+<script>
+	$(function(){ //toggle
+		var soo=[1,2,3,4]; // index 0,1,2 --> value 1,2,3,4 
+		$.each(soo,function(index,value){ //for(var imsi in... )
+			$('#title'+value).click(function(){                   //div 등의 id에 넘버링을 붙여서 click function 마다 반복문을 통해서 함수를 부여할 수 있다. 
+				if($('#stitle'+value).is(':hidden')) //hide 상태냐?
+					$('#stitle'+value).show(); //보여줘
+				else //show 상태면
+					$('#stitle'+value).hide(); //숨겨
+			});	//click-end			
+		});	//function-each end
+	});//$(function) end
+</script>
+</head>
+<body>
+  <div id="title1"> <h3>영화관으로</h3> </div>
+   <div id="stitle1"  style="display:none">
+      <ul>
+        <li><A href="#">영화제목은</A>
+        <li><A href="#">상영관안내</A>
+      </ul> 
+   </div>  
+  
+  <div id="title2"> <h3>식당으로</h3> </div>
+  <div id="stitle2"  style="display:none">
+    <ul>
+      <li><A href="#">음식메뉴는</A>
+      <li><A href="#">맛집안내</A>
+    </ul>
+  </div> 
+  
+<div id="title3"> <h3>후식</h3> </div>
+  <div id="stitle3"  style="display:none">
+    <ul>
+      <li><A href="#">커피메뉴는</A>
+      <li><A href="#">차메뉴는</A>
+    </ul>
+  </div>  
+  
+<div id="title4"> <h3>주차</h3> </div>
+  <div id="stitle4"  style="display:none">
+    <ul>
+      <li><A href="#">주차장약도는</A>
+      <li><A href="#">주차요금안내</A>
+    </ul>
+  </div>  
+</body>
+<!--  ---------------------------------------------------->
+<!--  -------------------------------------------------------->
+<script>
+$(function(){ //Array()
+	var urlArray1=[ //name:value
+		{key:'네이버~~',value:'http://www.naver.com/'},
+		{key:'redsunny',value:'http://blog.naver.com/i2krs/'}			
+	]
+	//var spp =[1,2,3,4];
+	//메뉴 2개를 화면에 출력하는 작업이 필요
+	//$.each(인자1(배열),function(인자2,인자3){		
+	//})
+	
+	
+	$.each(urlArray1,function(key1,kab1){ //for( in )
+		var str1="";
+		str1+='<a href="'+kab1.value+'">'
+			+'<h1>'+kab1.key+'</h1></a>'+'<br>';
+		//<a href="http//~주소/">
+		//
+		//여기까지 a tag 만들어짐
+		document.body.innerHTML +=str1;
+				//body 태그 공간에 쓴다.
+	});	
+});
+</script>
+<!--  ----------------------------------------------------->
+</body>
+</html>

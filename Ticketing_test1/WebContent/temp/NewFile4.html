@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!--jquery. 클릭한 영역의 값 변동. click function 등록. this. text로 값 읽어오기. innerHTML의 요약판.  -->
+<script>
+$(function(){
+	var num11, num22
+	$("#num1").click(function(){
+		num11 = $(this).text() //getText()
+	});
+	$("#num2").click(function(){
+		num22 =$(this).text()
+	});
+	$("#result").click(function(){
+		var result =num11 * num22
+		$(this).text(result); //setText()의 개념.
+	});
+});
+</script>
+<!--이미지 토글  -->
+$(function(){
+	$("h1").click(function(aa){ //h1클릭 시 수행.
+		$("img").toggle(3000); //duration. #, tag
+		//$("img").toggle("fast");
+	})	
+});
+</script>
+
+<h1>Hello!</h1>
+<h2>Future~</h2>
+<img src="images/jaemin2.jpg"><br>
+<!--  -->
+<!--jqery find, filter, addClass  -->
+
+<style>
+.fSize1{font-size:50px;} css -> class로 적용한다
+</style>
+
+$(function(){
+	
+	$("#div2").find("#li4").addClass("fSize1"); //css의 클래스를 추가하는 것. 온달이 50px로 출력된다. 	
+	$("div").filter("#div1").text("바보 온달의 러브라인!");	 //div 중에서 div1을 찾아내서, set innerHTML...나중에 날짜 선택, 달력, 시간.. 할때 적용하자.
+	//.다음에 이어쓰는 것. chaining 기법.
+	$("div").find("#li3").text("평강공주");
+	$("div").find("#li4").html("<h3>바보온달</h3>");
+	$("div").find("#li5").text("결혼한다네");
+	
+	$("#div2").find("#li3").text("평강")
+	.end().find("#li4").text("공주"); 
+	
+	});
+<!--  -->
+<!--  -->
+$(function (){
+		$('h1').css('color','orange');
+		$('h1#hana').css('color','pink');
+		$("h3").css('color','magenta');
+		$('#saek').css('color','green');
+		$('.kongjoo').css('color','red');
+		$('div.aa').css('color','blue')
+		
+	});
+<!--  -->
+<!--  -->
+그림 크기 조절이 쉽다. attr로 속성 값을 변경
+<script>
+	$(function(){
+		$('img#yokeo').attr('height',200)
+		$('img#keukeo').attr('height',200)
+	})
+</script>
+</head>
+<body>
+	<img src="images/jaemin2.jpg" width="200" id=yokeo>
+	<img src="images/doyoung.jpg" width="200" id=keukeo>
+</body>
+<!--  -->
+<!-- 쓰기와 읽기. val -->
+ setText
+$(function(){
+	alert($("#irum").val());//getValue
+	$("#irum").val("소개합니다...."); //setValue
+});
+<!--  -->
+<body>
+	<h1>미나리 수상소감 최고</h1>
+	$(function(){
+		$("<h2>나도 동감이야!</h2>").appendTo("body"); // body 끝에 나도 동감이야가 append 되어 출력된다.
+	});
+</body>
+appendTo -->  $("body").append("<h2>나도 동감이야</h2>"); 와  같은 의미.
+<!--  -->
+이미지 같은 크기로 맞춰주기
+<h1>members</h1>
+	<img src="images/mark.jpg" id= mem1/>
+	<img src="images/haechan.jpg" id=mem2/>
+	<img src="images/jisung.jpg" id=mem3/>
+<script>
+$(function(){
+	$("img").css("width",100);
+	$("img").css("height",100);
+/*  ***************************************/
+ /* */
+ 인덱스 세어서 참조하기.
+ alert($(".book1 li:first").text()) //getter
+ alert($(".book1 li:first-child").text())
+
+ alert($(".book1 li:nth-child(1)").text()); //홀수 자식 요소. 1부터 센다
+ alert($(".book1 li:eq(0)").text()); //0번째로 일치하는 요소
+ alert($(".book1 li:lt(1)").text()); //1번째 요소 이전의 요소. 0부터 시작 . less than
+
+/* 그림 눌러서 늘리고, 지우고 ***********************************8*/
+ <script>
+ function nawa(){
+ 	var krim = document.createElement("img");
+ 	//<img
+ 	krim.setAttribute("src","images/bear.png");
+ 	//<img src= "hc.gif"
+ 	krim.setAttribute("id","hchc");
+ 	//<img src="hc.gif" id="hchc"
+ 	document.form1.appendChild(krim);
+ }
+ function soomja(){
+ 	if(document.getElementById("hchc")) //접근. node가 있는 경우에만 
+ 		document.getElementById("hchc").parentNode.removeChild(document.getElementById("hchc"))
+ 	//부모 node는 document.
+ }
+ </script>
+ </head>
+ <body>
+ <h1>이것은 javascript로 하는 것이다.</h1><br>
+ <form name="form1">
+ <img src="images/read.png" onclick="nawa()">
+ <img src="images/bear.png" onclick="soomja()">
+ <!--자바스크립트- 동적생성  -->
+ </body>
+<!--  --> 
+
+
+</body>
+</html>
