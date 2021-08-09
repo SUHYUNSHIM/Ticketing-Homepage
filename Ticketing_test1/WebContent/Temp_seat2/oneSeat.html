@@ -5,7 +5,7 @@
 <title>좌석선택</title>
 <link rel="stylesheet" href="css/seat_frame.css"/>
 
-<!---- 현재 좌석 선택 화면을 메인 화면의 팝업 창 형태로 띄우게 할 것이다.  -->
+<!---- 현재 좌석 선택 화면을 메인 화면의 팝업 창 형태로 띄우게 할 것이다.-->
 <script>
 	window.onfocus=function(){
 	}
@@ -14,9 +14,10 @@
 	window.moveTo(0,0); // 웹 페이지의 창 위치를 0,0 (왼쪽 최상단) 으로 고정
 	window.resizeTo(1280,800); // 웹페이지의 크기를 가로 1280 , 세로 800 으로 고정(확장 및 축소) 
 	//window.scrollTo(0,250); // 페이지 상단 광고를 바로 볼 수 있게 스크롤 위치를 조정
-	}
-	
+	}	
 </script>
+<!----아직 작동안됨-->	
+
 <!--javascript 파일 분리 후 바깥에서 호출하는 방법. 그리고 body에서는 js안의 메소드를 호출하면 된다.  -->
 <!-- <script src="bakkat.js" charset="utf-8"></script> -->
 </head>
@@ -24,18 +25,19 @@
 <body>
 <div class ="info">공연 제목 &nbsp;&nbsp; <!--공연정보, 선택 창 상단영역  --> <!--공연 제목은 추후 사용자가 선택한 공연의 이름을 전 페이지에서 가져오는 것으로 한다.-->
 <select name="perform_list">
-	<option value="8월 20일 14:00시">8월 20일 14:00시<br>
+	<option value="8월 20일 14:00시">8월 20일 14:00시<br> <!--공연마다 회차 정보를 DB에 저장후 불러와야 한다.  -->
 	<option value="8월 20일 19:00시">8월 20일 19:00시<br>
 </select>
 </div>
 <p></p>
-<div class ="content-box">무대 <br></br> <!--좌석 선택 영역 -->
+<div class ="content-box">무대 <br></br> <!--좌석 선택 영역 temp... 다른 좌석 선택 파일과 합칠 예정.-->
 														<!--토글방식으로 변경. 한번 눌렸으면 같은 좌석 정보를 찍지 않도록. 다시 누르면 안 눌린 상태로 전환되도록. -->
 														<!--그리고 좌석 선택의 갯수에도 제한을 두어야 한다.  -->
 	<div class="seat" id ="#1" onclick="seat_click1();"></div> <!--해당 버튼 누르면 바로 선택된 좌석 번호가 찍히는 함수 매칭했음.  -->
 	<br></br>
 	<div class="seat" id="#2" onclick="seat_click2();"></div>
 </div>
+<!-- 채팅 때 했던 것처럼 스레드를 사용해서 동시 접속 및 실시간 좌석 변동을 할 수 있는지 고민중.. 일단 잔여 좌석 정보는 DB에 저장한 다음 불러오기를 해야 한다. -->
 
 <p></p>
 
@@ -43,7 +45,7 @@
 	<!--이미지 삽입  -->
 	<img src="images/music.png" class="resizing"> <!--이미지를 클릭하면 메인 홈으로 이동할 수 있도록 수정할 예정. -->
 	<h5>좌석등급/잔여석</h5>
-	<div class ="p_seat"> <!--남아있는 자리  --></div> <!--textArea 넣을 예정  -->
+	<div class ="p_seat"> <!--남아있는 자리  --></div> 
 	
 	<!-- <h5>안심예매</h5> <!--사이드 content의 영역 분배가 안되어서 처음 좌석 선택 페이지에 접속 시 팝업? 아니면 새로운 창으로  띄우는 걸로 수정할 예정.  -->
 	<!-- <div class = "security_num"> 안심예매</div> -->
@@ -58,5 +60,5 @@
 	</form>
 </div>
 </body>
- <script type="text/javascript" src="seat_order.js"></script> 
+ <script type="text/javascript" src="seat_order.js"></script>  <!--하단에 선언해야 에러가 나지 않는다.  -->
 </html>
