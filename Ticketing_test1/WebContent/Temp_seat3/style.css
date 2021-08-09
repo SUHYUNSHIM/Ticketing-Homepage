@@ -3,7 +3,7 @@
      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
      font-weight: normal;
      font-style: normal;
-}
+} 
 
 #holder{    
 height:200px;    
@@ -65,7 +65,7 @@ background-image:url("images/select.png");
 margin-top:10px;
 }
 #seatDescription li{
-font-family: 'S-CoreDream-3Light';
+font-family: 'S-CoreDream-3Light'; 
 font-size: 10px;
 verticle-align:middle;    
 list-style: none outside none;
