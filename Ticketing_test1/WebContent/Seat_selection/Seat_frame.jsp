@@ -24,6 +24,7 @@
 		
 	</ul>
 	</div>
+	<!--좌석 선택 main화면의 옆으로 옮겨야 한다. -->
 	<div style="clear:both;width:100%">
 	<input type="button" id="btnShowNew" value="선택한 좌석"/>
 	<input type="button" id="btnShow" value="선택된 좌석 모두 보기"/>

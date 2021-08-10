@@ -5,12 +5,16 @@
      font-style: normal;
 } 
 
-#holder{    
-height:200px;    
-width:550px;
+#holder{  
+box-sizing: content=box;
+height:80%;    
+width:95%; 
+display: inline-block;
+/* width:600px;
+height: 400px; */
 background-color:#F5F5F5;
 border:1px solid #A4A4A4;
-margin-left:5px;   
+padding: 10px;
 }
 #place {
 position:relative;

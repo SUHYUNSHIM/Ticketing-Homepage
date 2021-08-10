@@ -6,6 +6,7 @@
      font-style: normal;
 }
 
+
 .info-box{
 	box-sizing: content-box;
 	width: 500px;
@@ -15,19 +16,29 @@
 
 .content-box{
 	box-sizing: content-box;
-	width:60%;
+	width:50%;
 	height:500px;
 	padding: 20px;
 	border: 1px solid grey;
 	background-color: white;
 	float:left;
 	margin: 5px;
+	text-align: center;
 }
-.content-box .seat{
+.content-box #stage{  /*무대영역  */
+	box-sizing: content-box;
+	display: inline-block;
+	width:30%;
+	height:30px;
+	background-color: #E8DAB3;
+	
+}
+
+/* .content-box .seat{
 	width:10px;
 	height:10px;
 	background-color:lightgray;
-}
+} */
 .seat_info{
 	width: 20%;
 	height: 520px; /*padding... 높이 수동 조작  */
@@ -47,10 +58,7 @@
 	font-family: 'S-CoreDream-3Light';	
 	font-size: 12px;	
 }
-/* .seat_info .security_num{
-	width: 100%;	
-	box-sizing: border-box;	
-} */
+
 .seat_info .s_seat{
 	width: 100%;
 	font-family: 'S-CoreDream-3Light';	

@@ -46,12 +46,12 @@ $('.' + settings.seatCss).click(function () {
 	    }
 	});
 	 
-	$('#btnShow').click(function () { //선택한 좌석
+	$('#btnShow').click(function () { //선택한 좌석---------mvc2 모델로 바꾸기 위해 선택한 좌석을 읽어서 view인 Seat_frame으로 보내주는 controller를 사용할 것이다.
 	    var str = [];
 	    $.each($('#place li.' + settings.selectedSeatCss + ' a, #place li.'+ settings.selectingSeatCss + ' a'), function (index, value) {
 	        str.push($(this).attr('title'));
 	    });
-	    alert(str.join(','));
+	    alert(str.join(',')); //경고창으로 출력이 아니라, 화면에 출력하는 것인데, 그 값을 보내는 것은 controller가 할 것이다. 
 	})
 	 
 	$('#btnShowNew').click(function () { //선택된 좌석 모두 보기
