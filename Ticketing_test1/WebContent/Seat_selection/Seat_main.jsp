@@ -45,7 +45,7 @@
 		<ul id="seatDescription" > <!--등급, 잔여석 기술  -->
 		<li id ="vip" style="background:url('images/question.png') no-repeat scroll 0 0 transparent;font-size:13px;">VIP석     150,0000원 20석</li><br>
 		<li id ="r" style="background:url('images/plus.png') no-repeat scroll 0 0 transparent;font-size:13px;">R석       130,0000원 50석</li><br>		
-		<li id ="s" style="background:url('images/check.png') no-repeat scroll 0 0 transparent;font-size:13px;">S석      100,000원 70석</li> 			
+		<li id ="s" style="background:url('images/check.png') no-repeat scroll 0 0 transparent;font-size:13px;">S석      100,000원 70석</li> 
 		</ul>
 	</div>
 	</div> 
