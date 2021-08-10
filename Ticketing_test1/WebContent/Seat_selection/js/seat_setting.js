@@ -1,7 +1,7 @@
 //좌석 선택 버튼 정의
 var settings = {
-        rows: 5,
-        cols: 20,
+        rows: 15,
+        cols: 30,
         
         //블록 나누기를 위해서 간격을 주어야 한다.
         rowCssPrefix: 'row-',
@@ -17,7 +17,7 @@ var init = function (reservedSeat) { //영역 별로 좌석 등급이 다름. �
     var str = [], seatNo, className;
     for (i = 0; i < settings.rows; i++) {
         for (j = 0; j < settings.cols; j++) {
-            seatNo = (i + j * settings.rows + 1);
+            seatNo = (i + j * settings.rows + 1); //좌석번호 - 블록+ 층+ 번호로 바꾸기
             className = settings.seatCss + ' ' + settings.rowCssPrefix + i.toString() + ' ' + settings.colCssPrefix + j.toString();
             if ($.isArray(reservedSeat) && $.inArray(seatNo, reservedSeat) != -1) {
                 className += ' ' + settings.selectedSeatCss;

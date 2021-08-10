@@ -7,8 +7,6 @@
 <title>좌석 선택화면</title>
 <link rel="stylesheet" href="css/style.css"/>
 <script src="js/jquery-3.3.1.js"></script>
-
-
 </head>
 
 <body>
@@ -20,8 +18,7 @@
 	<ul id="seatDescription">
 		<li style="background:url('images/check.png') no-repeat scroll 0 0 transparent;">잔여석</li>
 		<li style="background:url('images/close.png') no-repeat scroll 0 0 transparent;">이미 선택된 좌석</li>
-		<li style="background:url('images/select.png') no-repeat scroll 0 0 transparent;">선택한 좌석</li> 
-		
+		<li style="background:url('images/select.png') no-repeat scroll 0 0 transparent;">선택한 좌석</li>
 	</ul>
 	</div>
 	<!--좌석 선택 main화면의 옆으로 옮겨야 한다. -->
