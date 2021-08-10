@@ -41,11 +41,11 @@
 	<!--남아있는 자리  -->
 	<h5>좌석등급/잔여석</h5>
 	<div class ="p_seat">
-		<div style="float:left;">
-		<ul id="seatDescription"> <!--등급, 잔여석 기술  -->
-		<li style="background:url('images/check.png') no-repeat scroll 0 0 transparent;">잔여석</li>
-		<li style="background:url('images/close.png') no-repeat scroll 0 0 transparent;">이미 선택된 좌석</li>
-		<li style="background:url('images/select.png') no-repeat scroll 0 0 transparent;">선택한 좌석</li> 		
+		<div style="white-space: pre-line;float:left;">		
+		<ul id="seatDescription" > <!--등급, 잔여석 기술  -->
+		<li id ="vip" style="background:url('images/question.png') no-repeat scroll 0 0 transparent;font-size:13px;">VIP석     150,0000원 20석</li><br>
+		<li id ="r" style="background:url('images/plus.png') no-repeat scroll 0 0 transparent;font-size:13px;">R석       130,0000원 50석</li><br>		
+		<li id ="s" style="background:url('images/check.png') no-repeat scroll 0 0 transparent;font-size:13px;">S석      100,000원 70석</li> 			
 		</ul>
 	</div>
 	</div> 
@@ -53,6 +53,7 @@
 	<!--선택된 자리  --> 
 	<h5 >선택한 좌석</h5>
 	<div class = "s_seat" id="s_seat">
+		당신이 선택한 좌석번호가 나타납니다.
 	</div> 
 	<br></br>
 	<form action="seatSelected.jsp" method="get">
