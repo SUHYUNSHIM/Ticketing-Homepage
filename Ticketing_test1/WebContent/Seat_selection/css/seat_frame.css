@@ -1,0 +1,67 @@
+/*웹폰트- https://noonnu.cc/font_page/223 에스코어 드림Lt  */
+@font-face {
+     font-family: 'S-CoreDream-3Light';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
+.info-box{
+	box-sizing: content-box;
+	width: 500px;
+	height: 50px;
+	padding: 10px;
+}
+
+.content-box{
+	box-sizing: content-box;
+	width:60%;
+	height:500px;
+	padding: 20px;
+	border: 1px solid grey;
+	background-color: white;
+	float:left;
+	margin: 5px;
+}
+.content-box .seat{
+	width:10px;
+	height:10px;
+	background-color:lightgray;
+}
+.seat_info{
+	width: 20%;
+	height: 520px; /*padding... 높이 수동 조작  */
+	padding:10px;
+	border:1px solid grey;
+	background-color: white;
+	margin: 5px;
+	float: left;
+} 
+.seat_info > div{
+	height: 150px;
+	background-color:#E5E5E5;
+	box-sizing: border-box;			
+}
+.seat_info .p_seat{
+	width: 100%;
+	font-family: 'S-CoreDream-3Light';	
+	font-size: 12px;	
+}
+/* .seat_info .security_num{
+	width: 100%;	
+	box-sizing: border-box;	
+} */
+.seat_info .s_seat{
+	width: 100%;
+	font-family: 'S-CoreDream-3Light';	
+	font-size: 12px;
+}
+
+/*이미지 리사이징  */
+	img.resizing{
+		float:right;
+		width:30px;
+		height:30px;
+		padding:10px;
+		maring:1ppx;
+	}
