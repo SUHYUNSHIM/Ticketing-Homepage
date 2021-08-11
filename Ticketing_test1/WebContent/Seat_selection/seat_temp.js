@@ -66,14 +66,10 @@ function blockA (already,blocked){ //이미 예약된 좌석 정보가 있는지
 			//seatNo = j;
 			//string으로 구성된 7자리 좌석 시리얼 넘버. 예시 1FA0101  1층 A구역 1열 1번 	
 			//한 자리 수일 경우 앞에 0을 붙여준다. 	 value.toString().length<2?'0'+value:value
-			console.log(settings.floorCssPrefix1);
-			console.log(settings.areaCssPrefix1);
-			console.log(i.toString().length<2?'0'+i:i);
-			console.log(j.toString().length<2?'0'+j:j);
-			className = new String(settings.floorCssPrefix1+' '+ settings.areaCssPrefix1+ +' '+i.toString().length<2?'0'+i:i 
-																			+' '+ j.toString().length<2?'0'+j:j);
+			//문자열 연결 방식
+			className = settings.floorCssPrefix1.concat(settings.areaCssPrefix1, i.toString().length<2?'0'+i:i, j.toString().length<2?'0'+j:j);
 			console.log(className);
-			console.log(className.toString())
+			
 			//clasName을 잘라서 화면에 나올 때는 보기 좋도록 수정한다.
 			var floor = className.toString().slice(0,1); //첫번째 글자는 층을 의미.
 			var area  = className.toString().slice(2,3); //세번째 글자는 구역을 의미.
