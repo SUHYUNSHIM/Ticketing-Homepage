@@ -74,17 +74,8 @@ background-image:url('images/close.png');
 background-image:url('images/select.png');        
 }
 #place .disableSeat{
-	background-color: #F5F5F5;
-	height:22px;
-	width:22px;
-	display:inline-block;
+	background-image:url('images/block.png');
 }
-
-
-/* #place .col-8, #place .col-9{
-margin-right:10px; margin-top
-margin-left:10px;
-} */
 
 
 #seatDescription li{

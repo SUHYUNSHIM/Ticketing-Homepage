@@ -5,20 +5,24 @@
 <head>
 <meta charset="UTF-8">
 <title>좌석 선택화면</title>
-<!-- <link rel="stylesheet" href="css/style.css"/> 오리지날 코드--> 
-<link rel="stylesheet" href="css/temp.css"/> <!--수정 중인 코드  -->
+<!-- <link rel="stylesheet" href="css/style.css"/>  -->
+<link rel="stylesheet" href="css/temp.css"/> 
 <script src="js/jquery-3.3.1.js"></script>
 </head>
 
 <body>
 <div id="holder">	
-	<ul style="float:left;margin-right:50px;">	
-	<li style="margin-left:170px;">A</li>
-	<li style="margin-left:150px;">B</li>
-	<li style="margin-left:150px;">C</li>	
-	</ul>	
+	<div id ="area_divider" style="margin-bottom:50px">
+	<ul>	
+	<li style="margin-left:100px;">A</li>
+	<li style="margin-left:170px;">B</li>
+	<li style="margin-left:190px;">C</li>	
+	</ul>
+	</div>
+	
 	<ul id="place">
 	</ul>
+	
 </div>
 	<div style="float:left;">
 	<ul id="seatDescription">
@@ -32,7 +36,7 @@
 	<input type="button" id="btnShowNew" value="선택한 좌석"/>
 	<input type="button" id="btnShow" value="선택된 좌석 모두 보기"/>
 	</div>
-<!-- <script src="js/seat_setting.js"></script> 오리지날 코드-->
-<script src="seat_temp.js"></script> <!--수정 중인 코드  -->
+<!-- <script src="js/seat_setting.js"></script> -->
+<!-- <script src="seat_temp.js"></script> 수정 중인 코드  -->
 </body>
 </html>

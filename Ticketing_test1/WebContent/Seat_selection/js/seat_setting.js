@@ -25,7 +25,7 @@ var init = function (reservedSeat) { //영역 별로 좌석 등급이 다름. �
             str.push('<li class="' + className + '"' +
                       'style="top:' + (i * settings.seatHeight).toString() + 'px;left:' + (j * settings.seatWidth).toString() + 'px">' +
                       '<a title="' + seatNo + '">' + seatNo + '</a>' +
-                      '</li>');
+                      '</li>'); 
         }
     }
     $('#place').html(str.join(''));
