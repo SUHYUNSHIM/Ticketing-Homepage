@@ -92,9 +92,11 @@ function blockA (already,blocked){ //이미 예약된 좌석 정보가 있는지
             					  + (j * settings.seatWidth).toString() + 'px">'+
             					'<a title="' +seat_info+ '">'+' '+ '</a>'  //좌석 정보가 나오도록. 좌석에 번호가 씌여있지는 않지만 마우스를 갖다대면 정보가 출력된다.
             					+'</li>'); //float:left -> 가로 방향으로 좌석을 배치한다. li 특성.
-            console.log(str); //0: "<li class=\"seat1FA0101\"style=\"top:22px;left:22px\"><a title=\"1층A구역01열01번\"></a></li>"
+             //0: "<li class=\"seat1FA0101\"style=\"top:22px;left:22px\"><a title=\"1층A구역01열01번\"></a></li>"
         }
+		
 		}
+	console.log(str);
 	$('#place').html(str.join('')); //place라는 id 태그에 붙는다. 해당 태그는 ul이다.
 };
 /*
