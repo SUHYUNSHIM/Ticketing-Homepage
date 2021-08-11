@@ -11,7 +11,12 @@
 </head>
 
 <body>
-<div id="holder">
+<div id="holder">	
+	<ul style="float:left;margin-right:50px;">	
+	<li style="margin-left:170px;">A</li>
+	<li style="margin-left:150px;">B</li>
+	<li style="margin-left:150px;">C</li>	
+	</ul>	
 	<ul id="place">
 	</ul>
 </div>
