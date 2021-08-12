@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>좌석 선택화면</title>
-<!-- <link rel="stylesheet" href="css/style.css"/> --> 
+<!-- <link rel="stylesheet" href="css/style.css"/>  -->
 <link rel="stylesheet" href="css/temp.css"/>
 <script src="js/jquery-3.3.1.js"></script>
 </head>
@@ -20,12 +20,7 @@
 	</ul>
 	</div>
 	<div style="float:left;margin-right:10px;">
-	<ul id="place">
-<!-- 	<li>좌석1</li>
-	<li>좌석2</li>
-	<li>좌석3</li> 
-	"<li class="seat1FA0101 disableSeat"style="top:22px;left:22px"><a title="1층A구역01열01번"> </a></li>" 그런데 지금 li를 넣어도 안보인다.
-	-->
+	<ul id="place">		
 	</ul>
 	</div>
 </div>
@@ -42,6 +37,6 @@
 	<input type="button" id="btnShow" value="선택된 좌석 모두 보기"/>
 	</div>
 <!-- <script src="js/seat_setting.js"></script> -->
-<script src="seat_temp.js"></script>
+<script src="js/seat_temp.js"></script>
 </body>
 </html>

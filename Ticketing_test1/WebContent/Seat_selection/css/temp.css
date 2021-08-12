@@ -32,7 +32,8 @@ font-size:0.6em;
 #place li
 {
  list-style: none outside none;
- position: absolute;   
+ position: absolute;  
+
 }    
 /* 버튼 눌림, hover 효과********************************* */
  #place li:hover::before{

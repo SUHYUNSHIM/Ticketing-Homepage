@@ -50,16 +50,17 @@ var settings = {
 //1. 블록 표시하기
 
 //재선언 불가. const 지정값. 안보여서 일단 var로 바꿔봄.
-var bookedSeats = ['seat1FB0111', 'seat1FA0909', 'seat1FC0521']; /*예매된 좌석 번호를 임의로 지정해 주었음. */
+var bookedSeats = ['seat 1FB0111', 'seat 1FA0909', 'seat 1FC0521']; /*예매된 좌석 번호를 임의로 지정해 주었음. */
 //시야 제한석이라서 화면에 보이지 않게 될 좌석 배열.
-var disableSeats = ['seat1FA0101','seat1FA0102','seat1FA0103','seat1FA0104','seat1FC0127','seat1FC0128','seat1FC0129','seat1FC0130',
-					'seat1FA0201','seat1FA0202','seat1FA0203', 'seat1FC0228','seat1FC0229','seat1FC0230',
-					'seat1FA0301','seat1FA0302', 'seat1FC0329','seat1FC0330',
-					'seat1FA0401','seat1FC0430'];
+var disableSeats = ['seat 1FA0101','seat 1FA0102','seat 1FA0103','seat 1FA0104','seat 1FC0127','seat 1FC0128','seat 1FC0129','seat 1FC0130',
+					'seat 1FA0201','seat 1FA0202','seat 1FA0203', 'seat 1FC0228','seat 1FC0229','seat 1FC0230',
+					'seat 1FA0301','seat 1FA0302', 'seat 1FC0329','seat 1FC0330',
+					'seat 1FA0401','seat 1FC0430'];
 
 function blockA (already,blocked){ //이미 예약된 좌석 정보가 있는지 배열로 넣어두어야 한다. 지금은 인자를 안받는 함수로 했는데... 또 오류 나면 disable, selected를 인자로 받도록 수정할 예정.
 	var str= [];
 	var className;
+	
 	//블록A-------------------------------------------------------------------------------------------//
 	for (i=1;i<=settings.rows;i++){ //여기서 rows는 10
 		for(j=1;j<=settings.cols;j++){ //여기서 cols는 10
@@ -67,14 +68,15 @@ function blockA (already,blocked){ //이미 예약된 좌석 정보가 있는지
 			//string으로 구성된 7자리 좌석 시리얼 넘버. 예시 1FA0101  1층 A구역 1열 1번  ----> 그런데 class 이름에  따라 style을 부가하기 위해서 앞에 seat을 붙여줌
 			//한 자리 수일 경우 앞에 0을 붙여준다. 	 value.toString().length<2?'0'+value:value
 			//문자열 연결 방식
-			className = settings.seatCss.concat(settings.floorCssPrefix1,settings.areaCssPrefix1, i.toString().length<2?'0'+i:i, j.toString().length<2?'0'+j:j);
-			console.log(className); //예시 seat1FA0101
+					
+			className = settings.seatCss.concat(" ",settings.floorCssPrefix1,settings.areaCssPrefix1, i.toString().length<2?'0'+i:i, j.toString().length<2?'0'+j:j);
+			console.log(className);
 			
 			//clasName을 잘라서 화면에 나올 때는 보기 좋도록 수정한다.
-			var floor = className.toString().slice(4,5); //첫번째 글자는 층을 의미.
-			var area  = className.toString().slice(6,7); //세번째 글자는 구역을 의미.
-			var line =  className.toString().slice(7,9); //4,5 번째 글자는 열 번호를 의미.
-			var number = className.toString().slice(9,11); //6,7번째 글자는 번. 왼쪽으로부터 몇 번째 칸인지 번지를 의미.			
+			var floor = className.toString().slice(5,6); //첫번째 글자는 층을 의미.
+			var area  = className.toString().slice(7,8); //세번째 글자는 구역을 의미.
+			var line =  className.toString().slice(8,10); //4,5 번째 글자는 열 번호를 의미.
+			var number = className.toString().slice(10,12); //6,7번째 글자는 번. 왼쪽으로부터 몇 번째 칸인지 번지를 의미.			
 			var seat_info = floor+"층"+area+"구역"+line+"열"+number+"번";
 			console.log(seat_info);
 			
@@ -109,6 +111,9 @@ $('.' + settings.seatCss).click(function () {
 	if ($(this).hasClass(settings.selectedSeatCss)){ //버튼의 해당 클래스를 쫓아서 간다.
 	    alert('다른 고객님이 결제 중인 좌석입니다.');
 	}
+	else if($(this).hasClass(settings.disableSeatCss)){
+		alert('좌석을 선택해주세요.')
+	}	//시야 방해석-- 화면에 나오지 않는 좌석 영역을 클릭했을 때 반응이 나는 오류를 해결해야 함.
 	else{
 	    $(this).toggleClass(settings.selectingSeatCss); //선택 좌석은 토글 방식으로, 선택 or 취소 자유로움.
 	    }

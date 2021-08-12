@@ -21,6 +21,7 @@ var init = function (reservedSeat) { //영역 별로 좌석 등급이 다름. �
             className = settings.seatCss + ' ' + settings.rowCssPrefix + i.toString() + ' ' + settings.colCssPrefix + j.toString();
             if ($.isArray(reservedSeat) && $.inArray(seatNo, reservedSeat) != -1) {
                 className += ' ' + settings.selectedSeatCss;
+                console.log(className);
             }
             str.push('<li class="' + className + '"' +
                       'style="top:' + (i * settings.seatHeight).toString() + 'px;left:' + (j * settings.seatWidth).toString() + 'px">' +
@@ -28,6 +29,7 @@ var init = function (reservedSeat) { //영역 별로 좌석 등급이 다름. �
                       '</li>'); 
         }
     }
+    console.log(str);
     $('#place').html(str.join(''));
 };
 //처음 티켓 오픈했을 경우.
