@@ -1,7 +1,3 @@
-//rows -> 가로 15줄 
-//cols -> 세로 30줄
-
-//좌석번호 예시) 1층 B구역 7열 17번
 //11줄부터 15줄은 2층, S석으로 구분된다.
 //중앙 5열 블록부터 10열블록까지 + A구역, C구역 두 줄까지 VIP 석으로 지정
 //1층의 VIP 석 제외의 구간은 R구역이다.
@@ -9,8 +5,7 @@
 //좌석 열번호(통로), 구역명칭은 표기되어야 한다. 사용자의 편의를 위해.
 //1인당 판매 좌석수를 4개로 제한시킨다.이것을 집계하는 함수도 controller에서 처리한다.
 //선택한 좌석 번호를 controller에 보낸다. 잔여좌석을 계산하여 mainframe view 우측에 출력한다.
-//2층은 count가 1열부터 다시 된다.
-//+선택한 좌석을 결제 종료 후 화면에서 좌석도로 다시 볼 수 있을까?
+//+선택한 좌석을 결제 종료 후 화면에서 좌석도로 다시 볼 수 있을까? DB에 저장후 회차 선택 시 선택되었던 좌석은 selected로 채워지도록 해야 한다.
 
 //데이터베이스 저장시 편의를 위해 만든 것. java 문자열 자르기로 출력 가능. 
 var settings = {
@@ -101,6 +96,21 @@ function blockA1 (already,blocked){ //이미 예약된 좌석 정보가 있는�
 	$('#place').html(str.join('')); //place라는 id 태그에 붙는다. 해당 태그는 ul이다.
 };
 blockA1(bookedSeats,disableSeats); //실행--------------------//
+
+var list_number=['<ul style="list-style:none;">'];
+function seat_number(){	
+	for(i=1;i<=10;i++){		
+			list_number.push('<li style="top:'+ (i * 20).toString() + 'px;left:' 
+            					 +'230'+'px">'+i+'</li></ul>');		
+	}
+	console.log("열번호:"+list_number);
+	$('#place').html(list_number.join(''));
+	/*list_number.push('<ul style="list-style:none;">' +
+			'<li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li>'	
+			+'</ul>');	*/
+	
+};
+seat_number();
 //[블록A 2층]-----------------------------------------------------------------------------------------//
 function blockA2 (already){
 	
@@ -306,8 +316,7 @@ function blockC2 (already){
 	};
 blockC2(bookedSeats);
 
-
-
+//좌석 선택 이벤트.
 $('.' + settings.seatCss).click(function () {
 	if ($(this).hasClass(settings.selectedSeatCss)){ //버튼의 해당 클래스를 쫓아서 간다.
 	    alert('다른 고객님이 결제 중인 좌석입니다.');
