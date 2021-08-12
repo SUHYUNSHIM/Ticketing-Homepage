@@ -19,16 +19,11 @@
 <div class ="content-box" style="font-family:'S-CoreDream-3Light'">
 		
 	<div id="stage">무대</div> 
-	<p></p>
-	
+	<p></p>	
 	<!--좌석 선택 영역 temp... 다른 좌석 선택 파일과 합칠 예정.-->
-	<%@ include file="Seat_frame.jsp" %>
+	<%@ include file="Seat_frame.jsp" %>	
+														
 	
-														
-														
-	<!-- <div class="seat" id ="#1" onclick="seat_click1();"></div> 해당 버튼 누르면 바로 선택된 좌석 번호가 찍히는 함수 매칭했음. 
-	<br></br>
-	<div class="seat" id="#2" onclick="seat_click2();"></div> -->
 </div>
 <!-- 멀티 스레드, 동시 접속 및 실시간 좌석 변동을 할 수 있는지. 일단 잔여 좌석 정보는 DB에 저장한 다음 불러오기를 해야 한다. -->
 <!-- 페이지가 바뀜 없이 서버와 통신하는 방법 - ajax -->

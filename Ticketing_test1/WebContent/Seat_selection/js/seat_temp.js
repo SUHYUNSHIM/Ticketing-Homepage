@@ -37,8 +37,8 @@ var settings = {
         
         /*blockCssPrefix: '',*/
         
-        seatWidth: 22,
-        seatHeight: 22,
+        seatWidth: 20,
+        seatHeight: 20,
         seatCss: 'seat',
         selectedSeatCss: 'selectedSeat',
         disableSeatCss: 'disableSeat', //시야 방해석이라서 선택하지 않고 공간으로 두는 css를 적용한다.
