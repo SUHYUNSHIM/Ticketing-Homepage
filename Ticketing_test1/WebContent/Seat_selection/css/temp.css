@@ -14,12 +14,12 @@ ul li{
 
 #holder{  
 box-sizing: content=box;
-height:90%;    
+height:87%;    
 width:100%; 
 display: inline-block;
 
 background-color:#F5F5F5;
-border:1px solid #A4A4A4;
+/* border:1px solid #A4A4A4; */
 
 }
 #place {

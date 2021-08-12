@@ -2,12 +2,11 @@
 //중앙 5열 블록부터 10열블록까지 + A구역, C구역 두 줄까지 VIP 석으로 지정
 //1층의 VIP 석 제외의 구간은 R구역이다.
 //VIP, R,S 구역에 따라서 좌석 색깔을 다르게 한다.*****
-//좌석 열번호(통로), 구역명칭은 표기되어야 한다. 사용자의 편의를 위해.
+
 //1인당 판매 좌석수를 4개로 제한시킨다.이것을 집계하는 함수도 controller에서 처리한다.
 //선택한 좌석 번호를 controller에 보낸다. 잔여좌석을 계산하여 mainframe view 우측에 출력한다.
 //+선택한 좌석을 결제 종료 후 화면에서 좌석도로 다시 볼 수 있을까? DB에 저장후 회차 선택 시 선택되었던 좌석은 selected로 채워지도록 해야 한다.
 
-//데이터베이스 저장시 편의를 위해 만든 것. java 문자열 자르기로 출력 가능. 
 var settings = {
         rows: 10, //1층
         cols: 10,
@@ -139,6 +138,7 @@ function blockA2 (already){
         }
 		
 		}
+	str.push('<li style="left:220px; top:241px;"><img src="images/seat_number_2.png" width="30px"; height="140px"></li>');
 	console.log(str);
 	$('#place').html(str.join('')); //place라는 id 태그에 붙는다. 해당 태그는 ul이다.
 };
@@ -220,6 +220,8 @@ function blockB2 (already){
 			
 			}
 		console.log(str);
+		str.push('<li style="left:23px; top:220px;"><img src="images/floor1.png" width="650px"; height="36px"></li>');
+		str.push('<li style="left:450px; top:241px;"><img src="images/seat_number_2.png" width="30px"; height="140px"></li>');
 		$('#place').html(str.join('')); //place라는 id 태그에 붙는다. 해당 태그는 ul이다.
 	};
 blockB2(bookedSeats);
