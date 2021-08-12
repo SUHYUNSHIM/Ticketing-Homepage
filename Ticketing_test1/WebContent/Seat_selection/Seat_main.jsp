@@ -16,8 +16,7 @@
 </select>
 </div>
 <p></p>
-<div class ="content-box" style="font-family:'S-CoreDream-3Light'">
-		
+<div class ="content-box" style="font-family:'S-CoreDream-3Light'">		
 	<div id="stage">무대</div> 
 	<p></p>	
 	<!--좌석 선택 영역 temp... 다른 좌석 선택 파일과 합칠 예정.-->
