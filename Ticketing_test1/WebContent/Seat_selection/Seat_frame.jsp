@@ -14,8 +14,8 @@
 <div id="holder">	
 	<div id ="area_divider" style="margin-bottom:40px">
 	<ul>	
-	<li style="margin-left:100px;">A</li>	
-	<li style="margin-left:200px;">B</li>
+	<li style="margin-left:100px;">A</li>
+	<li style="margin-left:200px;">B</li>	
 	<li style="margin-left:200px;">C</li>	
 	</ul>	
 	</div>

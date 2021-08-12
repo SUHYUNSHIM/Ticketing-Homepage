@@ -84,6 +84,7 @@ function blockA1 (already,blocked){ //이미 예약된 좌석 정보가 있는�
 				className += ' ' + settings.disableSeatCss; //disableSeat이라는 태그가 뒤에 붙는다. 배경색과 똑같은 색으로 처리. 없는 것처럼.
 				console.log(className)
 			}
+			/*seat_number();*/
             str.push('<li class="' + className + '"' + 
             		'style="top:' + (i * settings.seatHeight).toString() + 'px;left:' 
             					  + (j * settings.seatWidth).toString() + 'px">'+
@@ -92,25 +93,15 @@ function blockA1 (already,blocked){ //이미 예약된 좌석 정보가 있는�
            }
 		
 		}
+	str.push('<li style="left:220px; top:0px;""><img src="images/seat_number.png" width="30px"; height="240px"></li>');
 	console.log(str);
 	$('#place').html(str.join('')); //place라는 id 태그에 붙는다. 해당 태그는 ul이다.
+	/*document.write();*/
+	/*seat_number();*/
 };
 blockA1(bookedSeats,disableSeats); //실행--------------------//
 
-var list_number=['<ul style="list-style:none;">'];
-function seat_number(){	
-	for(i=1;i<=10;i++){		
-			list_number.push('<li style="top:'+ (i * 20).toString() + 'px;left:' 
-            					 +'230'+'px">'+i+'</li></ul>');		
-	}
-	console.log("열번호:"+list_number);
-	$('#place').html(list_number.join(''));
-	/*list_number.push('<ul style="list-style:none;">' +
-			'<li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li>'	
-			+'</ul>');	*/
-	
-};
-seat_number();
+
 //[블록A 2층]-----------------------------------------------------------------------------------------//
 function blockA2 (already){
 	
@@ -187,6 +178,7 @@ var className;
            }
 		
 		}
+	str.push('<li style="left:450px; top:0px;""><img src="images/seat_number.png" width="30px"; height="240px"></li>');
 	console.log(str);
 	$('#place').html(str.join('')); //place라는 id 태그에 붙는다. 해당 태그는 ul이다.
 };
