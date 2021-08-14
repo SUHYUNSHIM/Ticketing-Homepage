@@ -74,8 +74,23 @@ background-image:url('images/close.png');
 background-image:url('images/select.png');        
 }
 #place .disableSeat{
-	background-image:url('images/block.png');
+background-image:url('images/block.png');
 }
+
+#place .VIP
+{
+background-image:url('images/question.png');	
+}
+#place .R
+{
+background-image:url('images/plus.png');	
+}
+#place .S
+{
+background-image:url('images/check.png');	
+}
+
+
 
 
 #seatDescription li{

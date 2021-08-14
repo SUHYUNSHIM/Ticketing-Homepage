@@ -70,7 +70,12 @@ function blockA1 (already,blocked){
 			var seat_info = floor+"층"+area+"구역"+line+"열"+number+"번";
 			console.log(seat_info);
 			
-			if ($.isArray(already) && $.inArray(className,already) != -1) {   
+			//VIP석 지정 
+			if(parseInt(line)>=6 && parseInt(line)<=10 && (parseInt(number)>=8 && parseInt(number)<=10)){
+				className += ' ' + settings.classCssPrefix1;
+				console.log(className)
+			}			
+			else if ($.isArray(already) && $.inArray(className,already) != -1) {   
 															//선택 불가 좌석 목록에 속해 있다면
                 className += ' ' + settings.selectedSeatCss; //selectedSeat이라는 태그가 뒤에 붙는다.
                 console.log(className)
@@ -79,7 +84,13 @@ function blockA1 (already,blocked){
 				className += ' ' + settings.disableSeatCss; //disableSeat이라는 태그가 뒤에 붙는다. 배경색과 똑같은 색으로 처리. 없는 것처럼.
 				console.log(className)
 			}
-			/*seat_number();*/
+			//1층 A구역 VIP석 외에는 R석이다.
+			else{
+				className += ' ' + settings.classCssPrefix2; 
+				console.log(className)
+			}
+			
+			
             str.push('<li class="' + className + '"' + 
             		'style="top:' + (i * settings.seatHeight).toString() + 'px;left:' 
             					  + (j * settings.seatWidth).toString() + 'px">'+
@@ -120,6 +131,9 @@ function blockA2 (already){
                 className += ' ' + settings.selectedSeatCss; //selectedSeat이라는 태그가 뒤에 붙는다.
                 console.log(className)
             }
+			else{
+				className += ' ' + settings.classCssPrefix3;
+			}
 			//2층은 시야 방해되는 곳이 없다고 가정한다.
 			var new_height = i*settings.seatHeight+240;
 			console.log(new_height);
@@ -157,12 +171,22 @@ var className;
 			var seat_info = floor+"층"+area+"구역"+line+"열"+number+"번";
 			console.log(seat_info);
 			
-			if ($.isArray(already) && $.inArray(className,already) != -1) {   
+			//VIP석 지정 
+			if(parseInt(line)>=6 && parseInt(line)<=10){
+				className += ' ' + settings.classCssPrefix1;
+				console.log(className)
+			}			
+			else if ($.isArray(already) && $.inArray(className,already) != -1) {   
 															//선택 불가 좌석 목록에 속해 있다면
                 className += ' ' + settings.selectedSeatCss; //selectedSeat이라는 태그가 뒤에 붙는다.
                 console.log(className)
             }
 			//블록 B와 2층에는 시야 방해되는 곳이 없다. 따라서 빈 좌석 없음. 
+			//1층 A구역 VIP석 외에는 R석이다.
+			else{
+				className += ' ' + settings.classCssPrefix2; 
+				console.log(className)
+			}
 			var new_width = j*settings.seatHeight+230;
 			
             str.push('<li class="' + className + '"' + 
@@ -203,6 +227,9 @@ function blockB2 (already){
 	                className += ' ' + settings.selectedSeatCss; //selectedSeat이라는 태그가 뒤에 붙는다.
 	                console.log(className)
 	            }
+				else{
+					className += ' ' + settings.classCssPrefix3;
+				}
 				
 				var new_height = i*settings.seatHeight+240;
 				var new_width = j*settings.seatHeight+230;
@@ -240,7 +267,12 @@ function blockC (already,blocked){
 				var seat_info = floor+"층"+area+"구역"+line+"열"+number+"번";
 				console.log(seat_info);
 				
-				if ($.isArray(already) && $.inArray(className,already) != -1) {   
+				//VIP석 지정 
+				if(parseInt(line)>=6 && parseInt(line)<=10 && (parseInt(number)>=21 && parseInt(number)<=23)){
+					className += ' ' + settings.classCssPrefix1;
+					console.log(className)
+				}					
+				else if ($.isArray(already) && $.inArray(className,already) != -1) {   
 																//선택 불가 좌석 목록에 속해 있다면
 	                className += ' ' + settings.selectedSeatCss; //selectedSeat이라는 태그가 뒤에 붙는다.
 	                console.log(className)
@@ -248,7 +280,12 @@ function blockC (already,blocked){
 				else if($.inArray(className,blocked) !=-1){ //시야 방해석 해당 좌석이라면 화면에 출력하지 않는다.
 					className += ' ' + settings.disableSeatCss; //disableSeat이라는 태그가 뒤에 붙는다. 배경색과 똑같은 색으로 처리. 없는 것처럼.
 					console.log(className)
-				} 
+				}
+				//1층 A구역 VIP석 외에는 R석이다.
+				else{
+					className += ' ' + settings.classCssPrefix2; 
+					console.log(className)
+				}
 				
 				var new_width = j*settings.seatHeight+460;
 				
@@ -289,6 +326,9 @@ function blockC2 (already){
 	                className += ' ' + settings.selectedSeatCss; //selectedSeat이라는 태그가 뒤에 붙는다.
 	                console.log(className)
 	            }
+				else{
+					className += ' ' + settings.classCssPrefix3;
+				}
 				
 				var new_height = i*settings.seatHeight+240;
 				var new_width = j*settings.seatHeight+460;
