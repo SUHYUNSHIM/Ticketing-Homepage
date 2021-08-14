@@ -8,13 +8,12 @@
 //+선택한 좌석을 결제 종료 후 화면에서 좌석도로 다시 볼 수 있을까? DB에 저장후 회차 선택 시 선택되었던 좌석은 selected로 채워지도록 해야 한다.
 
 var settings = {
-        rows: 10, //1층
+        rows: 10, //1층은 10줄이다.
         cols: 10,
         
         rows2: 5, //2층은 5줄이다.
-        cols2: 10,
-        	
-        //블록 나누기를 위해서 간격을 주어야 한다.
+        cols2: 10,        	
+
         //시리얼 7자리를 위해 prefix 사용.
         floorCssPrefix1: '1F',
         floorCssPrefix2: '2F', //2층의 경우 모두 S석이다.
@@ -25,13 +24,8 @@ var settings = {
         areaCssPrefix2: 'B',
         areaCssPrefix3: 'C',
         
-        /*rowCssPrefix: 'row',
-        colCssPrefix: 'col', 일단 순서만으로 구분하도록 하자*/
-        
-        /*blockCssPrefix: '',*/
-        
-        seatWidth: 20,
-        seatHeight: 20,
+        seatWidth: 20, //좌석 한 칸의 크기
+        seatHeight: 20, //
         seatCss: 'seat',
         selectedSeatCss: 'selectedSeat',
         disableSeatCss: 'disableSeat', //시야 방해석이라서 선택하지 않고 공간으로 두는 css를 적용한다.
@@ -39,10 +33,7 @@ var settings = {
     };
 
 
-
 //1. 블록 표시하기
-
-//재선언 불가. const 지정값. 안보여서 일단 var로 바꿔봄.
 var bookedSeats = ['seat 1FB0111', 'seat 1FA0909', 'seat 1FC0521']; /*예매된 좌석 번호를 임의로 지정해 주었음. */
 //시야 제한석이라서 화면에 보이지 않게 될 좌석 배열.
 var disableSeats = ['seat 1FA0101','seat 1FA0102','seat 1FA0103','seat 1FA0104','seat 1FC0127','seat 1FC0128','seat 1FC0129','seat 1FC0130',
@@ -52,7 +43,7 @@ var disableSeats = ['seat 1FA0101','seat 1FA0102','seat 1FA0103','seat 1FA0104',
 var str= [];
 
 //[블록A 1층] -------------------------------------------------------------------------------------------//
-function blockA1 (already,blocked){ //이미 예약된 좌석 정보가 있는지 배열로 넣어두어야 한다. 지금은 인자를 안받는 함수로 했는데... 또 오류 나면 disable, selected를 인자로 받도록 수정할 예정.
+function blockA1 (already,blocked){ 
 	
 	var className;	
 
@@ -87,7 +78,7 @@ function blockA1 (already,blocked){ //이미 예약된 좌석 정보가 있는�
             str.push('<li class="' + className + '"' + 
             		'style="top:' + (i * settings.seatHeight).toString() + 'px;left:' 
             					  + (j * settings.seatWidth).toString() + 'px">'+
-            					'<a title="' +seat_info+ '">'+' '+ '</a>'  //좌석 정보가 나오도록. 좌석에 번호가 씌여있지는 않지만 마우스를 갖다대면 정보가 출력된다.
+            					'<a title="' +seat_info+ '">'+' '+ '</a>'  //좌석 정보가 나오도록 title을 쓰긴 했는데 내용이 없어서 그런지 작동하지 않는다.
             					+'</li>'); //float:left -> 가로 방향으로 좌석을 배치한다. li 특성.
            }
 		
@@ -95,13 +86,12 @@ function blockA1 (already,blocked){ //이미 예약된 좌석 정보가 있는�
 	str.push('<li style="left:220px; top:0px;""><img src="images/seat_number.png" width="30px"; height="240px"></li>');
 	console.log(str);
 	$('#place').html(str.join('')); //place라는 id 태그에 붙는다. 해당 태그는 ul이다.
-	/*document.write();*/
-	/*seat_number();*/
+	
 };
 blockA1(bookedSeats,disableSeats); //실행--------------------//
 
 
-//[블록A 2층]-----------------------------------------------------------------------------------------//
+//[블록A 2층]--------------------------------------------------------------------------------------------------------------//
 function blockA2 (already){
 	
 	var className;	
@@ -131,14 +121,14 @@ function blockA2 (already){
             str.push('<li class="' + className + '"' + 
             		'style="top:'+(new_height).toString() + 'px;left:' 
             					  + (j * settings.seatWidth).toString() + 'px">'+
-            					'<a title="' +seat_info+ '"></a>'  //좌석 정보가 나오도록. 좌석에 번호가 씌여있지는 않지만 마우스를 갖다대면 정보가 출력된다.
+            					'<a title="' +seat_info+ '"></a>'  
             					+'</li>'); //float:left -> 가로 방향으로 좌석을 배치한다. li 특성.  
             //'<a title="' + seatNo + '">' + seatNo + '</a>' +'</li>'); 
             console.log(seat_info);
         }
 		
 		}
-	str.push('<li style="left:220px; top:241px;"><img src="images/seat_number_2.png" width="30px"; height="140px"></li>');
+	str.push('<li style="left:220px; top:241px;"><img src="images/seat_number_2.png" width="30px"; height="140px"></li>'); //통로에 열번호 이미지 삽입.
 	console.log(str);
 	$('#place').html(str.join('')); //place라는 id 태그에 붙는다. 해당 태그는 ul이다.
 };
@@ -173,18 +163,18 @@ var className;
             str.push('<li class="' + className + '"' + 
             		'style="top:' + (i * settings.seatHeight).toString() + 'px;left:' 
             					  + (new_width).toString() + 'px">'+
-            					'<a title="' +seat_info+ '">'+' '+ '</a>'  //좌석 정보가 나오도록. 좌석에 번호가 씌여있지는 않지만 마우스를 갖다대면 정보가 출력된다.
+            					'<a title="' +seat_info+ '">'+' '+ '</a>'  
             					+'</li>'); //float:left -> 가로 방향으로 좌석을 배치한다. li 특성.
            }
 		
 		}
-	str.push('<li style="left:450px; top:0px;""><img src="images/seat_number.png" width="30px"; height="240px"></li>');
+	str.push('<li style="left:450px; top:0px;""><img src="images/seat_number.png" width="30px"; height="240px"></li>'); //통로에 열번호 이미지 삽입.
 	console.log(str);
 	$('#place').html(str.join('')); //place라는 id 태그에 붙는다. 해당 태그는 ul이다.
 };
 blockB(bookedSeats);
 
-//[블록B 2층]----------------------------------------------------------------//
+//[블록B 2층]---------------------------------------------------------------------------------------------------//
 function blockB2 (already){
 	var className;		
 		
@@ -214,19 +204,19 @@ function blockB2 (already){
 	            str.push('<li class="' + className + '"' + 
 	            		'style="top:' + (new_height).toString() + 'px;left:' 
 	            					  + (new_width).toString() + 'px">'+
-	            					'<a title="' +seat_info+ '">'+' '+ '</a>'  //좌석 정보가 나오도록. 좌석에 번호가 씌여있지는 않지만 마우스를 갖다대면 정보가 출력된다.
+	            					'<a title="' +seat_info+ '">'+' '+ '</a>'  
 	            					+'</li>'); //float:left -> 가로 방향으로 좌석을 배치한다. li 특성.
 	           }
 			
 			}
 		console.log(str);
-		str.push('<li style="left:23px; top:220px;"><img src="images/floor1.png" width="650px"; height="36px"></li>');
-		str.push('<li style="left:450px; top:241px;"><img src="images/seat_number_2.png" width="30px"; height="140px"></li>');
+		str.push('<li style="left:23px; top:220px;"><img src="images/floor1.png" width="650px"; height="36px"></li>'); //2층 표시 이미지 삽입.
+		str.push('<li style="left:450px; top:241px;"><img src="images/seat_number_2.png" width="30px"; height="140px"></li>'); //2층 열번호 이미지.
 		$('#place').html(str.join('')); //place라는 id 태그에 붙는다. 해당 태그는 ul이다.
 	};
 blockB2(bookedSeats);
 
-//[블록C 1층]----------------------------------------------------------------------//
+//[블록C 1층]---------------------------------------------------------------------------------------------//
 function blockC (already,blocked){
 	var className;
 			
@@ -250,7 +240,7 @@ function blockC (already,blocked){
 	                className += ' ' + settings.selectedSeatCss; //selectedSeat이라는 태그가 뒤에 붙는다.
 	                console.log(className)
 	            }
-				else if($.inArray(className,blocked) !=-1){ //시야 방해석 해당 좌석이라면 화면에 출력하지 않는다. 배열에서 빼기.
+				else if($.inArray(className,blocked) !=-1){ //시야 방해석 해당 좌석이라면 화면에 출력하지 않는다.
 					className += ' ' + settings.disableSeatCss; //disableSeat이라는 태그가 뒤에 붙는다. 배경색과 똑같은 색으로 처리. 없는 것처럼.
 					console.log(className)
 				} 
@@ -260,7 +250,7 @@ function blockC (already,blocked){
 	            str.push('<li class="' + className + '"' + 
 	            		'style="top:' + (i * settings.seatHeight).toString() + 'px;left:' 
 	            					  + (new_width).toString() + 'px">'+
-	            					'<a title="' +seat_info+ '">'+' '+ '</a>'  //좌석 정보가 나오도록. 좌석에 번호가 씌여있지는 않지만 마우스를 갖다대면 정보가 출력된다.
+	            					'<a title="' +seat_info+ '">'+' '+ '</a>'  
 	            					+'</li>'); //float:left -> 가로 방향으로 좌석을 배치한다. li 특성.
 	           }
 			
@@ -270,7 +260,7 @@ function blockC (already,blocked){
 	};
 blockC(bookedSeats,disableSeats);
 
-//[블록C 2층]----------------------------------------------------------------//
+//[블록C 2층]-------------------------------------------------------------------------------------------------//
 function blockC2 (already){
 	var className;		
 		
@@ -300,7 +290,7 @@ function blockC2 (already){
 	            str.push('<li class="' + className + '"' + 
 	            		'style="top:' + (new_height).toString() + 'px;left:' 
 	            					  + (new_width).toString() + 'px">'+
-	            					'<a title="' +seat_info+ '">'+' '+ '</a>'  //좌석 정보가 나오도록. 좌석에 번호가 씌여있지는 않지만 마우스를 갖다대면 정보가 출력된다.
+	            					'<a title="' +seat_info+ '">'+' '+ '</a>'  
 	            					+'</li>'); //float:left -> 가로 방향으로 좌석을 배치한다. li 특성.
 	           }
 			
