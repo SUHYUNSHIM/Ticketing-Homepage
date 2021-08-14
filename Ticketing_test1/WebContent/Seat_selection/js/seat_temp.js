@@ -1,8 +1,3 @@
-//11줄부터 15줄은 2층, S석으로 구분된다.
-//중앙 5열 블록부터 10열블록까지 + A구역, C구역 두 줄까지 VIP 석으로 지정
-//1층의 VIP 석 제외의 구간은 R구역이다.
-//VIP, R,S 구역에 따라서 좌석 색깔을 다르게 한다.*****
-
 //1인당 판매 좌석수를 4개로 제한시킨다.이것을 집계하는 함수도 controller에서 처리한다.
 //선택한 좌석 번호를 controller에 보낸다. 잔여좌석을 계산하여 mainframe view 우측에 출력한다.
 //+선택한 좌석을 결제 종료 후 화면에서 좌석도로 다시 볼 수 있을까? DB에 저장후 회차 선택 시 선택되었던 좌석은 selected로 채워지도록 해야 한다.
@@ -60,7 +55,7 @@ function blockA1 (already,blocked){
 			//문자열 연결 방식
 					
 			className = settings.seatCss.concat(" ",settings.floorCssPrefix1,settings.areaCssPrefix1, i.toString().length<2?'0'+i:i, j.toString().length<2?'0'+j:j);
-			console.log(className);
+			console.log(className); //seat 1FA0101
 			
 			//clasName을 잘라서 화면에 나올 때는 보기 좋도록 수정한다.
 			var floor = className.toString().slice(5,6); //층
@@ -71,7 +66,8 @@ function blockA1 (already,blocked){
 			console.log(seat_info);
 			
 			//VIP석 지정 
-			if(parseInt(line)>=6 && parseInt(line)<=10 && (parseInt(number)>=8 && parseInt(number)<=10)){
+			if(parseInt(line)>=6 && parseInt(line)<=10 && (parseInt(number)>=8 && parseInt(number)<=10) && ($.inArray(className,already) == -1))
+			{
 				className += ' ' + settings.classCssPrefix1;
 				console.log(className)
 			}			
@@ -142,7 +138,7 @@ function blockA2 (already){
             					  + (j * settings.seatWidth).toString() + 'px">'+
             					'<a title="' +seat_info+ '"></a>'  
             					+'</li>'); //float:left -> 가로 방향으로 좌석을 배치한다. li 특성.  
-            //'<a title="' + seatNo + '">' + seatNo + '</a>' +'</li>'); 
+           
             console.log(seat_info);
         }
 		
@@ -172,7 +168,7 @@ var className;
 			console.log(seat_info);
 			
 			//VIP석 지정 
-			if(parseInt(line)>=6 && parseInt(line)<=10){
+			if(parseInt(line)>=6 && parseInt(line)<=10  && ($.inArray(className,already) == -1)){
 				className += ' ' + settings.classCssPrefix1;
 				console.log(className)
 			}			
@@ -257,18 +253,18 @@ function blockC (already,blocked){
 				
 				className = settings.seatCss.concat(" ",settings.floorCssPrefix1,settings.areaCssPrefix3, 
 						i.toString().length<2?'0'+i:i, 20+j);
-				console.log(className);
+				console.log(className); //seat 1FC0126
 				
 				//clasName을 잘라서 화면에 나올 때는 보기 좋도록 수정한다.
 				var floor = className.toString().slice(5,6); //층
 				var area  = className.toString().slice(7,8); //구역
 				var line =  className.toString().slice(8,10); //열 번호
 				var number = className.toString().slice(10,12); //왼쪽으로부터 몇 번째 칸인지 번지를 의미.			
-				var seat_info = floor+"층"+area+"구역"+line+"열"+number+"번";
+				var seat_info = floor+"층"+area+"구역"+line+"열"+number+"번"; //1층C구역01열26번
 				console.log(seat_info);
 				
 				//VIP석 지정 
-				if(parseInt(line)>=6 && parseInt(line)<=10 && (parseInt(number)>=21 && parseInt(number)<=23)){
+				if(parseInt(line)>=6 && parseInt(line)<=10 && (parseInt(number)>=21 && parseInt(number)<=23)  && ($.inArray(className,already) == -1)){
 					className += ' ' + settings.classCssPrefix1;
 					console.log(className)
 				}					
@@ -284,7 +280,7 @@ function blockC (already,blocked){
 				//1층 A구역 VIP석 외에는 R석이다.
 				else{
 					className += ' ' + settings.classCssPrefix2; 
-					console.log(className)
+					console.log(className) //seat 1FC0126 R
 				}
 				
 				var new_width = j*settings.seatHeight+460;
@@ -328,6 +324,7 @@ function blockC2 (already){
 	            }
 				else{
 					className += ' ' + settings.classCssPrefix3;
+					console.log(className)
 				}
 				
 				var new_height = i*settings.seatHeight+240;
@@ -354,7 +351,7 @@ $('.' + settings.seatCss).click(function () {
 		alert('좌석을 선택해주세요.')
 	}	//시야 방해석-- 화면에 나오지 않는 좌석 영역을 클릭했을 때 반응이 나는 오류를 해결해야 함.
 	else{
-	    $(this).toggleClass(settings.selectingSeatCss); //선택 좌석은 토글 방식으로, 선택 or 취소 자유로움.
+	    $(this).toggleClass(settings.selectingSeatCss); //선택 좌석은 토글 방식으로, 선택 or 취소 자유로움.	    	
 	    }
 	});
 	 
