@@ -24,6 +24,11 @@ var settings = {
         areaCssPrefix2: 'B',
         areaCssPrefix3: 'C',
         
+        //좌석 색상 뿐만 아니라 가격도 다르게 매겨져야 하므로 class 태그를 사용한다. seat을 default(S)로 하고 다른 클래스 태그를 부여하는 것으로 하자.
+        classCssPrefix1: 'VIP',
+        classCssPrefix2: 'R',
+        classCssPrefix3: 'S',
+        
         seatWidth: 20, //좌석 한 칸의 크기
         seatHeight: 20, //
         seatCss: 'seat',
@@ -42,7 +47,7 @@ var disableSeats = ['seat 1FA0101','seat 1FA0102','seat 1FA0103','seat 1FA0104',
 					'seat 1FA0401','seat 1FC0430'];
 var str= [];
 
-//[블록A 1층] -------------------------------------------------------------------------------------------//
+//[블록A 1층] ------------------------------------------------------------------------------------------------------------//
 function blockA1 (already,blocked){ 
 	
 	var className;	
@@ -91,7 +96,7 @@ function blockA1 (already,blocked){
 blockA1(bookedSeats,disableSeats); //실행--------------------//
 
 
-//[블록A 2층]--------------------------------------------------------------------------------------------------------------//
+//[블록A 2층]--------------------------------------------------------------------------------------------------------------------------//
 function blockA2 (already){
 	
 	var className;	
