@@ -1,4 +1,4 @@
-package com.tbox.seatData;
+package com.tbox.seatController;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class seatData
+ * Servlet implementation class seatController
  */
-@WebServlet("/seatData")
-public class seatData extends HttpServlet {
+@WebServlet("/seatController") //.do를 쓸 것인지 안 쓸것인지는 일단 나중의 문제.
+public class seatController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public seatData() {
+    public seatController() {
         super();
         // TODO Auto-generated constructor stub
     }
