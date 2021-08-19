@@ -79,15 +79,11 @@ h5,option{
 	
 	border-top-left-radius:5px;
 	border-bottom-left-radius:5px;
-	/* border-top-right-radius:5px; */
-	/* border-bottom-right-radius:5px;	 */
-		
+
 	width: 107px;
 	height: 60px;
 	
-	margin-left:-40px;
-	
-	
+	margin-left:-40px;	
 }
 #select_return:hover{
 	color: #EAEAEA;
@@ -99,24 +95,18 @@ ul  >li {
     padding: 0 0 0 0;
 
     border : 0;
-    float: left;
-
-    
+    float: left;   
 }
 #select_complete{
 	font-family: 'S-CoreDream-3Light';
 	font-weight: bold;	
 	
 	background-color: #B1B1B1;
-	/* border-top-left-radius:5px; */
-	/* border-bottom-left-radius:5px; */
 	border-top-right-radius:5px;
 	border-bottom-right-radius:5px;
 		
 	width: 107px;
 	height: 60px;
-
-	
 }
 
 #select_complete:hover{
