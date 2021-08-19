@@ -42,7 +42,7 @@ var disableSeats = ['seat 1FA0101','seat 1FA0102','seat 1FA0103','seat 1FA0104',
 					'seat 1FA0201','seat 1FA0202','seat 1FA0203', 'seat 1FC0228','seat 1FC0229','seat 1FC0230',
 					'seat 1FA0301','seat 1FA0302', 'seat 1FC0329','seat 1FC0330',
 					'seat 1FA0401','seat 1FC0430'];
-var str= [];
+var str= []; //좌석 list를 보내는 것을 넣는다.
 
 //[블록A 1층] ------------------------------------------------------------------------------------------------------------//
 function blockA1 (already,blocked){ 
@@ -345,32 +345,45 @@ function blockC2 (already){
 blockC2(bookedSeats);
 
 
-//좌석 선택 이벤트.
+
+//좌석 선택 이벤트.-------------------------------------------------------------------------**//
 $('.' + settings.seatCss).click(function () {
 	if ($(this).hasClass(settings.selectedSeatCss)){ //버튼의 해당 클래스를 쫓아서 간다.
 	    alert('다른 고객님이 결제 중인 좌석입니다.');
 	}
 	else if($(this).hasClass(settings.disableSeatCss)){
 		alert('좌석을 선택해주세요.')
-	}	//시야 방해석-- 화면에 나오지 않는 좌석 영역을 클릭했을 때 반응이 나는 오류를 해결해야 함.
-	else{
-	    $(this).toggleClass(settings.selectingSeatCss); //선택 좌석은 토글 방식으로, 선택 or 취소 자유로움.	    	
-	    }
+	}	
+	//버튼이 눌릴 때 값이 넘어가면 된다.
+	else{		
+	    $(this).toggleClass(settings.selectingSeatCss); //선택 좌석은 토글 방식으로    	
+	    var str = [];			//이미 선택된 좌석(결제 완료, 후에 멀티스레드 다른 사용자가 결제 중인 좌석) + 지금 사용자가 선택한 좌석
+	    $.each($('#place li.'+ settings.selectingSeatCss + ' a'), function (index, value) {
+	        str.push($(this).attr('title'));
+	    });
+	    //str.join('\n')
+	    return str.join('\n');
+	}
 	});
 	 
-	$('#btnShow').click(function () { //선택한 좌석---------mvc2 모델로 바꾸기 위해 선택한 좌석을 읽어서 view인 Seat_frame으로 보내주는 controller를 사용할 것이다.
-	    var str = [];
+	//선택한 총 좌석-----이건 DB에서 가져와야 하는 값이다. DB에 저장되어 있던 값(이미 선택된 좌석 값)+ 사용자가 선택한 값 
+	$('#btnShow').click(function () { //mvc2 모델로 바꾸기 위해 선택한 좌석을 읽어서 view인 Seat_frame으로 보내주는 controller를 사용할 것이다.
+	    var str = [];			//이미 선택된 좌석(결제 완료, 후에 멀티스레드 다른 사용자가 결제 중인 좌석) + 지금 사용자가 선택한 좌석
 	    $.each($('#place li.' + settings.selectedSeatCss + ' a, #place li.'+ settings.selectingSeatCss + ' a'), function (index, value) {
 	        str.push($(this).attr('title'));
 	    });
-	    alert(str.join(',')); //경고창으로 출력이 아니라, 화면에 출력하는 것인데, 그 값을 보내는 것은 controller가 할 것이다. 
+	    alert(str.join('\n')); //줄바꿈 
+	    //controller 호출 어떻게 하나.
+	    //str.join('\n')이것을 servelet으로 보내야 한다.
+	    //''''''	   
+	
 	})
-	 
-	$('#btnShowNew').click(function () { //선택된 좌석 모두 보기
+	//사용자가 선택한 좌석
+	$('#btnShowNew').click(function () { 
 	    var str = [], item;
 	    $.each($('#place li.' + settings.selectingSeatCss + ' a'), function (index, value) {
 	        item = $(this).attr('title');                   
 	        str.push(item);                   
 	    });
-	    alert(str.join(','));
+	    alert(str.join('\n')); //줄바꿈
 	})

@@ -5,7 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>좌석 선택화면</title>
-<!-- <link rel="stylesheet" href="css/style.css"/>  -->
 <link rel="stylesheet" href="css/seat_style.css"/>
 <script src="js/jquery-3.3.1.js"></script>
 </head>
@@ -20,7 +19,7 @@
 	</ul>	
 	</div>
 	
-	<div style="float:left">
+	<div style="float:left"> <!--ul place 아래  좌석 frame이 li 형태로 들어온다.   -->
 	<ul id="place">		
 	</ul>
 	</div>
@@ -38,6 +37,11 @@
 	<input type="button" id="btnShowNew" value="선택한 좌석"/> <!--선택한 좌석, 잔여석(전체 좌석-선택된 모든 좌석) 계산과 화면 출력을 위한 전송은 controller를 거친다.  -->
 	<input type="button" id="btnShow" value="선택된 좌석 모두 보기"/>
 	</div>
+	
+	<form method="post" action="seatController">	
+	<input type="submit" id=".seat" name="seats"> <!--과연 한 좌석씩 눌렀을 때 controller에 보내지고, jsp에 출력되는 가. -->
+	</form>
+		
 <script src="js/seat_settings.js"></script>
 </body>
 </html>

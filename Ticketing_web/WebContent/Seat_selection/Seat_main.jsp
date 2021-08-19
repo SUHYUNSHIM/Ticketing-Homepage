@@ -18,10 +18,8 @@
 <p></p>
 <div class ="content-box" style="font-family:'S-CoreDream-3Light'">		
 	<div id="stage">무대</div> 
-	<p></p>	
-	<!--좌석 선택 영역 temp... 다른 좌석 선택 파일과 합칠 예정.-->
-	<%@ include file="Seat_frame.jsp" %>	
-														
+	<p></p>		
+	<%@ include file="Seat_frame.jsp" %>															
 	
 </div>
 <!-- 멀티 스레드, 동시 접속 및 실시간 좌석 변동을 할 수 있는지. 일단 잔여 좌석 정보는 DB에 저장한 다음 불러오기를 해야 한다. -->
