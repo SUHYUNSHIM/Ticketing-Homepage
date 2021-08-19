@@ -31,16 +31,12 @@
 	</ul>
 	</div>	
 </div>
-	
-	<!--좌석 선택 main화면의 옆으로 옮겨야 한다. 버튼이 아니라 결과를 사이드에 출력하도록 수정해야 한다.-->
+
 	<div style="clear:both;width:100%">
-	<input type="button" id="btnShowNew" value="선택한 좌석"/> <!--선택한 좌석, 잔여석(전체 좌석-선택된 모든 좌석) 계산과 화면 출력을 위한 전송은 controller를 거친다.  -->
-	<input type="button" id="btnShow" value="선택된 좌석 모두 보기"/>
+	<!-- <input type="button" id="btnShowNew" value="선택한 좌석"/> --> 
+	<!-- <input type="button" id="btnShow" value="선택된 좌석 모두 보기"/> -->
 	</div>
-	
-	<form method="post" action="seatController">	
-	<input type="submit" id=".seat" name="seats"> <!--과연 한 좌석씩 눌렀을 때 controller에 보내지고, jsp에 출력되는 가. -->
-	</form>
+
 		
 <script src="js/seat_settings.js"></script>
 </body>

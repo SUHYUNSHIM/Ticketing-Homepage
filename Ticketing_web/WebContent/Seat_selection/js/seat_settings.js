@@ -362,20 +362,21 @@ $('.' + settings.seatCss).click(function () {
 	        str.push($(this).attr('title'));
 	    });
 	    //str.join('\n')
-	    return str.join('\n');
+	    console.log("메인화면에 나타날 좌석:"+str);
+	    $('#s_seat').html(str.join('<br>'));
 	}
 	});
 	 
-	//선택한 총 좌석-----이건 DB에서 가져와야 하는 값이다. DB에 저장되어 있던 값(이미 선택된 좌석 값)+ 사용자가 선택한 값 
-	$('#btnShow').click(function () { //mvc2 모델로 바꾸기 위해 선택한 좌석을 읽어서 view인 Seat_frame으로 보내주는 controller를 사용할 것이다.
-	    var str = [];			//이미 선택된 좌석(결제 완료, 후에 멀티스레드 다른 사용자가 결제 중인 좌석) + 지금 사용자가 선택한 좌석
+	
+	$('#btnShow').click(function () { 
+	    var str = [];			
 	    $.each($('#place li.' + settings.selectedSeatCss + ' a, #place li.'+ settings.selectingSeatCss + ' a'), function (index, value) {
 	        str.push($(this).attr('title'));
 	    });
 	    alert(str.join('\n')); //줄바꿈 
 	    //controller 호출 어떻게 하나.
 	    //str.join('\n')이것을 servelet으로 보내야 한다.
-	    //''''''	   
+	   
 	
 	})
 	//사용자가 선택한 좌석
