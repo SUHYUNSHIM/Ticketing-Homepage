@@ -23,6 +23,6 @@ commit;
 --사용자 A-> 로그인시 이름 넘겨오고, 임시로 A라고 주었음. 
 create table user_seat(
     user_name varchar2(20),
-    seat_name varchar2(30),
+    seat_name varchar2(30)
     
 );
