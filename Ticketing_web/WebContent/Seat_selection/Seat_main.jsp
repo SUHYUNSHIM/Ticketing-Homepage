@@ -51,11 +51,12 @@
 		<!--당신이 선택한 좌석 정보가 나타납니다.  -->
 	</div> 
 	<br></br>
+	<!--controller로 값 넘겨주고, ../Seat_selected/seatSelected.jsp로 가게 한다.  -->
 	<form action="../Seat_selected/seatSelected.jsp" method="get">
-	<button id= "select_complete" type="submit" onclick()=" ">선택 완료</button><!--controller에게 값을 넘겨주고, controller가 할인수단 선택 화면 view(jsp)로 좌석 정보를 전달받는다.메소드 넣기 -->	
+	<button id= "select_complete" type="submit" onclick()=" ">선택 완료</button>
+	<!--controller에게 값을 넘겨주고, controller가 할인수단 선택 화면 view(jsp)로 좌석 정보를 전달받는다.메소드 넣기 -->	
 	</form>
 </div>
 <script src="js/seat_settings.js"></script> <!--선택한 좌석 정보 쓰기 위해서!!  -->
 </body>
-<!-- <script type="text/javascript" src="seat_order.js"></script>  하단에 선언해야 에러가 나지 않는다.  -->
 </html>

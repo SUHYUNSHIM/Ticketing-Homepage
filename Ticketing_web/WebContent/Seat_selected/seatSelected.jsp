@@ -33,6 +33,7 @@
 			<!--여기에 좌석 구역 li로 가져온 것처럼 정보 li로 넣기  -->
 			<!--공연 제목  -->
 			<!--공연 날짜 , 시간 한줄로  -->	
+			
 			<!--총 선택한 좌석수  -->
 			<!--선택한 등급, 층, 구역,열, 번호 -->
 			<!--선택한 등급, 층, 구역,열, 번호 -->
@@ -49,10 +50,21 @@
 	<!-- Seat_frame 참조, but 그것을 controller, servelet에서 처리해서 여기서 출력해 주는 것.  -->
 	</ul>
 	</div>
-	<br></br>
-	<form action="../Payment/total_payment.jsp" method="get"> <!-- 최종 결제 화면으로 넘어간다. -->
-	<button id= "select_complete" type="submit" onclick()=" ">선택 완료</button><!--controller에게 값을 넘겨주고, controller가 할인수단 선택 화면 view(jsp)로 좌석 정보를 전달받는다.메소드 넣기 -->	
-	</form>
+	<!-- 
+	<br></br> -->
+	<ul class="flex-contatiner" style="list-style:none;  ">
+		<li>
+		<button id= "select_return" value="BACK" onclick="history.go(-1)">이전 단계</button>
+		</li>
+		<li >
+		<!-- <form action="../Payment/total_payment.jsp" method="get"> --> <!-- 최종 결제 화면으로 넘어간다. -->
+		<button type="submit" id= "select_complete" onclick ="../Payment/total_payment.jsp" >선택 완료<!--controller에게 값을 넘겨주고, controller가 할인수단 선택 화면 view(jsp)로 좌석 정보를 전달받는다.메소드 넣기 -->	
+		</button>
+		<!-- </form> -->
+		</li>
+	
+	</ul>
+
 </div>
 </body>
 </html>

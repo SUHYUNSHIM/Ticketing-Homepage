@@ -354,16 +354,26 @@ $('.' + settings.seatCss).click(function () {
 	else if($(this).hasClass(settings.disableSeatCss)){
 		alert('좌석을 선택해주세요.')
 	}	
-	//버튼이 눌릴 때 값이 넘어가면 된다.
+	
 	else{		
-	    $(this).toggleClass(settings.selectingSeatCss); //선택 좌석은 토글 방식으로    	
-	    var str = [];			//이미 선택된 좌석(결제 완료, 후에 멀티스레드 다른 사용자가 결제 중인 좌석) + 지금 사용자가 선택한 좌석
+		$(this).toggleClass(settings.selectingSeatCss); //선택 좌석은 토글 방식으로  
+	    var cnt= 0;
+	    var str = [];
+	    
 	    $.each($('#place li.'+ settings.selectingSeatCss + ' a'), function (index, value) {
 	        str.push($(this).attr('title'));
-	    });
+	        cnt +=1;
+	        if(cnt>4){
+	        	alert("최대 4매까지 구매 가능합니다.");	        	
+	        	str.pop(); //마지막에 넣은 str 선택 좌석을 array에서 뺀다.  
+	        	//4개까지 선택되는 것은 맞지만, css 변하는 것 즉, selecting을 빼는 것이 안된다.
+	        	//class 명 중 selectingSeat이라고 되어 있는 것을 지우는 방법을 찾아야 한다.
+	        }
+	    });	    
 	    //str.join('\n')
 	    console.log("메인화면에 나타날 좌석:"+str);
-	    $('#s_seat').html(str.join('<br>'));
+	    $('#s_seat').html(str.join('<br>')); //줄바꿈 join으로 들어간다.
+	    
 	}
 	});
 	 

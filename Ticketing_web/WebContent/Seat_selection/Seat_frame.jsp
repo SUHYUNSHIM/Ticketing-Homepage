@@ -25,7 +25,7 @@
 	</div>
 	<div style="float:left; margin-top:390px; margin-left:440px">
 	<ul id="seatDescription">
-		<li style="background:url('images/check.png') no-repeat scroll 0 0 transparent;">잔여석</li>
+		<!-- <li style="background:url('images/check.png') no-repeat scroll 0 0 transparent;">잔여석</li> -->
 		<li style="background:url('images/close.png') no-repeat scroll 0 0 transparent;">이미 선택된 좌석</li>
 		<li style="background:url('images/select.png') no-repeat scroll 0 0 transparent;">선택한 좌석</li>
 	</ul>
