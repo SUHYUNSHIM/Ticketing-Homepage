@@ -387,6 +387,7 @@ $('.' + settings.seatCss).click(function () {
 	        	str.pop(); //마지막에 넣은 str 선택 좌석을 array에서 뺀다.  
 	        	//4개까지 선택되는 것은 맞지만, css 변하는 것 즉, selecting을 빼는 것이 안된다.
 	        	//class 명 중 selectingSeat이라고 되어 있는 것을 지우는 방법을 찾아야 한다.
+	        	//현재 같은 등급끼리 선택 후 5개 선택 시 기존 리스트에 영향이 안가는 것은 맞지만, 다른 등급 선택시 기존 것을 하나지우고 들어가는 오류 존재.
 	        }
 	    });	    
 	    //str.join('\n')
