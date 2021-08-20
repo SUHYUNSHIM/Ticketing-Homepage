@@ -13,8 +13,7 @@ import seatInfoVO.SeatInfoVO;
 
 public class SeatInfoDAO {
 
-	private Connection con;			
-	
+	private Connection con;	
 	PreparedStatement pstmt=null;
 	ResultSet rs=null;				
 	

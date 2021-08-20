@@ -71,7 +71,9 @@ function blockA1 (already,blocked){
 			if(parseInt(line)>=6 && parseInt(line)<=10 && (parseInt(number)>=8 && parseInt(number)<=10) && ($.inArray(className,already) == -1))
 			{
 				className += ' ' + settings.classCssPrefix1;
+				seat_info += ' '+  settings.classCssPrefix1;
 				console.log(className)
+				console.log("title에 들어갈 이름: "+seat_info);
 			}			
 			else if ($.isArray(already) && $.inArray(className,already) != -1) {   
 															//선택 불가 좌석 목록에 속해 있다면
@@ -86,6 +88,8 @@ function blockA1 (already,blocked){
 			else{
 				className += ' ' + settings.classCssPrefix2; 
 				console.log(className)
+				seat_info += ' '+  settings.classCssPrefix2;
+				console.log("title에 들어갈 이름: "+seat_info);
 			}
 			
 			
@@ -131,6 +135,9 @@ function blockA2 (already){
             }
 			else{
 				className += ' ' + settings.classCssPrefix3;
+				seat_info += ' '+  settings.classCssPrefix3;
+				console.log("title에 들어갈 이름: "+seat_info);
+				
 			}
 			//2층은 시야 방해되는 곳이 없다고 가정한다.
 			var new_height = i*settings.seatHeight+240;
@@ -173,6 +180,8 @@ var className;
 			if(parseInt(line)>=6 && parseInt(line)<=10  && ($.inArray(className,already) == -1)){
 				className += ' ' + settings.classCssPrefix1;
 				console.log(className)
+				seat_info += ' '+  settings.classCssPrefix1;
+				console.log("title에 들어갈 이름: "+seat_info);
 			}			
 			else if ($.isArray(already) && $.inArray(className,already) != -1) {   
 															//선택 불가 좌석 목록에 속해 있다면
@@ -184,6 +193,8 @@ var className;
 			else{
 				className += ' ' + settings.classCssPrefix2; 
 				console.log(className)
+				seat_info += ' '+  settings.classCssPrefix2;
+				console.log("title에 들어갈 이름: "+seat_info);
 			}
 			var new_width = j*settings.seatHeight+230;
 			
@@ -227,6 +238,8 @@ function blockB2 (already){
 	            }
 				else{
 					className += ' ' + settings.classCssPrefix3;
+					seat_info += ' '+  settings.classCssPrefix3;
+					console.log("title에 들어갈 이름: "+seat_info);
 				}
 				
 				var new_height = i*settings.seatHeight+240;
@@ -269,6 +282,8 @@ function blockC (already,blocked){
 				if(parseInt(line)>=6 && parseInt(line)<=10 && (parseInt(number)>=21 && parseInt(number)<=23)  && ($.inArray(className,already) == -1)){
 					className += ' ' + settings.classCssPrefix1;
 					console.log(className)
+					seat_info += ' '+  settings.classCssPrefix1;
+					console.log("title에 들어갈 이름: "+seat_info);
 				}					
 				else if ($.isArray(already) && $.inArray(className,already) != -1) {   
 																//선택 불가 좌석 목록에 속해 있다면
@@ -279,10 +294,12 @@ function blockC (already,blocked){
 					className += ' ' + settings.disableSeatCss; //disableSeat이라는 태그가 뒤에 붙는다. 배경색과 똑같은 색으로 처리. 없는 것처럼.
 					console.log(className)
 				}
-				//1층 A구역 VIP석 외에는 R석이다.
+				
 				else{
 					className += ' ' + settings.classCssPrefix2; 
 					console.log(className) //seat 1FC0126 R
+					seat_info += ' '+  settings.classCssPrefix2;
+					console.log("title에 들어갈 이름: "+seat_info);
 				}
 				
 				var new_width = j*settings.seatHeight+460;
@@ -327,6 +344,8 @@ function blockC2 (already){
 				else{
 					className += ' ' + settings.classCssPrefix3;
 					console.log(className)
+					seat_info += ' '+  settings.classCssPrefix3;
+					console.log("title에 들어갈 이름: "+seat_info);
 				}
 				
 				var new_height = i*settings.seatHeight+240;

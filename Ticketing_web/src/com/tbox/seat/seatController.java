@@ -39,7 +39,11 @@ public class seatController extends HttpServlet {
 		//doGet(request, response);
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
+		
+		
+		
 		String seats = request.getParameter("seats");
+		System.out.println("넘겨받은 좌석 문자열은 "+ seats);
 		
 		
 	}

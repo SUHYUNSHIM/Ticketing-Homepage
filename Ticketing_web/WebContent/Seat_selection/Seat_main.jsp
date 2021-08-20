@@ -47,14 +47,35 @@
 
 	<!--선택된 자리  --> 
 	<h5>선택한 좌석</h5>
-	<div class = "s_seat" id="s_seat">
-		<!--당신이 선택한 좌석 정보가 나타납니다.  -->
+	<div class = "s_seat" id="s_seat">	
+		<!--당신이 선택한 좌석 정보가 나타납니다.  -->		
 	</div> 
 	<br></br>
+	<script>
+	function getInnerText(){
+		const element = document.getElementById('s_seat'); //s_seat이라는  div 태그 안의 텍스트 내용을 반환하도록.
+		return element.innerHTML;
+		//console.log("seat 정보:"+element); //과연 되는가. 빈칸 단위로 문자열을 잘라서 배열로 만들어서 보내야 한다.
+	}
+	
+	/* 
+	//누른 좌석의 번호가 선택된 좌석 표시 영역에 써지도록 한다. 이건 테스트 파일.
+	const write_seat = document.getElementById('s_seat'); //document.querySelector('아이디 또는 클래스 이름');
+	function seat_click1(){										//querySelectorAll() css 선택자로 찾은 모든 element 목록을 리턴한다.
+		write_seat.innerHTML +='<br>1번좌석 선택';
+		console.log("1번");
+	}	
+	*/
+	
+	</script>
+	
 	<!--controller로 값 넘겨주고, ../Seat_selected/seatSelected.jsp로 가게 한다.  -->
-	<form action="../Seat_selected/seatSelected.jsp" method="get">
-	<button id= "select_complete" type="submit" onclick()=" ">선택 완료</button>
-	<!--controller에게 값을 넘겨주고, controller가 할인수단 선택 화면 view(jsp)로 좌석 정보를 전달받는다.메소드 넣기 -->	
+	<!-- <form action="../Seat_selected/seatSelected.jsp" method="get"> -->
+	<form action ="seatController">
+	<button id= "select_complete" type="submit" onclick='getInnerText()'>선택 완료</button> <!--onclick 하면 그 값을 넘기는가?  -->
+	<!--<input type="submit" id="select_complete" value="선택완료">  
+	submit은 form 태그 내에 입력된 데이터를 서버로 전송해준다. -->
+	<!--controller에게 값을 넘겨주고, controller가 할인수단 선택 화면 view(jsp)로 좌석 정보를 전달한다. -->	
 	</form>
 </div>
 <script src="js/seat_settings.js"></script> <!--선택한 좌석 정보 쓰기 위해서!!  -->
