@@ -34,7 +34,7 @@ create table temp_selecting(
 commit;
 
 select * from temp_selecting;
-
+select * from board;
 
 
 
