@@ -13,6 +13,6 @@ public class SeatInfoDBConn {
 	
 	public SeatInfoDBConn() throws ClassNotFoundException, SQLException {
 		Class.forName("oracle.jdbc.driver.OracleDriver");
-		con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "ticketbox", "1234");
+		con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "hr", "hr");		
 	}
 }
