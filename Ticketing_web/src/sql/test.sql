@@ -43,7 +43,9 @@ select * from performance_each;
 drop table member_seat;
 create table member_seat(
     id varchar2(20) constraint id_fk references member(id),
-    s_id varchar2(30),
+    s1_id varchar2(30),
+    s2_id varchar2(30),
+    s3_id varchar2(30),
     p_id varchar2(10) constraint p_id_fk references performance_each(p_id),
     p_name varchar2(30) constraint p_name_seat_fk references performance(p_name)
 );
