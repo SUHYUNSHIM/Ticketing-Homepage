@@ -382,8 +382,7 @@ $('.' + settings.seatCss).click(function () {
 	    $.each($('#place li.'+ settings.selectingSeatCss + ' a'), function (index, value) {
 	        str.push($(this).attr('title'));
 	        cnt +=1;
-	        if(cnt>3){
-	        	
+	        if(cnt>3){	        	
 	        	alert("최대 3매까지 구매 가능합니다.");	        	
 	        	 //마지막에 넣은 str 선택 좌석을 array에서 뺀다. 	        	
 	        	str.pop();
@@ -395,7 +394,7 @@ $('.' + settings.seatCss).click(function () {
 	    console.log("첫번째 좌석: "+str[0]);
 	    console.log("두번째 좌석: "+str[1]);
 	    console.log("세번쨰 좌석: "+str[2]);
-	    $('#s_seat').html(str.join('<br>')); //줄바꿈 join으로 들어간다.
+	    $('#s_seat').html(str.join('<br>')); //줄바꿈 join으로 들어간다. 문자열로 받았지만 html에 써지는 것은 text 타입이다.
 	    
 	}
 	});
@@ -407,8 +406,6 @@ $('.' + settings.seatCss).click(function () {
 	        str.push($(this).attr('title'));
 	    });
 	    alert(str.join('\n')); //줄바꿈 
-	    //controller 호출 어떻게 하나.
-	    //str.join('\n')이것을 servelet으로 보내야 한다.
 	   
 	
 	})
