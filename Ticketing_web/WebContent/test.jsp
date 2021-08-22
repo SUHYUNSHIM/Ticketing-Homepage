@@ -19,22 +19,21 @@
 	</div> 
 	<br></br>
 	
-	<script>
-		var element = document.getElementById('s_seat'); //s_seat이라는  div 태그 안의 텍스트 내용을 반환하도록.		
-		var temp;
-		var seats = [];		
-				
-		var temp2 = element.innerHTML;
-		temp = temp2.replace(/(<br>|<br\/>|<br \/>)/g, '\r\n'); //<br> 태그를 줄바꿈으로 바꿈.
-		
-		temp.trim();
-		console.log(temp);
-		seats = temp.split('\r\n');
-				
-		console.log(seats[0]);
-		console.log(seats[1]);
-		console.log(seats[2]);
-	</script>
-
+	   <script>
+      var element = document.getElementById('s_seat'); //s_seat이라는  div 태그 안의 텍스트 내용을 반환하도록.      
+      var temp;
+      var seats = [];      
+            
+      var temp2 = element.innerHTML;
+      temp = temp2.replace(/(<br>|<br\/>|<br \/>)/g, '\r\n'); //<br> 태그를 줄바꿈으로 바꿈.
+      
+      temp.trim();
+      console.log(temp);
+      seats = temp.split('\r\n');
+            
+      console.log(seats[0]);
+      console.log(seats[1]);
+      console.log(seats[2]); 
+   </script> 
 </body>
 </html>

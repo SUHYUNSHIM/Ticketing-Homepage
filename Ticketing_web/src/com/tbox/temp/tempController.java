@@ -1,4 +1,4 @@
-package com.tbox.seat;
+package com.tbox.temp;
 
 import java.io.IOException;
 
@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class seatController
+ * Servlet implementation class tempController
  */
-@WebServlet("/seatController")
-public class seatController extends HttpServlet {
+@WebServlet("/tempController")
+public class tempController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public seatController() {
+    public tempController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -42,24 +42,13 @@ public class seatController extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		
-		//String seats = request.getParameter("seats");
-	/*	String[] paramValue = request.getParameterValues("seats"); //(String[]) cast	
-		System.out.println(paramValue.length);
-		System.out.println("원래 나와야 하는 것: "+paramValue[0]);*/
-		
-		String seats =  request.getParameter("seats");
-		System.out.println(seats);
-		
-		String seat_class[] = {"VIP","R","S"};
-		while(true) {
-			//seats
-			
+		String[] paramValue = request.getParameterValues("seats");
+		for(int i=0;i<paramValue.length;i++) {
+			System.out.println(paramValue[i]);
 		}
-	
 		
-		
-		//RequestDispatcher rd1 = request.getRequestDispatcher("../Payment/total_payment.jsp");
-		//rd1.forward(request, response);
+		RequestDispatcher rd1 = request.getRequestDispatcher("Payment/total_payment.jsp");
+		rd1.forward(request, response);
 		
 	}
 

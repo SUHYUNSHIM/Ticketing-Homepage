@@ -39,5 +39,6 @@
 
 		
 <script src="js/seat_settings.js"></script>
+
 </body>
 </html>

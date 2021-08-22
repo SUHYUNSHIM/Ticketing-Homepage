@@ -1,7 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<SchemaObject class="oracle.dbtools.crest.model.design.relational.SchemaObject" name="HR" directorySegmentName="seg_0" id="01B97C3C-4F62-5957-E5F5-CE3180EE4F81">
-<createdBy>suhyun</createdBy>
-<createdTime>2021-08-22 03:32:11 UTC</createdTime>
-<ownerDesignName>ERD_1</ownerDesignName>
-<importedID>F32C4800-2E22-C2D7-47BC-FAA6874A85DE</importedID>
-</SchemaObject>

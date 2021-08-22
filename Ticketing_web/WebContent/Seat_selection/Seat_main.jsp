@@ -6,6 +6,19 @@
 <meta charset="UTF-8">
 <title>좌석 선택</title>
 <link rel="stylesheet" href="css/seat_frame.css"/>
+<script src="js/jquery-3.3.1.js"></script>
+
+<!-- jQueryUI css파일 -->
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css"/>
+<!-- jQuery 기본 js 파일 -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<!-- jQuery UI 라이브러리 js파일 -->
+<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+
+<%
+String MovieName= request.getParameter("name"); //이전 페이지에서 받아온다.
+%>
+
 </head>
 
 <body>
@@ -47,40 +60,19 @@
 
 	<!--선택된 자리  --> 
 	<h5>선택한 좌석</h5>
-	<div class = "s_seat" id="s_seat">	
-	<!--당신이 선택한 좌석 정보가 나타납니다.  -->		
+	<div class = "s_seat" id="s_seat">
 	</div> 
-	<br></br>
-	
-	<script type="text/javascript">
-	function getInnerText(){
-		
-		var seatSelect = document.seatSelect; //form 태그와 연결.
-		
-		var element = document.getElementById('s_seat'); //s_seat이라는  div 태그 안의 텍스트 내용을 반환하도록.
-		///return element.innerHTML; //문자열 	
-		var temp;
-		var temp2;
-		var seats = []; //문자열 배열 형태로 넘겨줄 것이다.
-		temp = element.innerHTML;
-		temp2 = temp.replace(/(<br>|<br\/>|<br \/>)/g, '\r\n'); //<br> 태그를 줄바꿈으로 바꿈.
-		temp2.trim();
-		
-		seats = temp.split('\r\n');
-		
-	}
+	<br></br>	
 
-	</script>
 	
-	
-	<!--controller로 값 넘겨주고, ../Seat_selected/seatSelected.jsp,,, 다음 페이지로 가게 한다.  -->	
-	<form name="seatSelect" action ="seatController">
-	<button id= "select_complete" type="submit" onclick='getInnerText()'>선택 완료</button> <!--onclick 하면 그 값을 넘기는가?  -->
-	<!--<input type="submit" id="select_complete" value="선택완료">  
-	submit은 form 태그 내에 입력된 데이터를 서버로 전송해준다. -->
-	<!--controller에게 값을 넘겨주고, controller가 할인수단 선택 화면 view(jsp)로 좌석 정보를 전달한다. -->	
+	<form action ="../seatController" method="post">
+		<%-- <input type="hidden" value="<%=MovieName %>" name="ticketName"/> --%>	
+		<!-- <script>var seatValue[] = getInnerText();</script>	 -->	
+		<button id= "select_complete" type="submit"  value="" name="seats">선택 완료</button> 		
 	</form>
+
 </div>
 <script src="js/seat_settings.js"></script> <!--선택한 좌석 정보 쓰기 위해서!!  -->
+	
 </body>
 </html>
