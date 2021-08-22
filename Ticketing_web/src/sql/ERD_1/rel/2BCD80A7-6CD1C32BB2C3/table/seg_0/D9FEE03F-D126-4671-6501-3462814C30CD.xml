@@ -1,0 +1,150 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D9FEE03F-D126-4671-6501-3462814C30CD" schemaObject="01B97C3C-4F62-5957-E5F5-CE3180EE4F81" name="PERFORMANCE_EACH">
+<sourceConnName>hr</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>PERFORMANCE_EACH</sourceObjName>
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="P_ID" id="679DDB06-C706-2E55-A0CE-9A8089C0801B">
+<sourceConnName>hr</sourceConnName>
+<sourceObjSchema>PERFORMANCE_EACH</sourceObjSchema>
+<sourceObjName>P_ID</sourceObjName>
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="P_NAME" id="C808066F-CDFB-6282-0868-6FD2600EE038">
+<sourceConnName>hr</sourceConnName>
+<sourceObjSchema>PERFORMANCE_EACH</sourceObjSchema>
+<sourceObjName>P_NAME</sourceObjName>
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 BYTE</dataTypeSize>
+<ownDataTypeParameters>30 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="047945B3-E1E5-31DD-6115-A99F4964E825" referredColumn="D04B6609-C6CD-9934-8926-85FC4CDBFDDE"/>
+</associations>
+</Column>
+<Column name="P_DATE" id="A79997C8-9894-F998-B1C1-E1E5B38FF8E6">
+<sourceConnName>hr</sourceConnName>
+<sourceObjSchema>PERFORMANCE_EACH</sourceObjSchema>
+<sourceObjName>P_DATE</sourceObjName>
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="P_TIME" id="15A1901E-3DA8-33E8-F202-AED23D4FE059">
+<sourceConnName>hr</sourceConnName>
+<sourceObjSchema>PERFORMANCE_EACH</sourceObjSchema>
+<sourceObjName>P_TIME</sourceObjName>
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VIP" id="C4A06A04-4A6D-9294-20ED-E6DAA5F346F6">
+<sourceConnName>hr</sourceConnName>
+<sourceObjSchema>PERFORMANCE_EACH</sourceObjSchema>
+<sourceObjName>VIP</sourceObjName>
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,2,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="R" id="B37F069E-7124-0CC0-D44F-6B202C4015D8">
+<sourceConnName>hr</sourceConnName>
+<sourceObjSchema>PERFORMANCE_EACH</sourceObjSchema>
+<sourceObjName>R</sourceObjName>
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,3,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="S" id="113DDEE6-800E-667E-46AF-37CD8626196A">
+<sourceConnName>hr</sourceConnName>
+<sourceObjSchema>PERFORMANCE_EACH</sourceObjSchema>
+<sourceObjName>S</sourceObjName>
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,3,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="31B94979-6631-2D58-EAE0-5C6219B44558" schemaObject="01B97C3C-4F62-5957-E5F5-CE3180EE4F81" name="PERFORMANCE_EACH_PK">
+<sourceConnName>hr</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>SYS_C007109</sourceObjName>
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="679DDB06-C706-2E55-A0CE-9A8089C0801B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="20AB6D07-6967-ADD7-D6B5-8A7B4CA59734" name="P_NAME_FK">
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C808066F-CDFB-6282-0868-6FD2600EE038"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

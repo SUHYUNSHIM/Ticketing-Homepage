@@ -1,0 +1,106 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EF5F4F10-C447-BF0D-503B-FE373870E28E" schemaObject="01B97C3C-4F62-5957-E5F5-CE3180EE4F81" name="MEMBER">
+<sourceConnName>hr</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>MEMBER</sourceObjName>
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:34:53 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<importedID>1B8B77CF-EBCA-7ECA-CD1F-9BBB58CE4FFC</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="8C02DDD4-1FFC-4E0E-E142-CFAB0C0A8314">
+<sourceConnName>hr</sourceConnName>
+<sourceObjSchema>MEMBER</sourceObjSchema>
+<sourceObjName>ID</sourceObjName>
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:34:53 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<importedID>EB92FEBC-944D-E12E-2BAD-26AD75096A58</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PW" id="1BD448B0-8D9C-2641-F247-DB96F5A6051B">
+<sourceConnName>hr</sourceConnName>
+<sourceObjSchema>MEMBER</sourceObjSchema>
+<sourceObjName>PW</sourceObjName>
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:34:53 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<importedID>BF491680-005E-7876-682F-FF3DE5347AF6</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NAME" id="556C0B17-A76B-967E-D188-B190772733C9">
+<sourceConnName>hr</sourceConnName>
+<sourceObjSchema>MEMBER</sourceObjSchema>
+<sourceObjName>NAME</sourceObjName>
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:34:53 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<importedID>AF2D2732-A778-24AD-BF8F-7A5F9F5BA91F</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EMAIL" id="DBC6BC93-B341-281A-C396-04047BFF0F14">
+<sourceConnName>hr</sourceConnName>
+<sourceObjSchema>MEMBER</sourceObjSchema>
+<sourceObjName>EMAIL</sourceObjName>
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:34:53 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<importedID>0A3957BB-A4B9-6C35-5A4A-193454D19922</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 BYTE</dataTypeSize>
+<ownDataTypeParameters>30 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4F4D6B26-D3A1-32D6-A519-473ABC807B02" name="ID_PK">
+<sourceConnName>hr</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>ID_PK</sourceObjName>
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:34:53 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<importedID>E10BBAAB-65DA-7B24-8C96-84EF005EFDC0</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8C02DDD4-1FFC-4E0E-E142-CFAB0C0A8314"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C2FF9133-EE25-333D-E275-163BD451E63C" schemaObject="01B97C3C-4F62-5957-E5F5-CE3180EE4F81" name="ID_PK">
+<sourceConnName>hr</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>ID_PK</sourceObjName>
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:34:53 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<importedID>8409401F-6D13-B94A-E563-53672752672E</importedID>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8C02DDD4-1FFC-4E0E-E142-CFAB0C0A8314"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

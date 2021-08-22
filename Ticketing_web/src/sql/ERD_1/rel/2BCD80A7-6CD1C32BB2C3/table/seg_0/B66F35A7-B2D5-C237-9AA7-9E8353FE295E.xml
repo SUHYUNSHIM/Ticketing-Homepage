@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B66F35A7-B2D5-C237-9AA7-9E8353FE295E" schemaObject="01B97C3C-4F62-5957-E5F5-CE3180EE4F81" name="PERFORMANCE">
+<sourceConnName>hr</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>PERFORMANCE</sourceObjName>
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="P_NAME" id="D04B6609-C6CD-9934-8926-85FC4CDBFDDE">
+<sourceConnName>hr</sourceConnName>
+<sourceObjSchema>PERFORMANCE</sourceObjSchema>
+<sourceObjName>P_NAME</sourceObjName>
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 BYTE</dataTypeSize>
+<ownDataTypeParameters>30 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CAST" id="69171F89-C2BA-7C0F-2C46-D3B3160646FA">
+<sourceConnName>hr</sourceConnName>
+<sourceObjSchema>PERFORMANCE</sourceObjSchema>
+<sourceObjName>CAST</sourceObjName>
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="P_DESC" id="03110241-5610-D4D1-4360-A3AD0262228C">
+<sourceConnName>hr</sourceConnName>
+<sourceObjSchema>PERFORMANCE</sourceObjSchema>
+<sourceObjName>P_DESC</sourceObjName>
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="829A419D-D320-C559-71DB-89990858ECD7" name="P_NAME_PK">
+<sourceConnName>hr</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>P_NAME_PK</sourceObjName>
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D04B6609-C6CD-9934-8926-85FC4CDBFDDE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="56125D28-B972-67F7-8A28-C157CE1D7E47" schemaObject="01B97C3C-4F62-5957-E5F5-CE3180EE4F81" name="P_NAME_PK">
+<sourceConnName>hr</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>P_NAME_PK</sourceObjName>
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D04B6609-C6CD-9934-8926-85FC4CDBFDDE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

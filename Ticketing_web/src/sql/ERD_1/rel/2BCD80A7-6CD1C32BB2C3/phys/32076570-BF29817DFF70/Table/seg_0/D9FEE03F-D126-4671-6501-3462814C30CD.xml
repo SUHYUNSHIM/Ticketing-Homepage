@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="PERFORMANCE_EACH" directorySegmentName="seg_0" id="D9FEE03F-D126-4671-6501-3462814C30CD">
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<schemaObject>01B97C3C-4F62-5957-E5F5-CE3180EE4F81</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>14B9D9D2-1428-8831-E2B4-CC5EEAE09472</segment>
+<tableSpace>B3D2ECFB-A9C6-58E7-35AA-32214CEBBFF4</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="S" id="113DDEE6-800E-667E-46AF-37CD8626196A">
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="P_TIME" id="15A1901E-3DA8-33E8-F202-AED23D4FE059">
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="P_ID" id="679DDB06-C706-2E55-A0CE-9A8089C0801B">
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="P_DATE" id="A79997C8-9894-F998-B1C1-E1E5B38FF8E6">
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="R" id="B37F069E-7124-0CC0-D44F-6B202C4015D8">
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="VIP" id="C4A06A04-4A6D-9294-20ED-E6DAA5F346F6">
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="P_NAME" id="C808066F-CDFB-6282-0868-6FD2600EE038">
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="P_NAME_FK" id="20AB6D07-6967-ADD7-D6B5-8A7B4CA59734">
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PERFORMANCE_EACH_PK" id="31B94979-6631-2D58-EAE0-5C6219B44558">
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<schemaObject>01B97C3C-4F62-5957-E5F5-CE3180EE4F81</schemaObject>
+<segment>F0B8EC3C-DC3A-D6FF-D4AC-ADC9AABD600F</segment>
+<tableSpace>B3D2ECFB-A9C6-58E7-35AA-32214CEBBFF4</tableSpace>
+<indexSegment>F0B8EC3C-DC3A-D6FF-D4AC-ADC9AABD600F</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

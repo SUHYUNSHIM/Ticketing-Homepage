@@ -1,0 +1,43 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="PAYMENT" directorySegmentName="seg_0" id="1FB7CA7A-2695-4576-8232-935C8B9F4EE7">
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<schemaObject>01B97C3C-4F62-5957-E5F5-CE3180EE4F81</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>14B9D9D2-1428-8831-E2B4-CC5EEAE09472</segment>
+<tableSpace>B3D2ECFB-A9C6-58E7-35AA-32214CEBBFF4</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ID" id="70572F08-EEF4-95A0-3BE7-A91D96D168E0">
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PAY_TICKET" id="BAB0C63C-00A8-54C5-22D5-BA7B9BC6B825">
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TOTAL" id="F3AA75F4-9742-F495-A1C0-0CC04D2E1FFD">
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="RCV_TICKET" id="F98677AE-FFBB-D2DF-C862-E945131BA0F0">
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="ID_PAY_FK" id="A0434545-BEDE-06D0-6886-DC9BF55E69B5">
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+</TableProxyOraclev11g>

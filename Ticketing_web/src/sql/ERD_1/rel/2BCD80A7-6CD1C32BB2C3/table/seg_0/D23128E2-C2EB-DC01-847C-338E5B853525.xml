@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D23128E2-C2EB-DC01-847C-338E5B853525" schemaObject="01B97C3C-4F62-5957-E5F5-CE3180EE4F81" name="TOTAL_TICKET">
+<sourceConnName>hr</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>TOTAL_TICKET</sourceObjName>
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="TICKET_NUMBER" id="5DDAD14C-A206-2C10-70AC-6C77FC7D0001">
+<sourceConnName>hr</sourceConnName>
+<sourceObjSchema>TOTAL_TICKET</sourceObjSchema>
+<sourceObjName>TICKET_NUMBER</sourceObjName>
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="USER_ID" id="F3006325-1379-A774-3B11-71B86C7695AE">
+<sourceConnName>hr</sourceConnName>
+<sourceObjSchema>TOTAL_TICKET</sourceObjSchema>
+<sourceObjName>USER_ID</sourceObjName>
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4235B216-8A56-4A52-3A50-E52845AE875A" referredColumn="8C02DDD4-1FFC-4E0E-E142-CFAB0C0A8314"/>
+</associations>
+</Column>
+<Column name="PAYMENT_NUMBER" id="AEC84105-77E3-CEC2-C18F-432EE904735B">
+<sourceConnName>hr</sourceConnName>
+<sourceObjSchema>TOTAL_TICKET</sourceObjSchema>
+<sourceObjName>PAYMENT_NUMBER</sourceObjName>
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8ED8D7B7-F158-80F2-AF25-B8A33178B19F" schemaObject="01B97C3C-4F62-5957-E5F5-CE3180EE4F81" name="TOTAL_TICKET_PK">
+<sourceConnName>hr</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>SYS_C007118</sourceObjName>
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5DDAD14C-A206-2C10-70AC-6C77FC7D0001"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="83C42B1A-8ABA-DA9E-4633-918B652DEB1C" name="U_ID_FK">
+<createdBy>suhyun</createdBy>
+<createdTime>2021-08-22 03:32:11 UTC</createdTime>
+<ownerDesignName>ERD_1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F3006325-1379-A774-3B11-71B86C7695AE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
