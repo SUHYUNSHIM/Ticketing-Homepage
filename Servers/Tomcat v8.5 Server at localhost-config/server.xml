@@ -153,7 +153,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="Ticketing_test1" path="/Ticketing_test1" reloadable="true" source="org.eclipse.jst.jee.server:Ticketing_test1"/><Context docBase="Ticketing_web" path="/Ticketing_web" reloadable="true" source="org.eclipse.jst.jee.server:Ticketing_web"/><Context docBase="Temp" path="/Temp" reloadable="true" source="org.eclipse.jst.jee.server:Temp"/><Context docBase="WebPage9" path="/WebPage9" reloadable="true" source="org.eclipse.jst.jee.server:WebPage9"/><Context docBase="Temp3" path="/Temp3" reloadable="true" source="org.eclipse.jst.jee.server:Temp3"/></Host>
+      <Context docBase="Ticketing_test1" path="/Ticketing_test1" reloadable="true" source="org.eclipse.jst.jee.server:Ticketing_test1"/><Context docBase="Ticketing_web" path="/Ticketing_web" reloadable="true" source="org.eclipse.jst.jee.server:Ticketing_web"/><Context docBase="Temp" path="/Temp" reloadable="true" source="org.eclipse.jst.jee.server:Temp"/><Context docBase="WebPage9" path="/WebPage9" reloadable="true" source="org.eclipse.jst.jee.server:WebPage9"/><Context docBase="Temp3" path="/Temp3" reloadable="true" source="org.eclipse.jst.jee.server:Temp3"/><Context docBase="TicketBox" path="/TicketBox" reloadable="true" source="org.eclipse.jst.jee.server:TicketBox"/></Host>
     </Engine>
   </Service>
 </Server>

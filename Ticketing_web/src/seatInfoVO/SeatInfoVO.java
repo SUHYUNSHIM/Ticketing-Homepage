@@ -5,10 +5,55 @@ public class SeatInfoVO {
 
 	//
 	private String u_id; //로그인 시 값을 입력받는다. 유저 아이디	
-	private String s_id; //좌석번호
+	private String s_id; //좌석번호 ---> 안쓰는 변수*
 	private String p_id; //공연 시리얼 번호
 	private String p_name; //공연이름
 	
+	private String s1_id; //좌석번호1
+	private String s2_id; //좌석번호2
+	private String s3_id; //좌석번호3
+	
+	
+	//좌석 한 번에 받을 것이라서 3개씩 넣어야. null이 되는 경우를 따로 고려해야 한다.
+	//선택한 좌석 수 칼럼 count로 몇 석인지 구할 수 있음 --> s1,s2,s3중에서 null이 되는 칼럼을 count 세야 한다.
+	public SeatInfoVO(String u_id, String s1_id, String s2_id, String s3_id, String p_id, String p_name) {
+		//super();
+		this.u_id = u_id;	
+		this.s1_id = s1_id;
+		this.s2_id = s2_id;
+		this.s3_id = s3_id;
+		this.p_id = p_id;
+		this.p_name = p_name;
+		
+	}
+	
+	//sv = new SeatInfoVO(id,s1_id,s2_id, s3_id,p_id,p_name);
+
+	public String getS1_id() {
+		return s1_id;
+	}
+
+	public void setS1_id(String s1_id) {
+		this.s1_id = s1_id;
+	}
+
+	public String getS2_id() {
+		return s2_id;
+	}
+
+	public void setS2_id(String s2_id) {
+		this.s2_id = s2_id;
+	}
+
+	public String getS3_id() {
+		return s3_id;
+	}
+
+	public void setS3_id(String s3_id) {
+		this.s3_id = s3_id;
+	}
+
+	//안쓴다. 좌석 한 개씩만 넣을 때 이야기.
 	public SeatInfoVO(String u_id, String s_id, String p_id, String p_name) {
 		super();
 		this.u_id = u_id;
@@ -17,7 +62,7 @@ public class SeatInfoVO {
 		this.p_name = p_name;
 	}	
 	
-	//+ 선택한 좌석 수 칼럼 count로 몇 석인지 구할 수 있음
+	
 	//+좌석 등급. 현재 목표하는 저장 형식이 ex)1층A구역09열10번 VIP. 
 	//여기서 등급이 시작하는 13번째 인덱스 부터 끝까지가 class 이름이다. 문자열 자르기 (java에서 아님 sql에서)
 	

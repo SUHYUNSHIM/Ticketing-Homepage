@@ -91,15 +91,12 @@ where id = 'suhyun' and member_seat.p_id = performance_each.p_id;
 
 select s_id from member_seat;
 select * from member_seat;
-delete from member_seat where s_id = '1摸C备开09凯10锅 VIP';
-
-update member_seat set s_id = '2摸A备开01凯06锅 S' where s_id is null and id is not null;
     
 select * from member_seat;
 
 delete from member_seat where id is null;
 select * from member_seat where s_id is null;
 commit;
-
+select s1_id,s2_id,s3_id from member_seat;
 
 

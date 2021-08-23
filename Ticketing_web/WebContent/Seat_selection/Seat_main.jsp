@@ -16,13 +16,17 @@
 <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
 
 <%
-String MovieName= request.getParameter("name"); //이전 페이지에서 받아온다.
+String uid= request.getParameter("user_id"); //이전 페이지에서 받아온다.
+String pid = request.getParameter("p_id");
+String pname = request.getParameter("p_name"); 
+%>
+</head>
+<%
+	out.println(pid);
 %>
 
-</head>
-
 <body>
-<div class ="info" style="font-family:'S-CoreDream-3Light'">공연 제목 &nbsp;&nbsp;&nbsp; <!--공연정보, 선택 창 상단영역  --> <!--공연 제목은 추후 사용자가 선택한 공연의 이름을 전 페이지에서 가져오는 것으로 한다.-->
+<div class ="info" style="font-family:'S-CoreDream-3Light'"><%=request.getParameter("p_name") %> &nbsp;&nbsp;&nbsp; <!--공연정보, 선택 창 상단영역  --> <!--공연 제목은 추후 사용자가 선택한 공연의 이름을 전 페이지에서 가져오는 것으로 한다.-->
 <select name="perform_list">
 	<option value="8월 20일 14:00시">8월 20일 14:00시<br> 
 	<option value="8월 20일 19:00시">8월 20일 19:00시<br>

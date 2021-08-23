@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import seatInfoDAO.SeatInfoDAO;
+import seatInfoVO.SeatInfoVO;
+
 /**
  * Servlet implementation class seatController
  */
@@ -41,18 +44,12 @@ public class seatController extends HttpServlet {
 		//doGet(request, response);
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
-		
-		//String seats = request.getParameter("seats");
-	/*	String[] paramValue = request.getParameterValues("seats"); //(String[]) cast	
-		System.out.println(paramValue.length);
-		System.out.println("원래 나와야 하는 것: "+paramValue[0]);*/
-		
+	
 		String seats =  request.getParameter("seats");
 		System.out.println("좌석들 "+ seats);
-		
-		//char seat_class[] = {'V','R','S'}; //VIP이지만 첫글자 V 기준으로 자르려고.
+				
 		String[] seatArr = {};
-		//char[] arr = seats.toCharArray(); //문자열을 문자 배열로 변환.
+		
 		if(seats.length() !=0) { //입력받은 값이 0이 아니라면 			
 			seatArr = seats.split("  ");
 			
@@ -66,7 +63,40 @@ public class seatController extends HttpServlet {
 			System.out.println("좌석 선택해야지!");
 		}
 		
-	
+		System.out.println("좌석 배열 첫번째 값: "+ seatArr[0]); //잘 들어갔는지 테스트. -> 잘들어감.
+		
+		//DB와 연결하는 부분.
+		SeatInfoDAO sidao = null;
+		SeatInfoVO sv = null;
+		String s1_id = seatArr[0];
+		String s2_id = seatArr[1];
+		String s3_id = seatArr[2];
+		
+		
+		/*
+		 TelInfoDAO tidao4 =null;
+				TelInfoVO tv2 = null;
+				int id2 = Integer.parseInt(request.getParameter("id"));
+				String name2 = request.getParameter("name");
+				String tel2 = request.getParameter("tel");
+				String d2 = request.getParameter("d");
+				
+				String sname = request.getParameter("sname");
+				try {
+					tidao4 = new TelInfoDAO();
+				}catch(ClassNotFoundException | SQLException e) {
+					e.printStackTrace();
+				}
+				tidao4.update_all(id2, name2, tel2, d2, sname);
+				//전부 update하는 메소드
+				
+				str="getAllInfo.jsp";
+				break; 
+		  
+		*/
+		
+		
+		
 		
 		
 		//RequestDispatcher rd1 = request.getRequestDispatcher("../Payment/total_payment.jsp");

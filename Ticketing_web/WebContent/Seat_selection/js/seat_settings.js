@@ -408,10 +408,10 @@ $('.' + settings.seatCss).click(function () {
 		var seats = []; //문자열 배열 형태로 넘겨줄 것이다.
 		temp = element.innerText; //innerHTML
 		temp2 = temp.replace(/(<br>|<br\/>|<br \/>)/g, '\r\n'); //<br> 태그를 줄바꿈으로 바꿈.
-		temp2.trim();
-		
+		temp2.trim();	
+
 		seats.push = temp.split('\r\n');
-		return seats;
+		return seats;		
 		}
 		
 		var temp = getInnerText();
