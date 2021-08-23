@@ -1,10 +1,12 @@
 package TicketDAO;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import TicketDBConn.TicketDBConn;
 import TicketVO.TicketVO;
@@ -67,8 +69,60 @@ public class TicketDAO {
 			System.out.println("insert Exception");
 			return false;
 		}
-		return true;
+		return true;		
+	}
+	
+	/////////////////////////////////////////////////////////////
+	public String getPID(String pname, String pdate, String ptime) throws SQLException{
+		String sql = "select p_id from performance_each where p_name =? and p_date=? and p_time=?"; //공연이름, 날짜, 시간을 바탕으로 p_id를 가져온다.
+		String p_id = null;
 		
+		pstmt = con.prepareStatement(sql);
+		pstmt.setString(1,pname); //마리앙뚜아네트-이름
+		//날짜값은 
+		int year = Integer.parseInt(pdate.substring(0,4));
+		int month = Integer.parseInt(pdate.substring(5,7));
+		int day = Integer.parseInt(pdate.substring(8,10));
+		
+		Date d = new Date(year,month,day);
+		pstmt.setDate(2, d); //날짜 - sql식으로 변경			
+		pstmt.setString(3, ptime); //시간- 14:00			
+		 
+		rs = pstmt.executeQuery();
+		if(rs.next()) {
+			p_id = rs.getString("p_id");
+		}else {
+			p_id = null; //못찾았다면
+		}
+		return p_id;
+	}
+	
+	public List<Integer> showSeat(String p_id) {
+		List<Integer> tiarray = new ArrayList<Integer>();
+		String sql = "select vip, r, s from performance_each where p_id=?";		
+		try {
+		pstmt = con.prepareStatement(sql); 
+		pstmt.setString(1, p_id);
+		rs = pstmt.executeQuery();
+		System.out.println("82번째");
+		while(rs.next()) {
+			/*System.out.println("while 안에");
+			int vip = rs.getInt(1);
+			int r = rs.getInt(2);
+			int s = rs.getInt(3);*/
+			
+			tiarray.add(rs.getInt(1));
+			tiarray.add(rs.getInt(2));
+			tiarray.add(rs.getInt(3));
+		}
+		
+		}catch(SQLException e){
+			e.printStackTrace();
+			System.out.println("catch입니다");
+			return null;
+		}
+		System.out.println("아닙니다");
+		return tiarray;
 	}
 	
 	

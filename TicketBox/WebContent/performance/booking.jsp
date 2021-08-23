@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,47 +59,95 @@ String MovieName= request.getParameter("name");
 		        </div>
 		    </header> 		
 <!-- ------------------------------header 끝-------------------------------- -->
+		
 		<div id="musicalImg">
-			<img src="image/<%=MovieName%>.jpg"> <!-- 이부분을 이미지를 바꿔야함. -->
+			<img src="image/<%=MovieName %>.jpg"> <!-- 이부분을 이미지를 바꿔야함. --> 
+			<!-- var url = 'action.jsp?param='+encodeURI(str); -->
 		</div>
+		
 
-<form action = "TicketInsert" method="post" > <!-- 데이터를 입력받는 곳 -->
-	<input type="hidden" value="<%=MovieName %>" name="ticketName"/>
+
+<input type="hidden" value="<%=MovieName %>" name="MovieName"/>
 	<div id="select">
 		<div id="selectDate">
-			<input type="date" id="input_date" name="selectedDate"> 
+			<input type="date" id="input_date" name="MovieDate"> 
 		</div>
 
 		<div id="selectTime">
 			<ul>
 				<li>
-					<div class="hour1" name = "selectedTime1">
-						<button type="submit" value= "14:00" name="MovieTime" >14시 00분</button>
+					<div class="hour1">
+						<a name="MovieTime" href="javascript:void(0);" onclick="showSeat(1400)">14시 00분</a>
 					</div>
 				</li>
 				<li>
-					<div class="hour1" name = "selectedTime2">
-						<button type="submit" value="18:00" name="MovieTime">18시 00분</button>	
+					<div class="hour1">
+						<a name="MovieTime" href="javascript:void(0);" onclick="showSeat(1600)">16시 00분</a>	
 					</div>
 				</li>
 				<!-- <li>
-					<div class="hour1" name = "selectedTime3">
-						<button type="submit" value="19시20분" name="MovieTime">19시 20분</button>
+					<div class="hour1">
+						<a name="MovieTime" href="javascript:void(0);" onclick="showSeat(1920)">19시 20분</a>
 					</div>
 				</li> -->
 			</ul>
-
-		
-		</div>
-		
-		<div id="currentSeat">
-			<!-- 이자리에 좌석  -->
-
-
-		</div>
+			<script type="text/javascript">
 			
+				function showSeat(data){
+		           var name = $('input[name=MovieName]').val();
+	               var date = $('#input_date').val();
+	               var time = data;
+	               
+	               console.log("영화제목 : " + name);
+	               console.log("상영날짜 : " + date);
+	               console.log("상영시간 : " + time);
+	               
+	               $.ajax({
+	                   url : 'showSeat',
+	                   type : 'post',
+	                   data : {
+	                      MovieName : name,
+	                      MovieDate : date,
+	                  	  MovieTime : time
+	                   },
+	                   success : function(data) {
+	          
+	                    console.log("ajax 통신 성공");
+	                    console.log(data);
+	                    if(data!=null){
+                 	      	$("#vip").html("vip 잔여석 : " + data.vip);
+	                    	$("#r").html("R 잔여석 : " + data.r);
+	                    	$("#s").html("S 잔여석 : " + data.s);
+	                    }
+	                   },
+	                   error : function(data, status, opt) {
+	                      alert("code:"+data.status+"\n"+"message:"+data.responseText+"\n"+"error:"+opt);
+	                   }
+	                }); //ajax-end
+	              }
+			</script>
+			
+		</div>
+			<div id="currentSeat" ><!-- 이자리에 좌석  -->
+				
+				 <li>
+					<lu id="vip"> 	 </lu><br>
+					<lu id="r">		 </lu><br>
+					<lu id="s"> 	 </lu><br>
+				</li>
+				 
+			</div>
 	</div>
-</form>
+	
+	<div>
+			<button type="submit" id="bookingButton">예매하러가기</button>
+	</div>
+
+
+
+
+
+
 <!-- -----------------------------footer시작----------------------------------- -->
 	<footer>
 		        <div>

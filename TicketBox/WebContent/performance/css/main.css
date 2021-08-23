@@ -322,7 +322,7 @@ li.second {
 	/*상대위치*/
 	position: relative;
 
-	margin: 0px auto;
+	margin: 2px auto;
 	margin-bottom:10px;
 	padding: 10px;	
 	border-width: 2px;
@@ -334,6 +334,8 @@ li.second {
 	float:left;
 	text-align:center;
 	flex:1;
+	margin:5px;
+
 }
 	
 #select > #selectDate > #input_date{
@@ -349,6 +351,16 @@ li.second {
 	
 }
 
+ #currentSeat{
+	border:2px double grey;
+	border-radius::2em;
+
+	
+}
+#bookingButton{
+	position:relative;
+	left: 1250px;
+}
 /*------------------------------------------------------------------*/
 					/*selectMusical.jsp 부분	*/
 .main_poster {
@@ -358,7 +370,7 @@ li.second {
 					
 					
 					
-/*---------------------------------------------------------------------*/
+
 
 
 

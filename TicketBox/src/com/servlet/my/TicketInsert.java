@@ -15,7 +15,9 @@ import TicketDAO.TicketDAO;
 /*ticketName varchar2(30) not null,
 MovieDate varchar2(20) not null,
 MovieTime varchar2(20) not null,
-MovieSeat varchar2(20) not null */ 
+MovieSeat varchar2(20) not null */
+import seatInfoDAO.SeatInfoDAO;
+import seatInfoVO.SeatInfoVO; 
 
 /////////////////////////////////////////////////////////////
 
@@ -49,6 +51,8 @@ public class TicketInsert extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		TicketDAO td1= null;
+		SeatInfoVO sv1 = null;
+		
 		try {
 			td1 = new TicketDAO();
 		} catch (ClassNotFoundException | SQLException e) {
@@ -57,26 +61,38 @@ public class TicketInsert extends HttpServlet {
 		}
 		
 		int id = 111;   //Integer.parseInt(request.getParameter("id"));
-		String ticketName = request.getParameter("ticketName");
-		String MovieDate = request.getParameter("selectedDate");
-		String MovieTime = request.getParameter("MovieTime"); 
-		String MovieSeat = "A3"; //request.getParameter("MovieSeat");
+		String ticketName = request.getParameter("ticketName"); //공연 이름
+		String ticketDate = request.getParameter("selectedDate"); //선택한 날짜
+		String ticketTime = request.getParameter("MovieTime"); //선택한 시간 
+		//String MovieSeat = "A3"; //request.getParameter("MovieSeat");
 		
-		Boolean b = td1.insertTicketData(id, ticketName, MovieDate, MovieTime, MovieSeat);
+		//Boolean b = td1.insertTicketData(id, ticketName, MovieDate, MovieTime, MovieSeat);
+		//String getPID(String pname, String pdate, String ptime)
+		String p_id=null;
+		try {
+			p_id = td1.getPID(ticketName,ticketDate,ticketTime);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} //pid 값 리턴 받음
 		
+		request.setAttribute("pid", p_id);
+		request.setAttribute("pname", ticketName);
+				
 		
 		//넘어가는지 확인하기 위해.
-		 System.out.println(MovieDate);
-		 System.out.println(MovieTime);
+		 System.out.println(ticketDate);
+		 System.out.println(ticketTime);
 		 System.out.println(ticketName);
 		 System.out.println("--------------");
 		 
+		
 		 
 		//결과가 잘 나왔는지 확인하려면 result1의 값을 설정한다. //여기는 입력확인을 위한 페이지
-		if(b) {request.setAttribute("result1", "입력잘됐음");
+		/*if(b) {request.setAttribute("result1", "입력잘됐음");
 		}
 		else {request.setAttribute("result1", "입력오류");
-		}
+		}*/
 		RequestDispatcher rd1 = request.getRequestDispatcher("result.jsp");
 		rd1.forward(request, response);
 	}

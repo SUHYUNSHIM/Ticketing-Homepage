@@ -74,7 +74,7 @@
 		        </div>
 		        
 		        <div class=main_poster id=mari>
-		            <a href = "booking.jsp?name=mari">
+		            <a href = "booking.jsp?name=mari"> <!--p_id와의 연결성을 위해서 수정 ***********************  -->
 		               <img src="image/mari.jpg" alt="이미지대체 텍스트">
 		                <h3>마리 앙뚜아네트</h3>
 		            </a>

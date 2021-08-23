@@ -21,14 +21,23 @@ public class TicketVO {
 	private String MovieDate;
 	private String MovieTime;
 	private String MovieSeat;
-	
-	public TicketVO() {
+	private int vip;
+	private int r;
+	private int s;
+	public TicketVO(int id, String ticketName, String movieDate, String movieTime, String movieSeat, int vip, int r,
+			int s) {
+		super();
+		this.id = id;
+		this.ticketName = ticketName;
+		MovieDate = movieDate;
+		MovieTime = movieTime;
+		MovieSeat = movieSeat;
+		this.vip = vip;
+		this.r = r;
+		this.s = s;
 	}
-	public TicketVO(int id, String ticketName, String MovieDate, String MovieTime, String MovieSeat) {
-		this.id= id;
-		this.MovieDate = MovieDate;
-		this.MovieTime = MovieTime;
-		this.MovieSeat = MovieSeat;
+	public TicketVO(int id2, String ticketName2, String movieDate2, String movieTime2, String movieSeat2) {
+		// TODO Auto-generated constructor stub
 	}
 	public int getId() {
 		return id;
@@ -60,4 +69,27 @@ public class TicketVO {
 	public void setMovieSeat(String movieSeat) {
 		MovieSeat = movieSeat;
 	}
+	public int getVip() {
+		return vip;
+	}
+	public void setVip(int vip) {
+		this.vip = vip;
+	}
+	public int getR() {
+		return r;
+	}
+	public void setR(int r) {
+		this.r = r;
+	}
+	public int getS() {
+		return s;
+	}
+	public void setS(int s) {
+		this.s = s;
+	}
+	
+	
+
 }
+
+
