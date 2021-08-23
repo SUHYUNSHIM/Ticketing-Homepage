@@ -32,14 +32,14 @@ String MovieName= request.getParameter("name");
 		
 		            <!--메뉴-->
 		            <ul>
-		                <li><a href="ticketmain.jsp">티켓박스 홈</a></li>
+		                <li><a href="../main/ticketmain.jsp">티켓박스 홈</a></li>
 		                <li><a href="#">뮤지컬</a></li>
 		                <li><a href="#">콘서트</a></li>
 		                <li><a href="#">마이페이지</a></li>
-		                <li><a href="#">공연 후기 게시판</a>
-		                <li><a href="#">*Login</a></li>
-		               	<li><a href="#">*Join</a></li>
-		               	<li><a href="#">*Join</a></li>
+		                <li><a href="${pageContext.request.contextPath}/board/BoardList">공연 후기 게시판</a>
+		                <li><a href="${pageContext.request.contextPath}/login_signup/index.jsp">Login</a></li>
+		               	<li><a href="${pageContext.request.contextPath}/login_signup/Logout">Logout</a></li>
+		               	<!-- <li><a href="#">*Join</a></li> -->
 		            </ul>
 		
 		            <select>

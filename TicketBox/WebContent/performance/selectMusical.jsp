@@ -8,6 +8,15 @@
 <link href="css/main.css" rel="stylesheet" type="text/css">
 <script src="js/jquery-1.7.2.min.js"></script>
 <script src="js/main.js"></script>
+
+<%
+	String sessionId = (String)session.getAttribute("id");
+	String sessionName = (String)session.getAttribute("name");
+	if(sessionId == null ||sessionName == null){
+		response.sendRedirect("../login_signup/index.jsp");
+	}
+
+%>
 </head>
 <body>
    			<header>
@@ -22,8 +31,8 @@
 		                <li><a href="#">콘서트</a></li>
 		                <li><a href="#">마이페이지</a></li>
 		                <li><a href="${pageContext.request.contextPath}/board/BoardList">공연 후기 게시판</a>
-		                <li><a href="${pageContext.request.contextPath}/login_signup/index.jsp"">Login</a></li>
-		               	<li><a href="${pageContext.request.contextPath}/login_signup/Logout"">Logout</a></li>
+		                <li><a href="${pageContext.request.contextPath}/login_signup/index.jsp">Login</a></li>
+		               	<li><a href="${pageContext.request.contextPath}/login_signup/Logout">Logout</a></li>
 		                
 		            </ul>
 		
