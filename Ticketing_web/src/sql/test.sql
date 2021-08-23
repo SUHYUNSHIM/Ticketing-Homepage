@@ -68,7 +68,7 @@ create table payment(
     pay_ticket varchar2(10),
     total number(6)
 );
-commit;
+cnullommit;
 select * from payment;
 
 ------[°Ô½ÃÆÇ]-----------------------------

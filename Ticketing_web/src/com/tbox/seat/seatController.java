@@ -53,7 +53,7 @@ public class seatController extends HttpServlet {
 		String seat_class[] = {"VIP","R","S"};
 		while(true) {
 			//seats
-			
+			//seats 일치하는 단어가 있으면 자른다. 자른 문자열의 원소로 들어간다.
 		}
 	
 		

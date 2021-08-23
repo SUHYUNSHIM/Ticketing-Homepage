@@ -423,31 +423,7 @@ $('.' + settings.seatCss).click(function () {
 	////////////////////////////////////////////////////
 	
 	});
-	//Seat_main에 있던 것 옮김.-------------------------------------------------//
-	/*function getInnerText(){
 	
-	var seatSelect = document.seatSelect; //form 태그와 연결.
-	
-	var element = document.getElementById('s_seat'); //s_seat이라는  div 태그 안의 텍스트 내용을 반환하도록.
-	///return element.innerHTML; //문자열 	
-	var temp;
-	var temp2;
-	var seats = []; //문자열 배열 형태로 넘겨줄 것이다.
-	temp = element.innerText; //innerHTML
-	temp2 = temp.replace(/(<br>|<br\/>|<br \/>)/g, '\r\n'); //<br> 태그를 줄바꿈으로 바꿈.
-	//temp2.trim();
-	
-	seats.push = temp.split('\r\n');
-	return seats;
-	}
-	
-	var temp = getInnerText();
-	console.log("값이 제대로 들어갔는가"+temp);
-	console.log("배열의 사이즈"+temp.length);
-	//jquery
-	var jb = $('#s_seat').text();
-	$('#select_complete').val(jb);
-*/
 	 
 	///////////////////////////////////////////////////////////////////////////////////
 	$('#btnShow').click(function () { 
