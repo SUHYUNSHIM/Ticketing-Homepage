@@ -22,3 +22,6 @@ gender varchar2(10),
 address varchar2(100),
 email varchar2(50)
 );
+
+
+select * from member;

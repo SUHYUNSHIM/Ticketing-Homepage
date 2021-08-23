@@ -55,7 +55,7 @@
 			
 		    
 			<div id="gogo">
-			 	<div><a href="#"><h3>뮤지컬 예매하러 ▶</h3></a></div>
+			 	<div><a href="${pageContext.request.contextPath}/performance/selectMusical.jsp"><h3>뮤지컬 예매하러 ▶</h3></a></div>
 			 	<div><a href="#"><h3>콘서트 예매하러 ▶</h3></a></div>
 				<div><a href="#"><h3>마이페이지 ▶</h3></a></div>
 				<div><a href="${pageContext.request.contextPath}/board/BoardList"><h3>공연 후기 게시판 ▶</h3></a></div>				

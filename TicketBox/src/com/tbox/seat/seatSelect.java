@@ -15,14 +15,15 @@ import seatInfoVO.SeatInfoVO;
 /**
  * Servlet implementation class seatController
  */
-@WebServlet("/seatController")
-public class seatController extends HttpServlet {
+@WebServlet("/seatSelect")
+//@WebServlet("*.do") 
+public class seatSelect extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public seatController() {
+    public seatSelect() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,6 +35,7 @@ public class seatController extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		doPost(request,response);
+		
 	}
 
 	/**
@@ -72,6 +74,10 @@ public class seatController extends HttpServlet {
 		String s2_id = seatArr[1];
 		String s3_id = seatArr[2];
 		
+		request.setAttribute("s1_id", s1_id);
+		request.setAttribute("s2_id", s2_id);
+		request.setAttribute("s3_id", s3_id);
+		
 		
 		/*
 		 TelInfoDAO tidao4 =null;
@@ -99,8 +105,8 @@ public class seatController extends HttpServlet {
 		
 		
 		
-		//RequestDispatcher rd1 = request.getRequestDispatcher("../Payment/total_payment.jsp");
-		//rd1.forward(request, response);
+		RequestDispatcher rd1 = request.getRequestDispatcher("../Payment/total_payment.jsp");
+		rd1.forward(request, response);
 		
 	}
 

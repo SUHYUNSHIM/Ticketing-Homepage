@@ -1,0 +1,93 @@
+@font-face {
+     font-family: 'S-CoreDream-3Light';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+h5,option{
+	font-family: 'S-CoreDream-3Light';
+	font-size: 14px;
+}
+/*결제 수단 및 결제 관련 영역 */
+.content-box{
+	box-sizing: content-box;
+	width:70%;
+	height:500px;
+	padding: 20px;
+	border: 1px solid grey;
+	background-color: white;
+	float:left;
+	margin: 5px;
+	text-align: center;
+	
+	border-top-left-radius:5px;
+	border-bottom-left-radius:5px;
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+}
+
+.selected_info{
+	width: 20%;
+	height: 520px; /*padding... 높이 수동 조작  */
+	padding:10px;
+	border:1px solid grey;
+	background-color: white;
+	margin: 5px;
+	float: left;	
+	
+	border-top-left-radius:5px;
+	border-bottom-left-radius:5px;
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+	
+}
+.selected_info> div{
+	height: 150px;
+	background-color:#E5E5E5;
+	box-sizing: border-box;			
+}
+.selected_info .seat{
+	width: 100%;
+	font-family: 'S-CoreDream-3Light';	
+	font-size: 14px;	
+} 
+.selected_info .s_cost{
+	width: 100%;
+	font-family: 'S-CoreDream-3Light';	
+	font-size: 13px;
+}
+
+#select_complete{  /*선택완료 버튼  */
+	font-family: 'S-CoreDream-3Light';
+	font-weight: bold;	
+	
+	border-top-left-radius:5px;
+	border-bottom-left-radius:5px;
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+	
+	background-color: #B1B1B1;
+	width: 100%;
+	height: 50px;
+}
+#select_complete:hover{
+	color: #EAEAEA;
+	background-color: #F5A6B9;
+}
+
+li.resizing{
+		float:left;		
+		padding:10px;
+		maring:1ppx;
+}
+/*이미지 리사이징  */
+img.resizing{
+	float:right;
+	width:30px;
+	height:30px;
+	padding:10px;
+	maring:1ppx;
+}
+
+
+
