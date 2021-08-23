@@ -22,17 +22,26 @@
 <%
 String MovieName= request.getParameter("name");
 %>
+<%
+	String sessionId = (String)session.getAttribute("id");
+	String sessionName = (String)session.getAttribute("name");
+	if(sessionId == null ||sessionName == null){
+		response.sendRedirect("../login_signup/index.jsp");
+	}
+
+%>
+
 </head>
 
 <body>
    			<header>
 		        <div id="menuBar">
 		            <!--로고-->
-		            <a href="ticketMain.jsp" class="logo"></a>
+		            <a href="../main/ticketMain.jsp" class="logo"></a>
 		
 		            <!--메뉴-->
 		            <ul>
-		                <li><a href="../main/ticketmain.jsp">티켓박스 홈</a></li>
+		                <li><a href="../main/ticketMain.jsp">티켓박스 홈</a></li>
 		                <li><a href="#">뮤지컬</a></li>
 		                <li><a href="#">콘서트</a></li>
 		                <li><a href="#">마이페이지</a></li>
@@ -65,19 +74,19 @@ String MovieName= request.getParameter("name");
 			<ul>
 				<li>
 					<div class="hour1" name = "selectedTime1">
-						<button type="submit" value= "11시20분" name="MovieTime" >11시 20분</button>
+						<button type="submit" value= "14:00" name="MovieTime" >14시 00분</button>
 					</div>
 				</li>
 				<li>
 					<div class="hour1" name = "selectedTime2">
-						<button type="submit" value="15시20분" name="MovieTime">15시 20분</button>	
+						<button type="submit" value="18:00" name="MovieTime">18시 00분</button>	
 					</div>
 				</li>
-				<li>
+				<!-- <li>
 					<div class="hour1" name = "selectedTime3">
 						<button type="submit" value="19시20분" name="MovieTime">19시 20분</button>
 					</div>
-				</li>
+				</li> -->
 			</ul>
 
 		

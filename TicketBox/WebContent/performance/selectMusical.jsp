@@ -22,7 +22,7 @@
    			<header>
 		        <div id="menuBar">
 		            <!--로고-->
-		            <a href="ticketMain.jsp" class="logo"></a>
+		            <a href="../main/ticketMain.jsp" class="logo"></a>
 		
 		            <!--메뉴-->
 		            <ul>
