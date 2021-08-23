@@ -48,13 +48,24 @@ public class seatController extends HttpServlet {
 		System.out.println("원래 나와야 하는 것: "+paramValue[0]);*/
 		
 		String seats =  request.getParameter("seats");
-		System.out.println(seats);
+		System.out.println("좌석들 "+ seats);
 		
-		String seat_class[] = {"VIP","R","S"};
-		while(true) {
-			//seats
-			//seats 일치하는 단어가 있으면 자른다. 자른 문자열의 원소로 들어간다.
+		//char seat_class[] = {'V','R','S'}; //VIP이지만 첫글자 V 기준으로 자르려고.
+		String[] seatArr = {};
+		//char[] arr = seats.toCharArray(); //문자열을 문자 배열로 변환.
+		if(seats.length() !=0) { //입력받은 값이 0이 아니라면 			
+			seatArr = seats.split("  ");
+			
+			for(int i=0;i<seatArr.length;i++) {
+				System.out.println(seatArr[i]);
+			}
+		}			
+		
+		else {
+			//아무것도 선택하지 않고 다음을 눌렀을 때는 또 따로 예외처리 해야 한다.
+			System.out.println("좌석 선택해야지!");
 		}
+		
 	
 		
 		

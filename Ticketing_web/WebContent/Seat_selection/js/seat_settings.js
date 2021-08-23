@@ -394,7 +394,7 @@ $('.' + settings.seatCss).click(function () {
 	    console.log("첫번째 좌석: "+str[0]);
 	    console.log("두번째 좌석: "+str[1]);
 	    console.log("세번쨰 좌석: "+str[2]);
-	    $('#s_seat').html(str.join('<br>')); //줄바꿈 join으로 들어간다. 문자열로 받았지만 html에 써지는 것은 text 타입이다.	    
+	    $('#s_seat').html(str.join('  <br>')); //줄바꿈 join으로 들어간다. 문자열로 받았지만 html에 써지는 것은 text 타입이다.	    
 	}
 	///////////////////////////////////////////////////////////////////////
 	function getInnerText(){
@@ -416,7 +416,7 @@ $('.' + settings.seatCss).click(function () {
 		
 		var temp = getInnerText();
 		console.log("값이 제대로 들어갔는가"+temp);
-		console.log("배열의 사이즈"+temp.length);
+		//console.log("배열의 사이즈"+temp.length);
 		//jquery
 		var jb = $('#s_seat').text();
 		$('#select_complete').val(jb);
