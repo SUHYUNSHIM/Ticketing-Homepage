@@ -11,13 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.google.gson.*;
-import com.google.gson.Gson;
-/*import org.json.simple.JSONObject; 
-import org.json.simple.parser.JSONParser;*/
-import org.json.simple.parser.JSONParser;
-
-import org.json.simple.JSONObject;
-import org.json.simple.JSONArray;
 
 import TicketDAO.TicketDAO;
 
@@ -82,9 +75,7 @@ public class showSeat extends HttpServlet {
 		json.addProperty("s", aa.get(2));
 		
 		
-		pw.print(json.toString());
-
-		
+		pw.print(json.toString());		
 	}
 
 }

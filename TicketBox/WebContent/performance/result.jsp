@@ -8,6 +8,6 @@
 </head>
 <body>  <!--  나는 result.jsp -->
 ${result1}<br>
-<a href="ticketMain.jsp"> 첫 화면으로</a>
+<a href="../main/ticketMain.jsp"> 첫 화면으로</a>
 </body>
 </html>

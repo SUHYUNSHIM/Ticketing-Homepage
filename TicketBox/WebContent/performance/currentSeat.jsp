@@ -12,6 +12,6 @@ String MovieName= request.getParameter("name");
 <body>
 	<h1> 현재 <%=MovieName %> 의 잔여석 정보</h1>
 	
-	<
+	<!-- < -->
 </body>
 </html>

@@ -143,7 +143,7 @@ String MovieName= request.getParameter("name");
 			<button type="submit" id="bookingButton">예매하러가기</button>
 	</div>
 
-
+	
 
 
 

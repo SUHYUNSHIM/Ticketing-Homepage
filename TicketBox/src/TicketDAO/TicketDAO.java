@@ -27,7 +27,7 @@ public class TicketDAO {
 	}
 	
 	//ticket 정보 다 받아오기    //쓸일이 없을듯..
-	public ArrayList<TicketVO> getAllInfo() throws SQLException{
+/*	public ArrayList<TicketVO> getAllInfo() throws SQLException{
 	ArrayList<TicketVO> tiarray = new ArrayList<TicketVO>();
 	String sql = "select * from ticket1 order by Id";
 	pstmt= con.prepareStatement(sql);
@@ -45,12 +45,12 @@ public class TicketDAO {
 	}
 	return tiarray;
 	
-	}
+	}*/
 	
 	//티켓정보 입력
 	/* 수업방식은 한번에 직접 텍스트를 쳐서 하는 방식인데, 내가 하려는 방식은 해당 데이터를 누르면 그 데이터가 전달되게 해야함 */
 	/* 티켓에 들어가야 할 내용은 기존에 입력되어 있는 id*/
-	/* 그리고 뮤지컬 제목, 뮤지컬 날짜, 뮤지컬 시간,      -- 좌석--*/
+	/* 그리고 뮤지컬 제목, 뮤지컬 날짜, 뮤지컬 시간,      -- 좌석--*//////////////////////////////////////////////안쓴다.
 	public boolean insertTicketData(int Id, String ticketName, String MovieDate, String MovieTime, String MovieSeat) {
 		String sql="insert into ticket1 values(?,?,?,?,?)";
 		

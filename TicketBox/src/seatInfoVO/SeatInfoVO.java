@@ -14,7 +14,7 @@ public class SeatInfoVO {
 	private String s3_id; //좌석번호3
 	
 	
-	//좌석 한 번에 받을 것이라서 3개씩 넣어야. null이 되는 경우를 따로 고려해야 한다.
+	//좌석 한 번에 받을 것이라서 3개씩 넣어야. null이 되는 경우를 따로 고려해야 한다. 넣는 자리는 3개인데 두개를 선택한 경우의 수도 고려------------------생성자 새로 만들기
 	//선택한 좌석 수 칼럼 count로 몇 석인지 구할 수 있음 --> s1,s2,s3중에서 null이 되는 칼럼을 count 세야 한다.
 	public SeatInfoVO(String u_id, String s1_id, String s2_id, String s3_id, String p_id, String p_name) {
 		//super();

@@ -14,5 +14,6 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="C:/Users/suhyun/Ticketing/TicketBox/WebContent/WEB-INF/lib/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/eclipse-jee-photon-R-win32-x86_64/eclipse/plugins/com.google.gson_2.8.2.v20180104-1110.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
