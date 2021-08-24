@@ -35,6 +35,7 @@ create table performance(
 commit;
 insert into performance values('마리앙뚜아네트','김주연,이조연,박조연','image/url');
 insert into performance values('헤드윅','최주연, 강조연,서조연','image/url');
+insert into performance values('모차르트','정주연, 나조연, 문조연','image/url');
 select * from performance;
 --------------------------------공연 회차 테이블--------------------------------
 create table performance_each(
@@ -51,6 +52,11 @@ insert into performance_each values('MA08281800','마리앙뚜아네트',TO_DATE('2021-
 insert into performance_each values('MA08251400','마리앙뚜아네트',TO_DATE('2021-08-25','yyyy-mm-dd'),'14:00',80,150,150);
 commit;
 insert into performance_each values('HE08281400','헤드윅',TO_DATE('2021-08-28','yyyy-mm-dd'),'14:00',80,150,150);
+insert into performance_each values('HE08281800','헤드윅',TO_DATE('2021-08-28','yyyy-mm-dd'),'18:00',80,150,150);
+
+insert into performance_each values('MO08281400','모차르트',TO_DATE('2021-08-28','yyyy-mm-dd'),'14:00',80,150,150);
+insert into performance_each values('MO08281800','모차르트',TO_DATE('2021-08-28','yyyy-mm-dd'),'18:00',80,150,150);
+
 select * from performance_each;
 commit;
 ----------------------------------------------좌석 선택 테이블-----------------------------

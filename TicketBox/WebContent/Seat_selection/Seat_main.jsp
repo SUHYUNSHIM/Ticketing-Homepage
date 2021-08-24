@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ page import="TicketVO.TicketVO"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,13 +34,16 @@ String MovieName= request.getParameter("name");
 	String pname = (String)session.getAttribute("pname");
 	//out.println(pname);
 	/* session.setAttribute("pname",MovieName); */
+	
+	TicketVO tv1 = new TicketVO();
+	out.print("p_id"+ tv1.getP_id());
 %>
 
 <body>
 <div class ="info" style="font-family:'S-CoreDream-3Light'"><%=pname %> &nbsp;&nbsp;&nbsp; <!--공연정보, 선택 창 상단영역  --> <!--공연 제목은 추후 사용자가 선택한 공연의 이름을 전 페이지에서 가져오는 것으로 한다.-->
 <select name="perform_list">
-	<option value="8월 20일 14:00시">8월 20일 14:00시<br> 
-	<option value="8월 20일 19:00시">8월 20일 19:00시<br>
+	<option value="8월 20일 14:00시">8월 28일 14:00<br> 
+	<option value="8월 20일 18:00시">8월 28일 18:00<br>
 	<!--회차 정보를 이전 페이지에서 가져와야 한다. 이전 페이지와 연동된 공연정보 DB  -->
 </select>
 </div>
@@ -60,7 +64,7 @@ String MovieName= request.getParameter("name");
 	<img src="images/cube.png" class="resizing"> <!--이미지를 클릭하면 메인 홈으로 이동할 수 있도록 링크를 달 예정. -->
 	
 	<!--남아있는 자리  -->
-	<h5>좌석등급/잔여석</h5>
+	<h5>좌석등급/잔여석</h5> 
 	<div class ="p_seat">
 		<div style="white-space: pre-line;float:left;">		
 		<ul id="seatDescription" > <!--등급, 잔여석 기술  -->

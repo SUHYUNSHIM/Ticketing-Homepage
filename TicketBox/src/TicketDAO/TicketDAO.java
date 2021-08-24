@@ -96,7 +96,7 @@ public class TicketDAO {
 		}
 		return p_id;
 	}
-	
+	////////////////////////////////////////////////////////////////////////////////////////
 	public List<Integer> showSeat(String p_id) {
 		List<Integer> tiarray = new ArrayList<Integer>();
 		String sql = "select vip, r, s from performance_each where p_id=?";		
