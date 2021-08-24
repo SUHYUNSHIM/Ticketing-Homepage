@@ -28,7 +28,24 @@ String MovieName= request.getParameter("name");
 	if(sessionId == null ||sessionName == null){
 		response.sendRedirect("login_signup/index.jsp");
 	}
-
+	String pname;
+	
+	if (MovieName.equals("mozart")){
+		pname = "모차르트";
+		session.setAttribute("pname",pname);
+	}
+	else if(MovieName.equals("mari")){
+		pname = "마리앙뚜아네트";
+		session.setAttribute("pname",pname);
+	}
+	else if(MovieName.equals("hedwig")){
+		pname = "헤드윅";
+		session.setAttribute("pname",pname);
+	}
+	else if(MovieName.equals("Excalibur")){
+		pname = "엑스칼리버";
+		session.setAttribute("pname",pname);
+	}
 %> 
 
 </head>
@@ -63,10 +80,9 @@ String MovieName= request.getParameter("name");
 		<div id="musicalImg">
 			<img src="image/<%=MovieName %>.jpg"> <!-- 이부분을 이미지를 바꿔야함. --> 
 			<!-- var url = 'action.jsp?param='+encodeURI(str); -->
-		</div>
-		
+		</div>		
 
-<form action=seat_Main.jsp>
+<form action= "Seat_selection/Seat_main.jsp">
 <input type="hidden" value="<%=MovieName %>" name="MovieName"/>
 	<div id="select">
 		<div id="selectDate">
@@ -85,11 +101,11 @@ String MovieName= request.getParameter("name");
 						<a name="MovieTime" href="javascript:void(0);" onclick="showSeat(1800)">18시 00분</a>	
 					</div>
 				</li>
-				<li>
+			<!-- 	<li>
 					<div class="hour1">
 						<a name="MovieTime" href="javascript:void(0);" onclick="showSeat(1920)">19시 20분</a>
 					</div>
-				</li>
+				</li> -->
 			</ul>
 			<script type="text/javascript">
 			</script>
@@ -106,11 +122,13 @@ String MovieName= request.getParameter("name");
 				 
 			</div>
 	</div>
+	<%-- ${sessionScope.id}님 --%>
 	
 	<div>
-			<button type="submit" id="bookingButton">예매하러가기</button>
+			<button type="submit" id="bookingButton" 
+			onclick="window.open('Seat_selection/Seat_main.jsp','name','resizable=no width=1100 height=615');return false"> 예매하기</button>
 	</div>
-
+	<!-- <button id="p_info" type="submit" onclick="window.open('Seat_main.jsp','name','resizable=no width=1100 height=615');return false">예매하기</button> -->
 	</form>
 
 

@@ -12,9 +12,7 @@
 <style>
 
 </style>
-</head>
-
-   			
+</head>   			
 <body>			
    			<header>
 		        <div id="menuBar">
@@ -108,13 +106,11 @@
 		              <img src="../image/66.png" alt="이미지대체 텍스트">
 		            </a>
 		          
-		        </div>	       
-		
+		        </div>		
 		    </div>
 	
 	
-	<footer>
-			
+	<footer>			
 		        <div>
 		             <img src="../image/ticket7.png" alt="이미지대체 텍스트">
 		            <p>
@@ -129,8 +125,7 @@
 		                    <option>관련사이트</option>
 		                </select>
 		            </div>
-		        </div>
-	
+		        </div>	
 	</footer>
 	
 </body>
