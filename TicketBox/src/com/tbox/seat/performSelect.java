@@ -1,6 +1,7 @@
 package com.tbox.seat;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -39,16 +40,21 @@ public class performSelect extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
-		String id = request.getParameter("user_id");
-		String p_id = request.getParameter("p_id");
-		String p_name = request.getParameter("p_name");
 		
-		System.out.println("아이디"+id);
-		System.out.println("공연 아이디"+p_id);
-		System.out.println("공연 이름"+p_name);
+		//여기서 좌석 정보를 null로 업데이트 해야 한다.--- DAO 사용.***************************************************
 		
-		RequestDispatcher rd1 = request.getRequestDispatcher("Seat_main.jsp");
-		rd1.forward(request, response);
+		
+		/*RequestDispatcher rd1 = request.getRequestDispatcher("../Seat_selection/Seat_main.jsp");
+		rd1.forward(request, response);*/
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter writer = response.getWriter();
+		
+		String PageUrl = request.getContextPath()+"/Seat_selection/Seat_main.jsp";
+		//String PageUrl = request.getContextPath()+"/Payment/total_payment.jsp";
+		writer.println("<script>alert('선택한 좌석이 삭제됩니다'); location.href='"+PageUrl+"';</script>"); 
+		writer.close();
+		
+		response.sendRedirect("../Seat_selection/Seat_main.jsp");
 	}
 
 }

@@ -27,7 +27,7 @@ String MovieName= request.getParameter("name");
 	} */
 	int vip_left = (Integer)session.getAttribute("vip_left");
 	int r_left = (Integer)session.getAttribute("r_left");
-	int s_left = (Integer)session.getAttribute("s_left");
+	int s_left = (Integer)session.getAttribute("s_left");	
 %> 
 </head>
 <%
@@ -35,15 +35,20 @@ String MovieName= request.getParameter("name");
 	String pname = (String)session.getAttribute("pname");
 	String p_id = (String)session.getAttribute("p_id");
 	
+	//날짜
+	String p_date = p_id.substring(2,4)+"월 "+p_id.substring(4,6)+"일";
+	String p_time = p_id.substring(6,8)+"시 "+ p_id.substring(8,10)+"분"; //시간
+	String p_info = p_date + " "+ p_time;
+	
 %>
 
 <body>
-<div class ="info" style="font-family:'S-CoreDream-3Light'"><%=pname %><%=p_id %> &nbsp;&nbsp;&nbsp; <!--공연정보, 선택 창 상단영역  --> <!--공연 제목은 추후 사용자가 선택한 공연의 이름을 전 페이지에서 가져오는 것으로 한다.-->
-<select name="perform_list">
+<div class ="info" style="font-family:'S-CoreDream-3Light'"><%=pname %>&nbsp;&nbsp;<%=p_info %> <!--공연정보, 선택 창 상단영역  --> 
+<!-- <select name="perform_list">
 	<option value="8월 20일 14:00시">8월 28일 14:00<br> 
 	<option value="8월 20일 18:00시">8월 28일 18:00<br>
-	<!--회차 정보를 이전 페이지에서 가져와야 한다. 이전 페이지와 연동된 공연정보 DB  -->
-</select>
+	회차 정보를 이전 페이지에서 가져와야 한다. 이전 페이지와 연동된 공연정보 DB 
+</select> -->
 </div>
 <p></p>
 <div class ="content-box" style="font-family:'S-CoreDream-3Light'">		
@@ -69,8 +74,7 @@ String MovieName= request.getParameter("name");
 		<li id ="vip" style="background:url('images/question.png') no-repeat scroll 0 0 transparent;font-size:13px;">VIP석    150,000원   <%=vip_left %>석</li><br>
 		<li id ="r" style="background:url('images/plus.png') no-repeat scroll 0 0 transparent;font-size:13px;">R석      130,000원  <%=r_left %>석 </li><br>		
 		<li id ="s" style="background:url('images/check.png') no-repeat scroll 0 0 transparent;font-size:13px;">S석     100,000원  <%=s_left %>석 </li> 
-		<!--공연장 정보에 따라서 VIP석, R석, S석이 몇 석인지 기록되어 있고, 결제 완료된 좌석을 빼어서 위의 li에 innerHTML하게 될 것이다.  -->
-		</ul>
+		</ul>	
 	</div>
 	</div> 
 
@@ -81,9 +85,7 @@ String MovieName= request.getParameter("name");
 	<br></br>	
 
 	
-	<form action ="../seatSelect" method="post">
-		<%-- <input type="hidden" value="<%=MovieName %>" name="ticketName"/> --%>	
-		<!-- <script>var seatValue[] = getInnerText();</script>	 -->	
+	<form action ="../seatSelect" method="post">		
 		<button id= "select_complete" type="submit"  value="" name="seats">선택 완료</button> 		
 	</form>
 

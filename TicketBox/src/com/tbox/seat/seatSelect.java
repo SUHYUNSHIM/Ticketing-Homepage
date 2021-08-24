@@ -1,6 +1,7 @@
 package com.tbox.seat;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -64,30 +65,77 @@ public class seatSelect extends HttpServlet {
 		else {
 			//아무것도 선택하지 않고 다음을 눌렀을 때는 또 따로 예외처리 해야 한다.
 			System.out.println("좌석 선택해야지!");
+			response.setContentType("text/html; charset=UTF-8");
+
+			
+			PrintWriter writer = response.getWriter();
+			
+			String PageUrl = request.getContextPath()+"/Seat_selection/Seat_main.jsp";
+			writer.println("<script>alert('좌석을 한 개 이상 선택해 주세요'); location.href='"+PageUrl+"';</script>"); 
+			writer.close();
+			
+			response.sendRedirect(PageUrl);  //좌석을 선택하지 않고 다음화면으로 넘어가려고 하는 경우
+
 		}
 		
 		System.out.println("좌석 배열 첫번째 값: "+ seatArr[0]); //잘 들어갔는지 테스트. -> 잘들어감.
 		
-		//DB와 연결하는 부분.
+		//DB와 연결하는 부분.//////////////////////////////////////**좌석 값을 순서대로 쓰는 함수를 dao에서 가져온다.
 		SeatInfoDAO sidao = null;
 		SeatInfoVO sv = null;
-	/*	for(int i=0;i<seatArr[i].length();i++) {
-			
-		}*/
 		
-		String s1_id = seatArr[0];
-		String s2_id = seatArr[1];
-		String s3_id = seatArr[2];
 		
-	/*	if()*/
 		
-		//request.setAttribute("s1_id", s1_id);
-		//request.setAttribute("s2_id", s2_id);
-		//request.setAttribute("s3_id", s3_id);
+		
+		///////////////////////////////////////*************************************************
+		
 		HttpSession session = request.getSession();
-		session.setAttribute("s1_id", s1_id);
-		session.setAttribute("s2_id", s2_id);
-		session.setAttribute("s3_id", s3_id);
+		
+		if(seatArr.length==1) {
+			String s1_id = seatArr[0]; //첫 번째 좌석.
+			session.setAttribute("s1_id", s1_id);
+			session.setAttribute("s2_id", ""); ///값이 없을 경우-> 한개, 두 개만 선택했을 경우, 남은 좌석 번호는 ""로 보낸다.
+			session.setAttribute("s3_id", "");
+		}
+		else if(seatArr.length==2) {
+			String s1_id = seatArr[0]; //첫 번째 좌석.
+			String s2_id = seatArr[1]; //두 번째 좌석.
+			session.setAttribute("s1_id", s1_id);
+			session.setAttribute("s2_id", s2_id);
+			session.setAttribute("s3_id", "");
+		}
+		else if(seatArr.length==3) {
+			String s1_id = seatArr[0]; //첫 번째 좌석.
+			String s2_id = seatArr[1];
+			String s3_id = seatArr[2];
+			
+			session.setAttribute("s1_id", s1_id);
+			session.setAttribute("s2_id", s2_id);
+			session.setAttribute("s3_id", s3_id);
+		}
+		
+		//////////////////////////////////금액 계산하는 부분
+		
+		int total_pay = 0;
+		
+		for(int i=0;i<seatArr.length;i++) {
+			
+			char[] arr = seatArr[i].toCharArray();	
+			
+			for(int j=0;j<arr.length;j++) { 
+				if(arr[j] == 'V') {
+				 total_pay+=150000;	
+				}
+				else if(arr[j] == 'R') {
+					total_pay +=130000;
+				}
+				else if(arr[j] =='S') {
+					total_pay += 100000;
+				}
+			}
+		}
+		
+		session.setAttribute("total_pay", total_pay); //총 지불 금액.(기본가)
 		
 		response.sendRedirect("Payment/total_payment.jsp");
 		

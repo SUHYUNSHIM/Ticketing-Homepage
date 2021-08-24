@@ -13,10 +13,15 @@ String s1_id = (String)session.getAttribute("s1_id");
 String s2_id = (String)session.getAttribute("s2_id");
 String s3_id = (String)session.getAttribute("s3_id");
 
-//int vip_left = (Integer)session.getAttribute("vip_left");
-//int r_left = (Integer)session.getAttribute("r_left");
-//int s_left = (Integer)session.getAttribute("s_left");
 
+int total_pay = (Integer)session.getAttribute("total_pay");
+String format_pay = String.format("%,d", total_pay); //천 단위 맞춰주기.
+
+String p_id = (String)session.getAttribute("p_id");
+
+//날짜
+String p_date = p_id.substring(2,4)+"월 "+p_id.substring(4,6)+"일";
+String p_time = p_id.substring(6,8)+"시 "+ p_id.substring(8,10)+"분"; //시간
 
 %>
 
@@ -40,6 +45,7 @@ String s3_id = (String)session.getAttribute("s3_id");
 	<!--사용자가 선택한 공연 이름이 h5 태그안에 써지도록 한다. 지금은 임시로 공간 잡아놓은 것.  -->
 	<h5><%=pname %></h5>
 	<div class ="seat"> 
+		<%=p_date +" "+p_time%>
 		<div style="white-space: pre-line;float:left;">	
 		<ul id="selected_description" >
 			<%=s1_id %>
@@ -54,23 +60,30 @@ String s3_id = (String)session.getAttribute("s3_id");
 	<div class="s_cost" id="s_cost">
 	<!--  controller에서 받은 결제 금액 정보들 나타나는 곳.  -->	
 	<ul id="cost_decription">
-	<!-- Seat_frame 참조, but 그것을 controller, servelet에서 처리해서 여기서 출력해 주는 것.  -->
+	<h5>기본가 : <%=format_pay %>원</h5>
+	<h5>할인금액: </h5>
 	</ul>
 	</div>
 	<!-- 
 	<br></br> -->
 	<ul class="flex-contatiner" style="list-style:none;  ">
 		<li>
-		<button id= "select_return" value="BACK" onclick="history.go(-1)">이전 단계</button>
+		<form action="../performSelect" method="post">
+			<!-- <button id= "select_return" value="BACK" onclick="history.go(-1)">이전 단계</button> -->
+			<button id= "select_return" type="submit" name="go_back">이전 단계</button>
+		</form>
 		</li>
 		<li >
-		<!-- <form action="../Payment/total_payment.jsp" method="get"> --> <!-- 최종 결제 화면으로 넘어간다. -->
-		<button type="submit" id= "select_complete" onclick ="../Payment/total_payment.jsp" >선택 완료<!--controller에게 값을 넘겨주고, controller가 할인수단 선택 화면 view(jsp)로 좌석 정보를 전달받는다.메소드 넣기 -->	
+		<form action="" method="post"> <!--임시로 잡아둔 것. 이니시스 결제 화면으로 넘어가야 한다.  -->
+		<button type="submit" id= "select_complete" onclick ="" >선택 완료<!--controller에게 값을 넘겨주고, controller가 할인수단 선택 화면 view(jsp)로 좌석 정보를 전달받는다.메소드 넣기 -->	
 		</button>
-		<!-- </form> -->
+		</form>
 		</li>
 	
 	</ul>
+<!-- 	<form action ="../seatSelect" method="post">		
+		<button id= "select_complete" type="submit"  value="" name="seats">선택 완료</button> 		
+	</form> -->
 	
 </div>
 </body>
