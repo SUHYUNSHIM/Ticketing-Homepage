@@ -25,22 +25,20 @@ String MovieName= request.getParameter("name");
 	/* if(sessionId == null ||sessionName == null){
 		response.sendRedirect("login_signup/index.jsp");
 	} */
-
+	int vip_left = (Integer)session.getAttribute("vip_left");
+	int r_left = (Integer)session.getAttribute("r_left");
+	int s_left = (Integer)session.getAttribute("s_left");
 %> 
 </head>
 <%
-	//out.println(MovieName);
-	//out.println(sessionName);
+
 	String pname = (String)session.getAttribute("pname");
-	//out.println(pname);
-	/* session.setAttribute("pname",MovieName); */
+	String p_id = (String)session.getAttribute("p_id");
 	
-	TicketVO tv1 = new TicketVO();
-	out.print("p_id"+ tv1.getP_id());
 %>
 
 <body>
-<div class ="info" style="font-family:'S-CoreDream-3Light'"><%=pname %> &nbsp;&nbsp;&nbsp; <!--공연정보, 선택 창 상단영역  --> <!--공연 제목은 추후 사용자가 선택한 공연의 이름을 전 페이지에서 가져오는 것으로 한다.-->
+<div class ="info" style="font-family:'S-CoreDream-3Light'"><%=pname %><%=p_id %> &nbsp;&nbsp;&nbsp; <!--공연정보, 선택 창 상단영역  --> <!--공연 제목은 추후 사용자가 선택한 공연의 이름을 전 페이지에서 가져오는 것으로 한다.-->
 <select name="perform_list">
 	<option value="8월 20일 14:00시">8월 28일 14:00<br> 
 	<option value="8월 20일 18:00시">8월 28일 18:00<br>
@@ -68,9 +66,9 @@ String MovieName= request.getParameter("name");
 	<div class ="p_seat">
 		<div style="white-space: pre-line;float:left;">		
 		<ul id="seatDescription" > <!--등급, 잔여석 기술  -->
-		<li id ="vip" style="background:url('images/question.png') no-repeat scroll 0 0 transparent;font-size:13px;">VIP석     150,000원</li><br>
-		<li id ="r" style="background:url('images/plus.png') no-repeat scroll 0 0 transparent;font-size:13px;">R석       130,000원 </li><br>		
-		<li id ="s" style="background:url('images/check.png') no-repeat scroll 0 0 transparent;font-size:13px;">S석      100,000원 </li> 
+		<li id ="vip" style="background:url('images/question.png') no-repeat scroll 0 0 transparent;font-size:13px;">VIP석    150,000원   <%=vip_left %>석</li><br>
+		<li id ="r" style="background:url('images/plus.png') no-repeat scroll 0 0 transparent;font-size:13px;">R석      130,000원  <%=r_left %>석 </li><br>		
+		<li id ="s" style="background:url('images/check.png') no-repeat scroll 0 0 transparent;font-size:13px;">S석     100,000원  <%=s_left %>석 </li> 
 		<!--공연장 정보에 따라서 VIP석, R석, S석이 몇 석인지 기록되어 있고, 결제 완료된 좌석을 빼어서 위의 li에 innerHTML하게 될 것이다.  -->
 		</ul>
 	</div>

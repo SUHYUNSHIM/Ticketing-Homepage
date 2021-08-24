@@ -54,11 +54,11 @@ String MovieName= request.getParameter("name");
    			<header>
 		        <div id="menuBar">
 		            <!--로고-->
-		            <a href="../main/ticketMain.jsp" class="logo"></a>
+		            <a href="${pageContext.request.contextPath}/main/ticketMain.jsp" class="logo"></a>
 		
 		            <!--메뉴-->
 		            <ul>
-		                <li><a href="main/ticketMain.jsp">티켓박스 홈</a></li>
+		                <li><a href="${pageContext.request.contextPath}/main/ticketMain.jsp">티켓박스 홈</a></li>
 		                <li><a href="#">뮤지컬</a></li>
 		                <li><a href="#">콘서트</a></li>
 		                <li><a href="#">마이페이지</a></li>

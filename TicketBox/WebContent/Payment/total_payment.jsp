@@ -7,9 +7,17 @@
 <title>배송/결제</title>
 <link rel="stylesheet" href="css/selected_frame.css"/>
 <%
-String s1_id = request.getParameter("s1_id");
-String s2_id = request.getParameter("s2_id");
-String s3_id = request.getParameter("s3_id");
+String pname = (String)session.getAttribute("pname");
+
+String s1_id = (String)session.getAttribute("s1_id");
+String s2_id = (String)session.getAttribute("s2_id");
+String s3_id = (String)session.getAttribute("s3_id");
+
+//int vip_left = (Integer)session.getAttribute("vip_left");
+//int r_left = (Integer)session.getAttribute("r_left");
+//int s_left = (Integer)session.getAttribute("s_left");
+
+
 %>
 
 </head>
@@ -30,13 +38,13 @@ String s3_id = request.getParameter("s3_id");
 	<img src="images/cube.png" class="resizing"> 
 	
 	<!--사용자가 선택한 공연 이름이 h5 태그안에 써지도록 한다. 지금은 임시로 공간 잡아놓은 것.  -->
-	<h5>공연 이름</h5>
+	<h5><%=pname %></h5>
 	<div class ="seat"> 
 		<div style="white-space: pre-line;float:left;">	
 		<ul id="selected_description" >
-			<%=s1_id %><br>
-			<%=s2_id %><br>
-			<%=s3_id %><br>
+			<%=s1_id %>
+			<%=s2_id %>
+			<%=s3_id %>
 		</ul>
 	</div>	
 	</div>

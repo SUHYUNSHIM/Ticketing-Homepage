@@ -11,6 +11,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import com.google.gson.*;
 
 import TicketDAO.TicketDAO;
@@ -63,12 +65,7 @@ public class showSeat extends HttpServlet {
 		String p_id1 = MovieName.substring(0,2).toUpperCase();
 		String [] imsi = MovieDate.split("-");
 		String p_id = (p_id1 + imsi[1]+imsi[2]+MovieTime);
-		
-		//tv1.setP_id(p_id); //p_id 지정.///////////////////////////////////
-		tv1 = new TicketVO();
-		tv1.setP_id(p_id);
-		
-		System.out.println("p_id 저장"+ tv1.getP_id());
+			 
 		
 		//System.out.println(p_id);  //p_id가 제대로 만들어 졌는지 확인
 		List<Integer> aa = td1.showSeat(p_id);  //DAO에 있는 메소드 showSeat에 
@@ -87,6 +84,15 @@ public class showSeat extends HttpServlet {
 		
 		
 		pw.print(json.toString());
+		
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("p_id", p_id);
+		
+		session.setAttribute("vip_left", aa.get(0));
+		session.setAttribute("r_left", aa.get(1));
+		session.setAttribute("s_left", aa.get(2));
+		//response.sendRedirect("../Seat_selection/Seat_main.jsp");
 		
 		//session.setAttribute("pname",pname);
 		//request.setAttribute("p_id", p_id);
