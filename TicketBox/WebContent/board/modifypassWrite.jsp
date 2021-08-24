@@ -23,7 +23,7 @@
 <head>
 <meta charset="UTF-8">
 <title>게시판 암호 입력화면 </title>
-<link href="../css/main.css" rel="stylesheet" type="text/css">
+<link href="../css/main1.css" rel="stylesheet" type="text/css">
 <style>
  
 		 body{

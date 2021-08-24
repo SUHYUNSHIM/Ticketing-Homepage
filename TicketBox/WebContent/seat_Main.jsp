@@ -5,13 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%
-String MovieName= request.getParameter("name");
-%>
 </head>
 <body>
-	<h1> 현재 <%=MovieName %> 의 잔여석 정보</h1>
-	
-	<!-- < -->
+<h1>seat_Main</h1>
 </body>
 </html>

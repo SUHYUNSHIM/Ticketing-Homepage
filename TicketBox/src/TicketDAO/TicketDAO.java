@@ -104,7 +104,7 @@ public class TicketDAO {
 		pstmt = con.prepareStatement(sql); 
 		pstmt.setString(1, p_id);
 		rs = pstmt.executeQuery();
-		System.out.println("82번째");
+		//System.out.println("82번째");
 		while(rs.next()) {
 			/*System.out.println("while 안에");
 			int vip = rs.getInt(1);

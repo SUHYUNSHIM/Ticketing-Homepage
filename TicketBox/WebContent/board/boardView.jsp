@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="../css/main.css" rel="stylesheet" type="text/css">
+<link href="../css/main1.css" rel="stylesheet" type="text/css">
 <script src="../js/jquery-1.7.2.min.js"></script> 
 <!--awesome icons--> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

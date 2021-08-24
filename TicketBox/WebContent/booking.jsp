@@ -26,10 +26,10 @@ String MovieName= request.getParameter("name");
 	String sessionId = (String)session.getAttribute("id");
 	String sessionName = (String)session.getAttribute("name");
 	if(sessionId == null ||sessionName == null){
-		response.sendRedirect("../login_signup/index.jsp");
+		response.sendRedirect("login_signup/index.jsp");
 	}
 
-%>
+%> 
 
 </head>
 
@@ -41,7 +41,7 @@ String MovieName= request.getParameter("name");
 		
 		            <!--메뉴-->
 		            <ul>
-		                <li><a href="../main/ticketMain.jsp">티켓박스 홈</a></li>
+		                <li><a href="main/ticketMain.jsp">티켓박스 홈</a></li>
 		                <li><a href="#">뮤지컬</a></li>
 		                <li><a href="#">콘서트</a></li>
 		                <li><a href="#">마이페이지</a></li>
@@ -66,7 +66,7 @@ String MovieName= request.getParameter("name");
 		</div>
 		
 
-
+<form action=seat_Main.jsp>
 <input type="hidden" value="<%=MovieName %>" name="MovieName"/>
 	<div id="select">
 		<div id="selectDate">
@@ -82,50 +82,18 @@ String MovieName= request.getParameter("name");
 				</li>
 				<li>
 					<div class="hour1">
-						<a name="MovieTime" href="javascript:void(0);" onclick="showSeat(1600)">16시 00분</a>	
+						<a name="MovieTime" href="javascript:void(0);" onclick="showSeat(1800)">18시 00분</a>	
 					</div>
 				</li>
-				<!-- <li>
+				<li>
 					<div class="hour1">
 						<a name="MovieTime" href="javascript:void(0);" onclick="showSeat(1920)">19시 20분</a>
 					</div>
-				</li> -->
+				</li>
 			</ul>
 			<script type="text/javascript">
-			
-				function showSeat(data){
-		           var name = $('input[name=MovieName]').val();
-	               var date = $('#input_date').val();
-	               var time = data;
-	               
-	               console.log("영화제목 : " + name);
-	               console.log("상영날짜 : " + date);
-	               console.log("상영시간 : " + time);
-	               
-	               $.ajax({
-	                   url : 'showSeat',
-	                   type : 'post',
-	                   data : {
-	                      MovieName : name,
-	                      MovieDate : date,
-	                  	  MovieTime : time
-	                   },
-	                   success : function(data) {
-	          
-	                    console.log("ajax 통신 성공");
-	                    console.log(data);
-	                    if(data!=null){
-                 	      	$("#vip").html("vip 잔여석 : " + data.vip);
-	                    	$("#r").html("R 잔여석 : " + data.r);
-	                    	$("#s").html("S 잔여석 : " + data.s);
-	                    }
-	                   },
-	                   error : function(data, status, opt) {
-	                      alert("code:"+data.status+"\n"+"message:"+data.responseText+"\n"+"error:"+opt);
-	                   }
-	                }); //ajax-end
-	              }
 			</script>
+		
 			
 		</div>
 			<div id="currentSeat" ><!-- 이자리에 좌석  -->
@@ -143,7 +111,7 @@ String MovieName= request.getParameter("name");
 			<button type="submit" id="bookingButton">예매하러가기</button>
 	</div>
 
-	
+	</form>
 
 
 
@@ -167,5 +135,6 @@ String MovieName= request.getParameter("name");
 		        </div>
 	
 	</footer>
+	
 </body>
 </html>

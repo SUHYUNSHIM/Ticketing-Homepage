@@ -59,7 +59,7 @@ public class TicketInsert extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		TicketDAO td1= null;
-		SeatInfoVO sv1 = null;
+		//SeatInfoVO sv1 = null;
 		
 		try {
 			td1 = new TicketDAO();
@@ -83,7 +83,7 @@ public class TicketInsert extends HttpServlet {
 		
 		
 		//String getPID(String pname, String pdate, String ptime)
-		String p_id=null;
+		/*String p_id=null;
 		try {
 			p_id = td1.getPID(ticketName,ticketDate,ticketTime);
 		} catch (SQLException e) {
@@ -92,7 +92,7 @@ public class TicketInsert extends HttpServlet {
 		} //pid 값 리턴 받음
 		
 		request.setAttribute("pid", p_id);
-		request.setAttribute("pname", ticketName);	
+		request.setAttribute("pname", ticketName);	*/
 		
 		 
 		

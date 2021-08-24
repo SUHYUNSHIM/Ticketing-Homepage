@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 
 <script src="../js/jquery-1.7.2.min.js"></script> 
-<script src="../js/main.js"></script>
-<link href="../css/main.css" rel="stylesheet" type="text/css">
+<script src="../js/main1.js"></script>
+<link href="../css/main1.css" rel="stylesheet" type="text/css">
 <style>
 
 </style>
@@ -55,7 +55,8 @@
 			
 		    
 			<div id="gogo">
-			 	<div><a href="${pageContext.request.contextPath}/performance/selectMusical.jsp"><h3>뮤지컬 예매하러 ▶</h3></a></div>
+			 	<%-- <div><a href="${pageContext.request.contextPath}/performance/selectMusical.jsp"><h3>뮤지컬 예매하러 ▶</h3></a></div> --%>
+			 	<div><a href="${pageContext.request.contextPath}/selectMusical.jsp"><h3>뮤지컬 예매하러 ▶</h3></a></div>
 			 	<div><a href="#"><h3>콘서트 예매하러 ▶</h3></a></div>
 				<div><a href="#"><h3>마이페이지 ▶</h3></a></div>
 				<div><a href="${pageContext.request.contextPath}/board/BoardList"><h3>공연 후기 게시판 ▶</h3></a></div>				
@@ -107,9 +108,7 @@
 		              <img src="../image/66.png" alt="이미지대체 텍스트">
 		            </a>
 		          
-		        </div>
-		
-		       
+		        </div>	       
 		
 		    </div>
 	

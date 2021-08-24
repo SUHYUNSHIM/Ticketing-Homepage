@@ -7,12 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	여기는 seat.jsp
-	<%
-	request.getParameter("selectedDate");
-	request.getParameter("ticketName");
-	%>
-	
-	
+<h1>seat_Main</h1>
 </body>
 </html>

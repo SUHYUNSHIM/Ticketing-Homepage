@@ -8,31 +8,22 @@
 <link href="css/main.css" rel="stylesheet" type="text/css">
 <script src="js/jquery-1.7.2.min.js"></script>
 <script src="js/main.js"></script>
-
-<%
-	String sessionId = (String)session.getAttribute("id");
-	String sessionName = (String)session.getAttribute("name");
-	if(sessionId == null ||sessionName == null){
-		response.sendRedirect("../login_signup/index.jsp");
-	}
-
-%>
 </head>
 <body>
    			<header>
 		        <div id="menuBar">
 		            <!--로고-->
-		            <a href="../main/ticketMain.jsp" class="logo"></a>
+		            <a href="ticketMain.jsp" class="logo"></a>
 		
 		            <!--메뉴-->
 		            <ul>
-		                <li><a href="../main/ticketMain.jsp">티켓박스 홈</a></li>
+		                <li><a href="ticketmain.jsp">티켓박스 홈</a></li>
 		                <li><a href="#">뮤지컬</a></li>
 		                <li><a href="#">콘서트</a></li>
 		                <li><a href="#">마이페이지</a></li>
-		                <li><a href="${pageContext.request.contextPath}/board/BoardList">공연 후기 게시판</a>
-		                <li><a href="${pageContext.request.contextPath}/login_signup/index.jsp">Login</a></li>
-		               	<li><a href="${pageContext.request.contextPath}/login_signup/Logout">Logout</a></li>
+		                <li><a href="#">공연 후기 게시판</a>
+		                <li><a href="#">*Login</a></li>
+		               	<li><a href="#">*Join</a></li>
 		                
 		            </ul>
 		
@@ -56,37 +47,62 @@
 			
 		    
 			<div id="gogo">
-			 	<div><a href="${pageContext.request.contextPath}/performance/selectMusical.jsp"><h3>뮤지컬 예매하러 ▶</h3></a></div>
+			 	<div><a href="selectMusical.jsp"><h3>뮤지컬 예매하러 ▶</h3></a></div>
 			 	<div><a href="#"><h3>콘서트 예매하러 ▶</h3></a></div>
 				<div><a href="#"><h3>마이페이지 ▶</h3></a></div>
-				<div><a href="${pageContext.request.contextPath}/board/BoardList"><h3>공연 후기 게시판 ▶</h3></a></div>				
-				<div><a href="${pageContext.request.contextPath}/login_signup/index.jsp"><h3>로그인 ▶</h3></a></div>
-				<div><a href="${pageContext.request.contextPath}/login_signup/signup.jsp"><h3>회원가입 ▶</h3></a></div>
+				<div><a href="#"><h3>공연 후기 게시판 ▶</h3></a></div>				
+				<div><a href="#"><h3>로그인 ▶</h3></a></div>
+				<div><a href="#"><h3>회원가입 ▶</h3></a></div>
 			</div>
-
 	
 		    <div id="ad">
-		        <div class=main_poster id=hedwig>
-		            <a href="booking.jsp?name=hedwig">
-		                <img src="image/hedwig.jpg" alt="이미지대체 텍스트">
-		                <h3>헤드윅</h3>
-		            </a>      	
-		        </div>
-		        
-		        <div class=main_poster id=mari>
-		            <a href = "booking.jsp?name=mari"> <!--p_id와의 연결성을 위해서 수정 ***********************  -->
-		               <img src="image/mari.jpg" alt="이미지대체 텍스트">
-		                <h3>마리 앙뚜아네트</h3>
+		
+		        <div>
+		            <h3>New! 공연 </h3>
+		            <a href="#">
+		                <img src="image/11.png" alt="이미지대체 텍스트">
 		            </a>
 		        </div>
-		        
-     		    <div class= main_poster id=mozart>
-					<a href = booking.jsp?name=mozart>
-	                	<img src="image/mozart.jpg"  alt="이미지대체 텍스트">
-						<h3>모차르트</h3>
-					</a>
+		
+		        <div>
+		            <h3>Hot! 콘서트 </h3>
+		            <p>
+		                <img src="image/22.png" alt="이미지대체 텍스트">
+		            </p>
 		        </div>
-
+		
+		        <div>
+		            <h3>10주년 기념공연</h3>
+		            <a href="#">
+		                <img src="image/33.png" alt="이미지대체 텍스트">
+		            </a>
+		          
+		        </div>
+		
+		        <div>
+		            <h3>한국 최초 공연</h3>
+		            <a href="#">
+		                <img src="image/44.png" alt="이미지대체 텍스트">
+		            </a>
+		        </div>
+		
+		        <div>
+		            <h3>왕의 귀환!</h3>
+		            <a href="#">
+		              <img src="image/55.png" alt="이미지대체 텍스트">
+		            </a>
+		          
+		        </div>
+		        <div>
+		            <h3>시원한 할인혜택</h3>
+		            <a href="#">
+		              <img src="image/66.png" alt="이미지대체 텍스트">
+		            </a>
+		          
+		        </div>
+		
+		       
+		
 		    </div>
 	
 	
@@ -101,6 +117,7 @@
 		                <span>Copyright ⓒTicket Box Company Corp</span>
 		            </p>
 		            <div>
+		                
 		                <select>
 		                    <option>관련사이트</option>
 		                </select>

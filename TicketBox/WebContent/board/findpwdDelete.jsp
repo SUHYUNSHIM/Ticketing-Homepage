@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="../css/main.css" rel="stylesheet" type="text/css">
+<link href="../css/main1.css" rel="stylesheet" type="text/css">
 <script language=javascript>
 		self.window.alert("게시글을 삭제합니다.");
 	

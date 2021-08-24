@@ -7,11 +7,6 @@
 	padding: 0;
 }
 
-
-body {
-	font-family: 'Nanum Gothic', sans-serif; 
-}
-
 li {
 	list-style: none;
 }
@@ -23,12 +18,17 @@ a {
 img {
 	display: block;
 	border: none;
+	margin:0px auto;
 }
 
+body {
+	font-size: 14px;
+	line-height: 26px;
+	color: #434343;
+	/*  font-family: '맑은고딕', 'Arial'; */
+	font-family: 'Nanum Gothic', sans-serif;
 
-
-
-
+}
 
 /*-------------디자인------------------------------------------------  */
 
@@ -56,44 +56,72 @@ header {
 }
 
 #menuBar {
+	/*가로너비*/
 	width: 1200px;
+	/*세로높이*/
 	height: 90px;
+	/*block속성일때 가운데배치*/
 	margin: 0 auto;
+	/*상대위치*/
 	position: relative;
+	
+	/*내용물만큼 높이만큼 보여짐*/
 	overflow: hidden;
+	/*글자정렬*/
 	text-align: center;
 }
 
 #menuBar>.logo {
+	/*가로너비*/
 	width: 120px;
+	/*세로높이*/
 	height: 130px;
+	/*속성변경*/
 	display: block;
+	/*왼쪽기준정렬*/
 	float: left;
+	 /*바깥쪽여백*/
 	margin-top: 0px; 
+	/*배경이미지*/
 	background-image: url(../image/ticket7.png);
-	background-size: 100%;	
+	/*배경이미지 사이즈*/
+	background-size: 100%;
+	/*코드상에서만 글자를 보기위하여 글자의 사이즈를 0으로 처리*/
+	font-size: 0;
 }
 
 #menuBar>ul {
-	 /*글자로 속여서 text-align먹이려고  */
+	/*속성변경*/ /*글자로 속여서 text-align먹이려고  */
 	display: inline-block;
-	overflow: hidden;
+	/*높이만큼 늘어남*/
+	overflow: hidden; /*내용이 넘치면 잘림 hidden*/
+	/*바깥쪽여백*/
+	/* margin-top: 30px; */
 }
 
 #menuBar>ul>li {
+	/*왼쪽기준정렬*/
 	float: left;
+	/*줄간격*/
 	line-height: 100px;
+	/*글자크기*/
 	font-size: 14px;
 }
 /*li(부모)에서 정의한 line-height그대로 먹는다.   */
 #menuBar>ul>li>a {
+	/*글자색상*/
 	color: #d4d0dc;
+	/*글자굵기*/
+	/* font-weight: 600; */
+	/*속성변경*/
 	display: block; /*??  */
+	/*안쪽여백*/
 	padding-left: 30px;
 	padding-right: 30px;
 }
 
 #menuBar>ul>li>a:hover {
+	/*a링크속성의 글자에 마우스를 올렸을때의 글자색상*/
 	color: #ED9595;
 }
 
@@ -101,17 +129,30 @@ header {
 	border-top: 3px solid #ED9595;
 	font-weight:800;
 }
-
+/*  li에 마우스를 올렸을때 a링크 속성의 글자 색상이 변한다.*/
+/*    #top>ul>li:hover a{
+		           color: orange;
+		        }  */
 #menuBar select {
+	/*오른쪽기준정렬*/
 	float: right;
+	/*속성변경*/
 	display: block;
+	/*세로높이*/
 	height: 20px;
+	/*안쪽여백*/
 	padding-left: 10px;
 	padding-right: 10px;
+	/*테두리값을 전체너비와 높이에 포함시킴*/
 	box-sizing: border-box;
+	/*바깥쪽여백*/
 	margin-top: 30px;
 	font-size: 10px;
 }
+/*main부분에 추가될 부분.*/
+
+
+
 /*---------------------------------------------------banner----------------------  */
 .thumbs {
 	position: relative;
@@ -148,12 +189,18 @@ li.second {
 	top: 0;
 }
 
+/*------------------------------------------------------ */
+
+
 /*---------------------  */
 #gogo {
-	font-size: 14px; 
+	/*가로너비*/
 	width: 1140px;
+	/*높이만큼 늘어남*/
 	overflow: hidden;
+	/*상대위치*/
 	position: relative;
+	/*block속성일때 가운데배치*/
 	margin: 40px auto;
 
 		           /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#5e84a0+2,3f4c6b+46,1e2833+100 */
@@ -168,70 +215,165 @@ li.second {
 }
 
 #gogo>div {
+	/*가로너비*/
 	width: 270px;
+	/*바깥쪽여백*/
 	margin-right: 10px;
 	margin-left: 100px;
 	margin-top: 10px;
 	margin-bottom: 10px;
+	/*상대위치*/
 	position: relative;
+	/*높이만큼 늘어남*/
 	overflow: hidden;
+	/*왼쪽기준정렬*/
 	float: left;
 }
 
 #gogo div h3 {
+	/*글자굵기*/
+	/*줄간격*/
 	line-height: 42px;
+	/*높이만큼 늘어남*/
 	overflow: hidden;
+	/*전체너비와 높이에 테두리값을 포함시킴*/
 	box-sizing: border-box;
+	/*세로높이*/
 	height: 42px;
-	
-
+	/* font-size:20px; */
 	font-weight: 150;
-	color: #BDBDBD;   
-	
-	
-	 
+	color: #BDBDBD;
 }
 
-#gogo>div>a>h3:hover{
+#gogo > div > a > h3:hover{
 	  text-decoration: underline;
 	  color:white;
 }
-
+/*contents박스 스타일*/
 #ad {
-	font-size: 14px; 
+	/*가로너비*/
 	width: 1140px;
+	/*높이만큼 늘어남*/
 	overflow: hidden;
+	/*상대위치*/
 	position: relative;
+	/*block속성일때 가운데배치*/
 	margin: 40px auto;
-	
-	
 }
 
 #ad>div {
+	/*가로너비*/
 	width: 270px;
+	/*바깥쪽여백*/
 	margin-right: 10px;
 	margin-left: 80px;
 	margin-bottom: 20px;
+	/*상대위치*/
 	position: relative;
+	/*높이만큼 늘어남*/
 	overflow: hidden;
+	/*왼쪽기준정렬*/
 	float: left;
 }
 
 #ad div h3 {
+	/*글자굵기*/
 	font-weight: 100;
+	/*줄간격*/
 	line-height: 42px;
+	/*높이만큼 늘어남*/
 	overflow: hidden;
+	/*전체너비와 높이에 테두리값을 포함시킴*/
 	box-sizing: border-box;
+	/*세로높이*/
 	height: 42px;
-	
-	 
 }
 
 #ad>div p {
+	/*높이만큼 늘어남*/
 	overflow: hidden;
+	/*자간*/
 	letter-spacing: -1px;
+	/*줄간격*/
 	line-height: 38px;
 }
+/*------------------------------------------------------------------*/
+ 
+/*------------------------------------------------------------------*/
+
+			/*booking.jsp 부분*/
+			
+#musicalImg{
+	margin:10px 0px 10px 0px;
+	border:2px outset grey;
+	width:1200px;
+	overflow: hidden;
+	position: relative;
+	margin: 2px auto;
+
+	
+}			
+
+#select {
+	/*가로너비*/
+	width: 1180px;
+	/*높이만큼 늘어남*/
+	overflow: hidden;
+	/*상대위치*/
+	position: relative;
+
+	margin: 2px auto;
+	margin-bottom:10px;
+	padding: 10px;	
+	border-width: 2px;
+	border-style: double;
+	border-color: grey;
+	display:flex;
+}
+#select > div{
+	float:left;
+	text-align:center;
+	flex:1;
+	margin:5px;
+
+}
+	
+#select > #selectDate > #input_date{
+	position: relative;
+	width: 200px;
+	height: 40px;
+	margin-top:20px;
+	
+}
+
+.hour1 {
+	border-bottom: 2px double grey;
+	
+}
+
+ #currentSeat{
+	border:2px double grey;
+	border-radius::2em;
+
+	
+}
+#bookingButton{
+	position:relative;
+	left: 1250px;
+}
+/*------------------------------------------------------------------*/
+					/*selectMusical.jsp 부분	*/
+.main_poster {
+	text-align:center;
+	border: 2px outset grey;	
+}
+					
+					
+					
+
+
+
+
 
 /*---------footer하단구조-------------------------------------------------*/
 footer {
@@ -251,6 +393,7 @@ footer>div {
 
 footer>div>img {
 	float: left;
+	/* margin-top: 15px; */
 }
 
 footer>div>p {
@@ -262,12 +405,12 @@ footer>div>p {
 	font-size: 10px;
 }
 
-footer p>a {
+footer p > a {
 	color: #b9b9b9;
 	margin-left: 20px;
 }
 
-footer p>span {
+footer p > span {
 	color: #69696b;
 	font-size: 11px;
 }
@@ -336,8 +479,9 @@ footer>div>div>select {
 		margin: 0;
 		margin-left: 1%;
 		margin-right: 1%;
+		
 	}
-	#ad>div img {
+	#ad>div> img {
 		/*가변그리드안에서의 이미지는 백분율로 표시되어야 박스의 너비와 같은 크기로 보여짐*/
 		max-width: 100%;
 		height: auto;

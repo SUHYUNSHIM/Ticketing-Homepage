@@ -5,7 +5,7 @@
 <html>
 <head>
 <title>목록</title>
-<link href="../css/main.css" rel="stylesheet" type="text/css">
+<link href="../css/main1.css" rel="stylesheet" type="text/css">
 <style>
 	   #main_picture {
 		            /*가로너비*/
