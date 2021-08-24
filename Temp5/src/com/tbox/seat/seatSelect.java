@@ -8,7 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import seatInfoDAO.SeatInfoDAO;
 import seatInfoVO.SeatInfoVO;
@@ -71,28 +70,43 @@ public class seatSelect extends HttpServlet {
 		//DB와 연결하는 부분.
 		SeatInfoDAO sidao = null;
 		SeatInfoVO sv = null;
-	/*	for(int i=0;i<seatArr[i].length();i++) {
-			
-		}*/
-		
 		String s1_id = seatArr[0];
 		String s2_id = seatArr[1];
 		String s3_id = seatArr[2];
 		
-	/*	if()*/
+		request.setAttribute("s1_id", s1_id);
+		request.setAttribute("s2_id", s2_id);
+		request.setAttribute("s3_id", s3_id);
 		
-		//request.setAttribute("s1_id", s1_id);
-		//request.setAttribute("s2_id", s2_id);
-		//request.setAttribute("s3_id", s3_id);
-		HttpSession session = request.getSession();
-		session.setAttribute("s1_id", s1_id);
-		session.setAttribute("s2_id", s2_id);
-		session.setAttribute("s3_id", s3_id);
 		
-		response.sendRedirect("Payment/total_payment.jsp");
+		/*
+		 TelInfoDAO tidao4 =null;
+				TelInfoVO tv2 = null;
+				int id2 = Integer.parseInt(request.getParameter("id"));
+				String name2 = request.getParameter("name");
+				String tel2 = request.getParameter("tel");
+				String d2 = request.getParameter("d");
+				
+				String sname = request.getParameter("sname");
+				try {
+					tidao4 = new TelInfoDAO();
+				}catch(ClassNotFoundException | SQLException e) {
+					e.printStackTrace();
+				}
+				tidao4.update_all(id2, name2, tel2, d2, sname);
+				//전부 update하는 메소드
+				
+				str="getAllInfo.jsp";
+				break; 
+		  
+		*/
 		
-		//RequestDispatcher rd1 = request.getRequestDispatcher("../Payment/total_payment.jsp");
-		//rd1.forward(request, response);
+		
+		
+		
+		
+		RequestDispatcher rd1 = request.getRequestDispatcher("../Payment/total_payment.jsp");
+		rd1.forward(request, response);
 		
 	}
 

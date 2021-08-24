@@ -1,3 +1,4 @@
+/*웹폰트- https://noonnu.cc/font_page/223 에스코어 드림Lt  */
 @font-face {
      font-family: 'S-CoreDream-3Light';
      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
@@ -8,7 +9,33 @@ h5,option{
 	font-family: 'S-CoreDream-3Light';
 	font-size: 14px;
 }
-/*할인 수단 선택 영역 */
+.p_seat #seatDescription{
+	margin:0;
+	padding:0;
+	list-style:none;
+	padding-left:5px;
+		
+}
+.p_seat ul li{
+	margin:0;
+	padding:0;
+	list-style:none;
+	padding-left:0px;	
+}
+
+
+.info-box{
+	box-sizing: content-box;
+	width: 500px;
+	height: 50px;
+	padding: 10px;
+	
+	border-top-left-radius:5px;
+	border-bottom-left-radius:5px;
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+}
+
 .content-box{
 	box-sizing: content-box;
 	width:70%;
@@ -26,7 +53,17 @@ h5,option{
 	border-bottom-right-radius:5px;
 }
 
-.selected_info{
+.content-box #stage{  /*무대영역  */
+	box-sizing: content-box;
+	display: inline-block;
+	width:30%;
+	height:30px;
+	background-color: #E8DAB3;
+	
+}
+
+
+.seat_info{
 	width: 20%;
 	height: 520px; /*padding... 높이 수동 조작  */
 	padding:10px;
@@ -40,75 +77,38 @@ h5,option{
 	border-top-right-radius:5px;
 	border-bottom-right-radius:5px;
 	
-}
-.selected_info> div{
+} 
+
+.seat_info > div{
 	height: 150px;
 	background-color:#E5E5E5;
 	box-sizing: border-box;			
 }
-.selected_info .seat{
+.seat_info .p_seat{
 	width: 100%;
 	font-family: 'S-CoreDream-3Light';	
 	font-size: 14px;	
-} 
-.selected_info .s_cost{
+}
+
+.seat_info .s_seat{
 	width: 100%;
 	font-family: 'S-CoreDream-3Light';	
 	font-size: 13px;
 }
 
-.flex-container{
-	list-style:none;
-	margin:10px;
-	padding:0;
-	font-family: 'S-CoreDream-3Light';
-	font-weight: bold;
-	
-	float:left;
-	width: 150%;
-	height: 60px;
-	
-	text-align:center;		
-} 
-
-
-#select_return{
-	background-color: #B1B1B1;	
+#select_complete{  /*선택완료 버튼  */
 	font-family: 'S-CoreDream-3Light';
 	font-weight: bold;	
 	
 	border-top-left-radius:5px;
 	border-bottom-left-radius:5px;
-
-	width: 107px;
-	height: 60px;
-	
-	margin-left:-40px;	
-}
-#select_return:hover{
-	color: #EAEAEA;
-	background-color: #F5A6B9;
-}
-/*공연 정보 받아올 때는 아래 처럼 가로 정렬이면 안된다..!  */
-ul  >li {
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
-
-    border : 0;
-    float: left;   
-}
-#select_complete{
-	font-family: 'S-CoreDream-3Light';
-	font-weight: bold;	
-	
-	background-color: #B1B1B1;
 	border-top-right-radius:5px;
 	border-bottom-right-radius:5px;
-		
-	width: 107px;
-	height: 60px;
+	
+	background-color: #B1B1B1;
+	width: 100%;
+	height: 50px;
 }
-
 #select_complete:hover{
 	color: #EAEAEA;
 	background-color: #F5A6B9;
@@ -118,15 +118,14 @@ li.resizing{
 		float:left;		
 		padding:10px;
 		maring:1ppx;
-}
+	}
+
 /*이미지 리사이징  */
-img.resizing{
-	float:right;
-	width:30px;
-	height:30px;
-	padding:10px;
-	maring:1ppx;
-}
-
-
+	img.resizing{
+		float:right;
+		width:30px;
+		height:30px;
+		padding:10px;
+		maring:1ppx;
+	}
 
