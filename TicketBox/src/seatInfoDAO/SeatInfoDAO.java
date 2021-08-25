@@ -72,62 +72,61 @@ public class SeatInfoDAO {
 		}
 		return sv; //객체 반환
 	}
-	//회차 선택 시 만들어지는 테이블. 2개 이상의 좌석을 선택 시, insert s
-	//사용자는 공연 회차 선택 단계에서 member_seat 테이블에 사용자 id, 공연이름 pname, 공연시리얼 번호 p_id만 썼다. 
-	public boolean insert_selected_perform (String id, String p_id, String p_name) {
-		String sql="insert into member_seat(id,p_id,p_name) values(?,?,?)";
-		try {
-			pstmt=con.prepareStatement(sql);
-			pstmt.setString(1, id);
-			pstmt.setString(2, p_id);
-			pstmt.setString(3, p_name);
-	
-			pstmt.executeUpdate();
-		} catch (SQLException e) {
-			System.out.println("Insert Exception");
-			return false;
-		}
-		return true;
-	}
-	
-	
-	
-	
-	//**********************************************************좌석 선택 시 udpate 되는 테이블 ****************************//	
-	//좌석 선택 창에서 선택한 좌석이 들어간다.member_seat 테이블의 좌석 칼럼(s1_id, s2_id, s3_id)에만 값을 더한다.
-	//s1_id가 null인 경우를 조건에 넣은 이유는 s1,s2,s3 순서로 넣기 때문에, 제일 처음 값이 null이면 좌석 선택 단계를 거치지 않은 것이기 떄문이다.
-	//사용자는 공연 회차 선택 단계에서 member_seat 테이블에 사용자 id, 공연이름 pname, 공연시리얼 번호 p_id만 썼다. 좌석 선택 칼럼만 null인 상태.
-	public boolean update_seat(String id, String p_id, String s1_id, String s2_id, String s3_id) {
-		String sql = "update member_seat set s1_id =?, s2_id =?, s3_id =? where s1_id is null and id=? and p_id =?";		
+
+	///////////////////////////////쓰는 함수1./////////////////////////////////////////////////////////////////////////////
+	public boolean insert_select_seat(String id, String s1_id, String s2_id, String s3_id, String p_id, String p_name) {
+		String sql = "insert into member_seat values(?,?,?,?,?,?)";
 		try {
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, s1_id); //좌석번호1
-			pstmt.setString(2, s2_id); //좌석번호2
-			pstmt.setString(3, s3_id); //좌석번호3
-			pstmt.setString(4, id); //사용자 id
-			pstmt.setString(5, p_id); //공연회차 id
+			pstmt.setString(1, id);
+			pstmt.setString(2, s1_id);
+			pstmt.setString(3, s2_id);
+			pstmt.setString(4, s3_id);
+			pstmt.setString(5, p_id);
+			pstmt.setString(6, p_name);
 			
 			pstmt.executeUpdate();
+		}catch(SQLException e){
+			System.out.println("삽입실패");
+			return false;
+		}
+		return true;
+	}
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	//이전 단계 버튼을 누르면 자신이 선택한 좌석 정보가 날라간다. 쓰는 함수2///////////////
+	public boolean delete_seat(String id,String p_id) {
+			String sql="delete from member_seat where id=? and p_id=?";
+			try {
+				pstmt=con.prepareStatement(sql);
+				pstmt.setString(1, id);   //유저 아이디
+				pstmt.setString(2, p_id); //공연회차 id(시리얼 번호)
+				pstmt.executeUpdate();
+				System.out.println("삭제 성공");
+			} catch (SQLException e) {
+				System.out.println("Delete Exception");
+				return false;
+			}
+			return true;
+		} 
+	//잔여석 update를 위한 함수
+	public boolean update_seats(String p_id, int vip, int r, int s) {
+		String sql = "update performance_each set VIP = VIP-? , R= R-?, S=S-? where p_id =?";
+		try {
+			pstmt =con.prepareStatement(sql);
+			pstmt.setInt(1, vip);
+			pstmt.setInt(2, r);
+			pstmt.setInt(3, s);
+			pstmt.setString(4, p_id);
+			pstmt.executeUpdate();
+			System.out.println("잔여석 업데이트 성공");
 		}catch(SQLException e) {
-			System.out.println("좌석 입력 오류");
+			System.out.println("Update Exception");
 			return false;
 		}
 		return true;
 	}
 	
-	//이전 단계 버튼을 누르면 자신이 선택한 좌석 정보가 날라간다. 지금 예매 중인 사용자의 아이디,공연회차 id 검색해서 해당 좌석만 테이블에서 지워지도록 한다.
-	public boolean delete_seat(String id,String p_id) {
-		String sql="delete from member_seat where id=? and p_id=?";
-		try {
-			pstmt=con.prepareStatement(sql);
-			pstmt.setString(1, id);   //유저 아이디
-			pstmt.setString(2, p_id); //공연회차 id(시리얼 번호)
-			pstmt.executeUpdate();
-		} catch (SQLException e) {
-			System.out.println("Delete Exception");
-			return false;
-		}
-		return true;
-	} 
+	//update performance_each set VIP = VIP-0 , R= R-0, S=S-1 where p_id = 'MA08281400';
 	
+		
 }

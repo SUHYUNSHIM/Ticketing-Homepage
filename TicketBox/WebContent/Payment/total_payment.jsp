@@ -8,6 +8,10 @@
 <link rel="stylesheet" href="css/selected_frame.css"/>
 <%
 String pname = (String)session.getAttribute("pname");
+String name = (String)session.getAttribute("name");
+String email = (String)session.getAttribute("email");
+String phone = (String)session.getAttribute("phone");
+String address = (String)session.getAttribute("address");
 
 String s1_id = (String)session.getAttribute("s1_id");
 String s2_id = (String)session.getAttribute("s2_id");
@@ -15,7 +19,7 @@ String s3_id = (String)session.getAttribute("s3_id");
 
 
 int total_pay = (Integer)session.getAttribute("total_pay");
-String format_pay = String.format("%,d", total_pay); //천 단위 맞춰주기.
+String format_pay = Integer.toString(total_pay); //천 단위 맞춰주기.
 
 String p_id = (String)session.getAttribute("p_id");
 
@@ -27,6 +31,7 @@ String p_time = p_id.substring(6,8)+"시 "+ p_id.substring(8,10)+"분"; //시간
 
 </head>
 <body>
+
 <div class ="info" style="font-family:'S-CoreDream-3Light'">배송/결제 &nbsp;&nbsp;&nbsp;
 </div>
 <p></p>	
@@ -34,7 +39,28 @@ String p_time = p_id.substring(6,8)+"시 "+ p_id.substring(8,10)+"분"; //시간
 <div class ="content-box" style="font-family:'S-CoreDream-3Light'">		
 	<p></p>
 	<!--include를 사용해서 결제 수단 선택 및 결제 관련 페이지의 jsp가 들어가도록 한다.  *****************-->
-	<%-- <%@ include file="seatSelected_dc.jsp" %>	 --%>													
+	<%-- <%@ include file="seatSelected_dc.jsp" %>	 --%>		
+	
+		<table style="margin-left: auto; margin-right: auto;">
+	<tr collaps=3>
+	<td> <img src="../image/11.png"><br>신작 홍보</td>	
+	<td><h5>이메일 주소</h5>
+	 <%=email %><br> 
+	<%-- <input type="text" value="${pv1[1]}" name="email"><br> --%> 	
+	<h5>티켓 수령방법</h5> <!-- 체크한 방법을 마지막 결과창에 모여줄 수 있게 넘겨준다. -->
+	<input type="checkbox" name="book" value="come">방문 수령<br>
+	<input type="checkbox" name="book" value="post">우편 수령<br>
+	<h5>주소</h5> <!-- 회워가입할 때 주소 기입창이 없어서 넣어준다. -->
+	<%-- <input type="type" value="${pv1[3]}" name="address"><br><br> --%>
+	<%=address %> <br>
+	<input type="radio" name="payway" value="credit"> 신용카드  
+	<input type="radio" name="payway" value="bankbook"> 무통장 입금<br>
+		<h5>쿠폰함</h5>
+		<select name="coupon">
+			<option value="sale">첫 구매 할인</option>
+		</select></td></tr>
+	</table>
+	<p></p>												
 </div>
 <p></p>
 
@@ -74,8 +100,13 @@ String p_time = p_id.substring(6,8)+"시 "+ p_id.substring(8,10)+"분"; //시간
 		</form>
 		</li>
 		<li >
-		<form action="" method="post"> <!--임시로 잡아둔 것. 이니시스 결제 화면으로 넘어가야 한다.  -->
-		<button type="submit" id= "select_complete" onclick ="" >선택 완료<!--controller에게 값을 넘겨주고, controller가 할인수단 선택 화면 view(jsp)로 좌석 정보를 전달받는다.메소드 넣기 -->	
+		 <form action="../PayInsert" method="post"><!--임시로 잡아둔 것. 이니시스 결제 화면으로 넘어가야 한다.  -->
+		 <input type="hidden" name="pname" id="pname" value=<%=name %>>
+		 <input type="hidden" name="email" id="email" value=<%=email %>>
+		 <input type="hidden" name="phone" id="phone" value=<%=phone %>>	
+		 <input type="hidden" name="address" id="address" value=<%=address %>>
+		 <input type="hidden" name="pay" id="pay" value=<%=format_pay %>>
+		<button type="submit" id= "select_complete" onclick ="./ticketEnd/ticketEnd.jsp" >선택 완료<!--controller에게 값을 넘겨주고, controller가 할인수단 선택 화면 view(jsp)로 좌석 정보를 전달받는다.메소드 넣기 -->	
 		</button>
 		</form>
 		</li>
@@ -86,5 +117,6 @@ String p_time = p_id.substring(6,8)+"시 "+ p_id.substring(8,10)+"분"; //시간
 	</form> -->
 	
 </div>
+
 </body>
 </html>

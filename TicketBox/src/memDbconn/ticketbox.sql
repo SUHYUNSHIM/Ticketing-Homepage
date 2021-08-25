@@ -22,6 +22,10 @@ gender varchar2(10),
 address varchar2(100),
 email varchar2(50)
 );
-
-
+select * from member_seat;
 select * from member;
+
+delete from member_seat where id= 'suhyun' and p_id = 'MA08281400';
+commit;
+
+

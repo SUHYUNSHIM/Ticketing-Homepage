@@ -2,6 +2,7 @@ package com.tbox.seat;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -48,6 +49,7 @@ public class seatSelect extends HttpServlet {
 		//doGet(request, response);
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
+		HttpSession session = request.getSession();
 	
 		String seats =  request.getParameter("seats");
 		System.out.println("좌석들 "+ seats);
@@ -85,24 +87,56 @@ public class seatSelect extends HttpServlet {
 		SeatInfoVO sv = null;
 		
 		
+		/*
+		 TelInfoDAO tidao2 = null;
+				try {
+					tidao2 = new TelInfoDAO();
+				} catch(ClassNotFoundException | SQLException e) {
+					e.printStackTrace();
+				}
+				tidao2.insert_nametel(sabun1,name1,tel1,date1); //여기서 dao의 insert 메서드를 호출한다. 즉 계산 작업을 수행하는 controller.
+				str= "getAllInfo.jsp";
+				
+				break; 
+		 */
+		try {
+			sidao = new SeatInfoDAO();
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		String id = (String) session.getAttribute("id");
+		String p_name = (String)session.getAttribute("pname");
+		String p_id = (String)session.getAttribute("p_id");
+		
+		System.out.println("아이디, 공연이름, 공연아이디"+id+" "+p_name+" "+p_id);
 		
 		
 		///////////////////////////////////////*************************************************
 		
-		HttpSession session = request.getSession();
+		
 		
 		if(seatArr.length==1) {
 			String s1_id = seatArr[0]; //첫 번째 좌석.
+			String s2_id ="";
+			String s3_id ="";
 			session.setAttribute("s1_id", s1_id);
 			session.setAttribute("s2_id", ""); ///값이 없을 경우-> 한개, 두 개만 선택했을 경우, 남은 좌석 번호는 ""로 보낸다.
 			session.setAttribute("s3_id", "");
+			
+			System.out.println("두번째, 세번쨰"+s2_id+" "+s3_id);
+			sidao.insert_select_seat(id, s1_id, s2_id, s3_id, p_id, p_name); //아이디, 좌석123,p_id, 공연이름 삽입
 		}
 		else if(seatArr.length==2) {
 			String s1_id = seatArr[0]; //첫 번째 좌석.
 			String s2_id = seatArr[1]; //두 번째 좌석.
+			String s3_id = "";
 			session.setAttribute("s1_id", s1_id);
 			session.setAttribute("s2_id", s2_id);
 			session.setAttribute("s3_id", "");
+			
+			sidao.insert_select_seat(id, s1_id, s2_id, s3_id, p_id, p_name); //아이디, 좌석123,p_id, 공연이름 삽입
 		}
 		else if(seatArr.length==3) {
 			String s1_id = seatArr[0]; //첫 번째 좌석.
@@ -112,11 +146,15 @@ public class seatSelect extends HttpServlet {
 			session.setAttribute("s1_id", s1_id);
 			session.setAttribute("s2_id", s2_id);
 			session.setAttribute("s3_id", s3_id);
+			sidao.insert_select_seat(id, s1_id, s2_id, s3_id, p_id, p_name); //아이디, 좌석123,p_id, 공연이름 삽입
 		}
 		
 		//////////////////////////////////금액 계산하는 부분
 		
 		int total_pay = 0;
+		int vip = 0;
+		int r= 0;
+		int s=0;
 		
 		for(int i=0;i<seatArr.length;i++) {
 			
@@ -125,15 +163,25 @@ public class seatSelect extends HttpServlet {
 			for(int j=0;j<arr.length;j++) { 
 				if(arr[j] == 'V') {
 				 total_pay+=150000;	
+				 vip+=1;
 				}
 				else if(arr[j] == 'R') {
 					total_pay +=130000;
+					r+=1;
 				}
 				else if(arr[j] =='S') {
 					total_pay += 100000;
+					s+=1;
 				}
 			}
 		}
+		session.setAttribute("vip", vip);
+		session.setAttribute("r",r);
+		session.setAttribute("s", s);
+		
+		System.out.println("vip석 총 :"+vip+"석 선택");
+		System.out.println("r석 총: "+r+"석 선택");
+		System.out.println("s석 총: "+s+"석 선택");
 		
 		session.setAttribute("total_pay", total_pay); //총 지불 금액.(기본가)
 		

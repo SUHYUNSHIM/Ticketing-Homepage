@@ -48,7 +48,7 @@ console.log($('#p_name').val()); */
 <input type="hidden" id="p_name" name="p_name" value="<%=pname%>"/>
 
 <!--servlet에 제출도 하고, resize된 상태의 다음 창도 열릴 것인가.  -->
-<button id="p_info" type="submit" onclick="window.open('Seat_main.jsp','name','resizable=no width=1100 height=615');return false">예매하기</button>
+<button id="p_info" type="submit" onclick="window.open('Seat_main.jsp','name','resizable=no width=1200 height=615');return false">예매하기</button>
 </form>
 
 <!-- script 위치도 상관있는가 -->
